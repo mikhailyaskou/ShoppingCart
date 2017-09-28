@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  YMAGoodsNotAvailableCell.h
 //  ShoppingCart
 //
 //  Created by Mikhail Yaskou on 18.07.17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface YMAGoodsNotAvailableCell : UITableViewCell
 
 @end
-

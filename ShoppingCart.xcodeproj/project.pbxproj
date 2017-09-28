@@ -7,27 +7,87 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		982E96E71F1DF14200FB0F1C /* YMAGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 982E96E61F1DF14200FB0F1C /* YMAGoodsViewController.m */; };
+		982E96F11F1DF80A00FB0F1C /* YMADataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 982E96F01F1DF80A00FB0F1C /* YMADataBase.m */; };
+		982E96F81F1DFB5D00FB0F1C /* YMAGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 982E96F61F1DFB5D00FB0F1C /* YMAGoodsCell.m */; };
+		982E96F91F1DFB5D00FB0F1C /* YMAGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 982E96F71F1DFB5D00FB0F1C /* YMAGoodsCell.xib */; };
+		982E96FD1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 982E96FB1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.m */; };
+		982E96FE1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 982E96FC1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.xib */; };
+		985F704F1F29EEAD0087E8F8 /* YMABackEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 985F704E1F29EEAD0087E8F8 /* YMABackEnd.m */; };
 		987607171F1DEDFF00FEAD5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 987607161F1DEDFF00FEAD5C /* main.m */; };
 		9876071A1F1DEDFF00FEAD5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 987607191F1DEDFF00FEAD5C /* AppDelegate.m */; };
-		9876071D1F1DEDFF00FEAD5C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9876071C1F1DEDFF00FEAD5C /* ViewController.m */; };
 		987607201F1DEDFF00FEAD5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9876071E1F1DEDFF00FEAD5C /* Main.storyboard */; };
 		987607231F1DEE0100FEAD5C /* ShoppingCart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 987607211F1DEE0000FEAD5C /* ShoppingCart.xcdatamodeld */; };
 		987607251F1DEE0100FEAD5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 987607241F1DEE0100FEAD5C /* Assets.xcassets */; };
 		987607281F1DEE0100FEAD5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 987607261F1DEE0100FEAD5C /* LaunchScreen.storyboard */; };
+		98769EDA1F2CEBF500602FCF /* YMAShopService.m in Sources */ = {isa = PBXBuildFile; fileRef = 98769ED91F2CEBF500602FCF /* YMAShopService.m */; };
+		9887D8E71F330E3500448E4C /* User+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8DA1F330E3500448E4C /* User+CoreDataClass.m */; };
+		9887D8E81F330E3500448E4C /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8DC1F330E3500448E4C /* User+CoreDataProperties.m */; };
+		9887D8F91F330ED100448E4C /* Goods+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8EE1F330ED100448E4C /* Goods+CoreDataClass.m */; };
+		9887D8FA1F330ED100448E4C /* Goods+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8F01F330ED100448E4C /* Goods+CoreDataProperties.m */; };
+		9887D8FB1F330ED100448E4C /* Order+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8F21F330ED100448E4C /* Order+CoreDataClass.m */; };
+		9887D8FC1F330ED100448E4C /* Order+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8F41F330ED100448E4C /* Order+CoreDataProperties.m */; };
+		9887D8FD1F330ED100448E4C /* OrderBook+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8F61F330ED100448E4C /* OrderBook+CoreDataClass.m */; };
+		9887D8FE1F330ED100448E4C /* OrderBook+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8F81F330ED100448E4C /* OrderBook+CoreDataProperties.m */; };
+		98B71EF81F30A400005D81FE /* YMACartOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B71EF71F30A400005D81FE /* YMACartOrderViewController.m */; };
+		98B71EFB1F30B121005D81FE /* YMAPrettyButtonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B71EFA1F30B121005D81FE /* YMAPrettyButtonHelper.m */; };
+		98B71EFE1F30BDCF005D81FE /* YMADateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B71EFD1F30BDCF005D81FE /* YMADateHelper.m */; };
+		98CFD83C1F322CC20053461D /* YMAOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CFD83B1F322CC20053461D /* YMAOrdersViewController.m */; };
+		98CFD8401F322D640053461D /* YMAOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CFD83E1F322D640053461D /* YMAOrderTableViewCell.m */; };
+		98CFD8411F322D640053461D /* YMAOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98CFD83F1F322D640053461D /* YMAOrderTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		982E96E51F1DF14200FB0F1C /* YMAGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAGoodsViewController.h; sourceTree = "<group>"; };
+		982E96E61F1DF14200FB0F1C /* YMAGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAGoodsViewController.m; sourceTree = "<group>"; };
+		982E96EF1F1DF80A00FB0F1C /* YMADataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMADataBase.h; sourceTree = "<group>"; };
+		982E96F01F1DF80A00FB0F1C /* YMADataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMADataBase.m; sourceTree = "<group>"; };
+		982E96F51F1DFB5D00FB0F1C /* YMAGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAGoodsCell.h; sourceTree = "<group>"; };
+		982E96F61F1DFB5D00FB0F1C /* YMAGoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAGoodsCell.m; sourceTree = "<group>"; };
+		982E96F71F1DFB5D00FB0F1C /* YMAGoodsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMAGoodsCell.xib; sourceTree = "<group>"; };
+		982E96FA1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAGoodsNotAvailableCell.h; sourceTree = "<group>"; };
+		982E96FB1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAGoodsNotAvailableCell.m; sourceTree = "<group>"; };
+		982E96FC1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMAGoodsNotAvailableCell.xib; sourceTree = "<group>"; };
+		985F704D1F29EEAD0087E8F8 /* YMABackEnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMABackEnd.h; sourceTree = "<group>"; };
+		985F704E1F29EEAD0087E8F8 /* YMABackEnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMABackEnd.m; sourceTree = "<group>"; };
 		987607121F1DEDFF00FEAD5C /* ShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		987607161F1DEDFF00FEAD5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		987607181F1DEDFF00FEAD5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		987607191F1DEDFF00FEAD5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9876071B1F1DEDFF00FEAD5C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9876071C1F1DEDFF00FEAD5C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		9876071F1F1DEDFF00FEAD5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		987607221F1DEE0000FEAD5C /* ShoppingCart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingCart.xcdatamodel; sourceTree = "<group>"; };
 		987607241F1DEE0100FEAD5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		987607271F1DEE0100FEAD5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		987607291F1DEE0100FEAD5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98769ED81F2CEBF500602FCF /* YMAShopService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAShopService.h; sourceTree = "<group>"; };
+		98769ED91F2CEBF500602FCF /* YMAShopService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAShopService.m; sourceTree = "<group>"; };
+		9887D8D91F330E3500448E4C /* User+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataClass.h"; sourceTree = "<group>"; };
+		9887D8DA1F330E3500448E4C /* User+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataClass.m"; sourceTree = "<group>"; };
+		9887D8DB1F330E3500448E4C /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9887D8DC1F330E3500448E4C /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9887D8ED1F330ED100448E4C /* Goods+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Goods+CoreDataClass.h"; path = "../Goods+CoreDataClass.h"; sourceTree = "<group>"; };
+		9887D8EE1F330ED100448E4C /* Goods+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Goods+CoreDataClass.m"; path = "../Goods+CoreDataClass.m"; sourceTree = "<group>"; };
+		9887D8EF1F330ED100448E4C /* Goods+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Goods+CoreDataProperties.h"; path = "../Goods+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9887D8F01F330ED100448E4C /* Goods+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Goods+CoreDataProperties.m"; path = "../Goods+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9887D8F11F330ED100448E4C /* Order+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Order+CoreDataClass.h"; sourceTree = "<group>"; };
+		9887D8F21F330ED100448E4C /* Order+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Order+CoreDataClass.m"; sourceTree = "<group>"; };
+		9887D8F31F330ED100448E4C /* Order+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Order+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9887D8F41F330ED100448E4C /* Order+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Order+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9887D8F51F330ED100448E4C /* OrderBook+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OrderBook+CoreDataClass.h"; sourceTree = "<group>"; };
+		9887D8F61F330ED100448E4C /* OrderBook+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OrderBook+CoreDataClass.m"; sourceTree = "<group>"; };
+		9887D8F71F330ED100448E4C /* OrderBook+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OrderBook+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9887D8F81F330ED100448E4C /* OrderBook+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OrderBook+CoreDataProperties.m"; sourceTree = "<group>"; };
+		98B71EF61F30A400005D81FE /* YMACartOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMACartOrderViewController.h; sourceTree = "<group>"; };
+		98B71EF71F30A400005D81FE /* YMACartOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMACartOrderViewController.m; sourceTree = "<group>"; };
+		98B71EF91F30B121005D81FE /* YMAPrettyButtonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAPrettyButtonHelper.h; sourceTree = "<group>"; };
+		98B71EFA1F30B121005D81FE /* YMAPrettyButtonHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAPrettyButtonHelper.m; sourceTree = "<group>"; };
+		98B71EFC1F30BDCF005D81FE /* YMADateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMADateHelper.h; sourceTree = "<group>"; };
+		98B71EFD1F30BDCF005D81FE /* YMADateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMADateHelper.m; sourceTree = "<group>"; };
+		98CFD83A1F322CC20053461D /* YMAOrdersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAOrdersViewController.h; sourceTree = "<group>"; };
+		98CFD83B1F322CC20053461D /* YMAOrdersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAOrdersViewController.m; sourceTree = "<group>"; };
+		98CFD83D1F322D640053461D /* YMAOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAOrderTableViewCell.h; sourceTree = "<group>"; };
+		98CFD83E1F322D640053461D /* YMAOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAOrderTableViewCell.m; sourceTree = "<group>"; };
+		98CFD83F1F322D640053461D /* YMAOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMAOrderTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +101,107 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		982E96E11F1DF05500FB0F1C /* model */ = {
+			isa = PBXGroup;
+			children = (
+				982E96EE1F1DF7E400FB0F1C /* core */,
+				982E96EC1F1DF77D00FB0F1C /* storagearea */,
+				982E96EB1F1DF75C00FB0F1C /* serverside */,
+				98769ED81F2CEBF500602FCF /* YMAShopService.h */,
+				98769ED91F2CEBF500602FCF /* YMAShopService.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		982E96E21F1DF05E00FB0F1C /* helpes */ = {
+			isa = PBXGroup;
+			children = (
+				98B71EF91F30B121005D81FE /* YMAPrettyButtonHelper.h */,
+				98B71EFA1F30B121005D81FE /* YMAPrettyButtonHelper.m */,
+				98B71EFC1F30BDCF005D81FE /* YMADateHelper.h */,
+				98B71EFD1F30BDCF005D81FE /* YMADateHelper.m */,
+			);
+			name = helpes;
+			sourceTree = "<group>";
+		};
+		982E96E31F1DF06C00FB0F1C /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				98CFD83D1F322D640053461D /* YMAOrderTableViewCell.h */,
+				98CFD83E1F322D640053461D /* YMAOrderTableViewCell.m */,
+				98CFD83F1F322D640053461D /* YMAOrderTableViewCell.xib */,
+				982E96F51F1DFB5D00FB0F1C /* YMAGoodsCell.h */,
+				982E96F61F1DFB5D00FB0F1C /* YMAGoodsCell.m */,
+				982E96F71F1DFB5D00FB0F1C /* YMAGoodsCell.xib */,
+				982E96FA1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.h */,
+				982E96FB1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.m */,
+				982E96FC1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.xib */,
+			);
+			name = cells;
+			sourceTree = "<group>";
+		};
+		982E96E41F1DF0AC00FB0F1C /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				982E96E51F1DF14200FB0F1C /* YMAGoodsViewController.h */,
+				982E96E61F1DF14200FB0F1C /* YMAGoodsViewController.m */,
+				98B71EF61F30A400005D81FE /* YMACartOrderViewController.h */,
+				98B71EF71F30A400005D81FE /* YMACartOrderViewController.m */,
+				98CFD83A1F322CC20053461D /* YMAOrdersViewController.h */,
+				98CFD83B1F322CC20053461D /* YMAOrdersViewController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		982E96EB1F1DF75C00FB0F1C /* serverside */ = {
+			isa = PBXGroup;
+			children = (
+				985F704D1F29EEAD0087E8F8 /* YMABackEnd.h */,
+				985F704E1F29EEAD0087E8F8 /* YMABackEnd.m */,
+			);
+			name = serverside;
+			sourceTree = "<group>";
+		};
+		982E96EC1F1DF77D00FB0F1C /* storagearea */ = {
+			isa = PBXGroup;
+			children = (
+				985F70501F2A32CA0087E8F8 /* managed object */,
+			);
+			name = storagearea;
+			sourceTree = "<group>";
+		};
+		982E96EE1F1DF7E400FB0F1C /* core */ = {
+			isa = PBXGroup;
+			children = (
+				982E96EF1F1DF80A00FB0F1C /* YMADataBase.h */,
+				982E96F01F1DF80A00FB0F1C /* YMADataBase.m */,
+			);
+			name = core;
+			sourceTree = "<group>";
+		};
+		985A712B1F2F422900CF1D79 /* orderBook */ = {
+			isa = PBXGroup;
+			children = (
+				9887D8F51F330ED100448E4C /* OrderBook+CoreDataClass.h */,
+				9887D8F61F330ED100448E4C /* OrderBook+CoreDataClass.m */,
+				9887D8F71F330ED100448E4C /* OrderBook+CoreDataProperties.h */,
+				9887D8F81F330ED100448E4C /* OrderBook+CoreDataProperties.m */,
+			);
+			name = orderBook;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		985F70501F2A32CA0087E8F8 /* managed object */ = {
+			isa = PBXGroup;
+			children = (
+				98769ED71F2CDFF700602FCF /* User */,
+				98769ECA1F2CD98B00602FCF /* order */,
+				985A712B1F2F422900CF1D79 /* orderBook */,
+				98769EC31F2CD82D00602FCF /*  goods */,
+			);
+			name = "managed object";
+			sourceTree = "<group>";
+		};
 		987607091F1DEDFF00FEAD5C = {
 			isa = PBXGroup;
 			children = (
@@ -60,14 +221,11 @@
 		987607141F1DEDFF00FEAD5C /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
-				987607181F1DEDFF00FEAD5C /* AppDelegate.h */,
-				987607191F1DEDFF00FEAD5C /* AppDelegate.m */,
-				9876071B1F1DEDFF00FEAD5C /* ViewController.h */,
-				9876071C1F1DEDFF00FEAD5C /* ViewController.m */,
+				982E96E41F1DF0AC00FB0F1C /* controllers */,
+				982E96E31F1DF06C00FB0F1C /* cells */,
+				982E96E21F1DF05E00FB0F1C /* helpes */,
+				982E96E11F1DF05500FB0F1C /* model */,
 				9876071E1F1DEDFF00FEAD5C /* Main.storyboard */,
-				987607241F1DEE0100FEAD5C /* Assets.xcassets */,
-				987607261F1DEE0100FEAD5C /* LaunchScreen.storyboard */,
-				987607291F1DEE0100FEAD5C /* Info.plist */,
 				987607211F1DEE0000FEAD5C /* ShoppingCart.xcdatamodeld */,
 				987607151F1DEDFF00FEAD5C /* Supporting Files */,
 			);
@@ -77,9 +235,49 @@
 		987607151F1DEDFF00FEAD5C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				987607181F1DEDFF00FEAD5C /* AppDelegate.h */,
+				987607191F1DEDFF00FEAD5C /* AppDelegate.m */,
+				987607241F1DEE0100FEAD5C /* Assets.xcassets */,
+				987607261F1DEE0100FEAD5C /* LaunchScreen.storyboard */,
+				987607291F1DEE0100FEAD5C /* Info.plist */,
 				987607161F1DEDFF00FEAD5C /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		98769EC31F2CD82D00602FCF /*  goods */ = {
+			isa = PBXGroup;
+			children = (
+				9887D8ED1F330ED100448E4C /* Goods+CoreDataClass.h */,
+				9887D8EE1F330ED100448E4C /* Goods+CoreDataClass.m */,
+				9887D8EF1F330ED100448E4C /* Goods+CoreDataProperties.h */,
+				9887D8F01F330ED100448E4C /* Goods+CoreDataProperties.m */,
+			);
+			name = " goods";
+			sourceTree = "<group>";
+		};
+		98769ECA1F2CD98B00602FCF /* order */ = {
+			isa = PBXGroup;
+			children = (
+				9887D8F11F330ED100448E4C /* Order+CoreDataClass.h */,
+				9887D8F21F330ED100448E4C /* Order+CoreDataClass.m */,
+				9887D8F31F330ED100448E4C /* Order+CoreDataProperties.h */,
+				9887D8F41F330ED100448E4C /* Order+CoreDataProperties.m */,
+			);
+			name = order;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		98769ED71F2CDFF700602FCF /* User */ = {
+			isa = PBXGroup;
+			children = (
+				9887D8D91F330E3500448E4C /* User+CoreDataClass.h */,
+				9887D8DA1F330E3500448E4C /* User+CoreDataClass.m */,
+				9887D8DB1F330E3500448E4C /* User+CoreDataProperties.h */,
+				9887D8DC1F330E3500448E4C /* User+CoreDataProperties.m */,
+			);
+			name = User;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +306,7 @@
 		9876070A1F1DEDFF00FEAD5C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = YMA;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Mikhail Yaskou";
 				TargetAttributes = {
@@ -141,8 +340,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				982E96F91F1DFB5D00FB0F1C /* YMAGoodsCell.xib in Resources */,
 				987607281F1DEE0100FEAD5C /* LaunchScreen.storyboard in Resources */,
 				987607251F1DEE0100FEAD5C /* Assets.xcassets in Resources */,
+				982E96FE1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.xib in Resources */,
+				98CFD8411F322D640053461D /* YMAOrderTableViewCell.xib in Resources */,
 				987607201F1DEDFF00FEAD5C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,10 +356,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9876071D1F1DEDFF00FEAD5C /* ViewController.m in Sources */,
+				9887D8FC1F330ED100448E4C /* Order+CoreDataProperties.m in Sources */,
+				982E96F11F1DF80A00FB0F1C /* YMADataBase.m in Sources */,
+				98B71EFE1F30BDCF005D81FE /* YMADateHelper.m in Sources */,
+				98B71EF81F30A400005D81FE /* YMACartOrderViewController.m in Sources */,
+				98CFD8401F322D640053461D /* YMAOrderTableViewCell.m in Sources */,
+				982E96F81F1DFB5D00FB0F1C /* YMAGoodsCell.m in Sources */,
+				98B71EFB1F30B121005D81FE /* YMAPrettyButtonHelper.m in Sources */,
+				982E96FD1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.m in Sources */,
 				9876071A1F1DEDFF00FEAD5C /* AppDelegate.m in Sources */,
+				9887D8FA1F330ED100448E4C /* Goods+CoreDataProperties.m in Sources */,
+				9887D8F91F330ED100448E4C /* Goods+CoreDataClass.m in Sources */,
+				982E96E71F1DF14200FB0F1C /* YMAGoodsViewController.m in Sources */,
+				985F704F1F29EEAD0087E8F8 /* YMABackEnd.m in Sources */,
+				98769EDA1F2CEBF500602FCF /* YMAShopService.m in Sources */,
+				9887D8E71F330E3500448E4C /* User+CoreDataClass.m in Sources */,
+				9887D8FD1F330ED100448E4C /* OrderBook+CoreDataClass.m in Sources */,
+				9887D8E81F330E3500448E4C /* User+CoreDataProperties.m in Sources */,
+				9887D8FB1F330ED100448E4C /* Order+CoreDataClass.m in Sources */,
+				98CFD83C1F322CC20053461D /* YMAOrdersViewController.m in Sources */,
 				987607171F1DEDFF00FEAD5C /* main.m in Sources */,
 				987607231F1DEE0100FEAD5C /* ShoppingCart.xcdatamodeld in Sources */,
+				9887D8FE1F330ED100448E4C /* OrderBook+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +538,7 @@
 				9876072E1F1DEE0100FEAD5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
