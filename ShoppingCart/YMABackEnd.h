@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Order;
+
+@class YMAOrder;
 
 @interface YMABackEnd : NSObject
 
 + (void)fetchPhone;
-+ (void)post:(Order *)order;
+
++ (void)post:(YMAOrder *)order;
+
 + (void)fetchOrders;
 
 @end

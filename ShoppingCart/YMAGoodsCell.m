@@ -9,7 +9,7 @@
 #import "YMAGoodsCell.h"
 #import "YMAPrettyButtonHelper.h"
 
-@interface YMAGoodsCell()
+@interface YMAGoodsCell ()
 @property (weak, nonatomic) IBOutlet UIButton *inCartButton;
 
 @end
@@ -19,8 +19,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-     [YMAPrettyButtonHelper makePrettyButton:self.inCartButton];
-    
+    [YMAPrettyButtonHelper makePrettyButton:self.inCartButton];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -29,11 +29,10 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)addToCart:(UIButton*)sender {
-    
+- (IBAction)addToCart:(UIButton *)sender {
+
     //add this condition to all the actions becz u need to get the index path of tapped cell contains the button
-    if([self.delegate respondsToSelector:@selector(touchedTheCell:)])
-    {
+    if ([self.delegate respondsToSelector:@selector(touchedTheCell:)]) {
         [self.delegate touchedTheCell:sender];
     }
 }

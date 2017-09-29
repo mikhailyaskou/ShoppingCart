@@ -10,14 +10,15 @@
 #import "YMADataBase.h"
 #import "YMAShopService.h"
 #import "YMAGoodsCell.h"
-#import "OrderBook+CoreDataProperties.h"
 #import "YMAPrettyButtonHelper.h"
 #import "YMABackEnd.h"
+#import "YMAGoods+CoreDataProperties.h"
+#import "YMAOrderBook+CoreDataProperties.h"
 
 @interface YMACartOrderViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic,retain)NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (weak, nonatomic) IBOutlet UIButton *sendOrderButton;
 
 @end
@@ -29,21 +30,20 @@
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     UINib *nib = [UINib nibWithNibName:@"YMAGoodsCell" bundle:nil];
     [[self tableView] registerNib:nib forCellReuseIdentifier:@"YMAGoodsCell"];
-   [YMAPrettyButtonHelper makePrettyButton:self.sendOrderButton];
-    
+    [YMAPrettyButtonHelper makePrettyButton:self.sendOrderButton];
+
     [self initializeFetchedResultsController];
 }
 
 
 - (IBAction)sendOrderButtonTapped:(id)sender {
-    Order *order = [[YMAShopService sharedShopService] currentOrder];
+    YMAOrder *order = [[YMAShopService sharedShopService] currentOrder];
     [YMABackEnd post:order];
 }
 
 
-- (void)initializeFetchedResultsController
-{
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"OrderBook"];
+- (void)initializeFetchedResultsController {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"YMAOrderBook"];
     NSSortDescriptor *lastNameSort = [NSSortDescriptor sortDescriptorWithKey:@"goods" ascending:YES];
     [request setSortDescriptors:@[lastNameSort]];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"order.state == %@", @"0"];
@@ -63,7 +63,7 @@
     [self.tableView setEditing:editing animated:animated];
 }
 
-- (void)configureCell:(YMAGoodsCell *)cell withObject:(Goods *)goods {
+- (void)configureCell:(YMAGoodsCell *)cell withObject:(YMAGoods *)goods {
     cell.name.text = goods.name;
     cell.code.text = [NSString stringWithFormat:@"%d", goods.code];
     cell.price.text = [NSString stringWithFormat:@"%f", goods.price];
@@ -85,20 +85,20 @@
      forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath {
     UITableView *tableView = self.tableView;
-    
-    switch(type) {
+
+    switch (type) {
         case NSFetchedResultsChangeInsert:
             [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
-            
+
         case NSFetchedResultsChangeDelete:
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
-            
+
         case NSFetchedResultsChangeUpdate:
             [self configureCell:[tableView cellForRowAtIndexPath:indexPath] withObject:anObject];
             break;
-            
+
         case NSFetchedResultsChangeMove:
             [tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
             break;
@@ -107,26 +107,24 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     id <NSFetchedResultsSectionInfo> sectionInfo =
-    [[[self fetchedResultsController] sections] objectAtIndex:section];
-    
+            [[self fetchedResultsController] sections][section];
+
     return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    YMAGoodsCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"YMAGoodsCell"];
-    OrderBook *orderBook = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    Goods *goods = orderBook.goods;
+    YMAGoodsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YMAGoodsCell"];
+    YMAOrderBook *orderBook = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    YMAGoods *goods = orderBook.goods;
     [self configureCell:cell withObject:goods];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        OrderBook *orderBook = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        YMAOrderBook *orderBook = [self.fetchedResultsController objectAtIndexPath:indexPath];
         [[[YMADataBase sharedDataBase] managedObjectContext] deleteObject:orderBook];
     }
 }

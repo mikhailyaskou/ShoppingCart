@@ -7,37 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D84EB1B541CD5ADD8FDA2E2 /* YMAJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84ED4ABF869363D9502E12 /* YMAJSONParser.m */; };
+		1D84EDDF70FA359DFCFCD413 /* YMAShopService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E9F2B56F56D270729E13 /* YMAShopService.m */; };
+		1D84EFDD581570CC03099BC9 /* YMABackEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E819F60A718C918BE6DD /* YMABackEnd.m */; };
 		982E96E71F1DF14200FB0F1C /* YMAGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 982E96E61F1DF14200FB0F1C /* YMAGoodsViewController.m */; };
 		982E96F11F1DF80A00FB0F1C /* YMADataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 982E96F01F1DF80A00FB0F1C /* YMADataBase.m */; };
 		982E96F81F1DFB5D00FB0F1C /* YMAGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 982E96F61F1DFB5D00FB0F1C /* YMAGoodsCell.m */; };
 		982E96F91F1DFB5D00FB0F1C /* YMAGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 982E96F71F1DFB5D00FB0F1C /* YMAGoodsCell.xib */; };
 		982E96FD1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 982E96FB1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.m */; };
 		982E96FE1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 982E96FC1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.xib */; };
-		985F704F1F29EEAD0087E8F8 /* YMABackEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 985F704E1F29EEAD0087E8F8 /* YMABackEnd.m */; };
+		985A3B141F7CE96100C6A4B4 /* YMAOrderBook+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 985A3B051F7CE96100C6A4B4 /* YMAOrderBook+CoreDataClass.m */; };
+		985A3B151F7CE96100C6A4B4 /* YMAOrderBook+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 985A3B071F7CE96100C6A4B4 /* YMAOrderBook+CoreDataProperties.m */; };
+		985A3B161F7CE96100C6A4B4 /* YMAUser+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 985A3B091F7CE96100C6A4B4 /* YMAUser+CoreDataClass.m */; };
+		985A3B171F7CE96100C6A4B4 /* YMAUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 985A3B0B1F7CE96100C6A4B4 /* YMAUser+CoreDataProperties.m */; };
+		985A3B181F7CE96100C6A4B4 /* YMAOrder+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 985A3B0D1F7CE96100C6A4B4 /* YMAOrder+CoreDataClass.m */; };
+		985A3B191F7CE96100C6A4B4 /* YMAOrder+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 985A3B0F1F7CE96100C6A4B4 /* YMAOrder+CoreDataProperties.m */; };
+		985A3B1A1F7CE96100C6A4B4 /* YMAGoods+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 985A3B111F7CE96100C6A4B4 /* YMAGoods+CoreDataClass.m */; };
+		985A3B1B1F7CE96100C6A4B4 /* YMAGoods+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 985A3B131F7CE96100C6A4B4 /* YMAGoods+CoreDataProperties.m */; };
+		9861C9801F7E495100F1E2F4 /* YMALeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9861C97F1F7E495100F1E2F4 /* YMALeftMenuViewController.m */; };
+		9861C9851F7E629900F1E2F4 /* 78770204_catsmeshnoy11.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9861C9841F7E629900F1E2F4 /* 78770204_catsmeshnoy11.jpg */; };
+		9861C9881F7E6DAE00F1E2F4 /* YMACircularGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9861C9871F7E6DAE00F1E2F4 /* YMACircularGradientView.m */; };
 		987607171F1DEDFF00FEAD5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 987607161F1DEDFF00FEAD5C /* main.m */; };
 		9876071A1F1DEDFF00FEAD5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 987607191F1DEDFF00FEAD5C /* AppDelegate.m */; };
 		987607201F1DEDFF00FEAD5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9876071E1F1DEDFF00FEAD5C /* Main.storyboard */; };
 		987607231F1DEE0100FEAD5C /* ShoppingCart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 987607211F1DEE0000FEAD5C /* ShoppingCart.xcdatamodeld */; };
 		987607251F1DEE0100FEAD5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 987607241F1DEE0100FEAD5C /* Assets.xcassets */; };
 		987607281F1DEE0100FEAD5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 987607261F1DEE0100FEAD5C /* LaunchScreen.storyboard */; };
-		98769EDA1F2CEBF500602FCF /* YMAShopService.m in Sources */ = {isa = PBXBuildFile; fileRef = 98769ED91F2CEBF500602FCF /* YMAShopService.m */; };
-		9887D8E71F330E3500448E4C /* User+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8DA1F330E3500448E4C /* User+CoreDataClass.m */; };
-		9887D8E81F330E3500448E4C /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8DC1F330E3500448E4C /* User+CoreDataProperties.m */; };
-		9887D8F91F330ED100448E4C /* Goods+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8EE1F330ED100448E4C /* Goods+CoreDataClass.m */; };
-		9887D8FA1F330ED100448E4C /* Goods+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8F01F330ED100448E4C /* Goods+CoreDataProperties.m */; };
-		9887D8FB1F330ED100448E4C /* Order+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8F21F330ED100448E4C /* Order+CoreDataClass.m */; };
-		9887D8FC1F330ED100448E4C /* Order+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8F41F330ED100448E4C /* Order+CoreDataProperties.m */; };
-		9887D8FD1F330ED100448E4C /* OrderBook+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8F61F330ED100448E4C /* OrderBook+CoreDataClass.m */; };
-		9887D8FE1F330ED100448E4C /* OrderBook+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9887D8F81F330ED100448E4C /* OrderBook+CoreDataProperties.m */; };
 		98B71EF81F30A400005D81FE /* YMACartOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B71EF71F30A400005D81FE /* YMACartOrderViewController.m */; };
 		98B71EFB1F30B121005D81FE /* YMAPrettyButtonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B71EFA1F30B121005D81FE /* YMAPrettyButtonHelper.m */; };
 		98B71EFE1F30BDCF005D81FE /* YMADateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B71EFD1F30BDCF005D81FE /* YMADateHelper.m */; };
 		98CFD83C1F322CC20053461D /* YMAOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CFD83B1F322CC20053461D /* YMAOrdersViewController.m */; };
 		98CFD8401F322D640053461D /* YMAOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CFD83E1F322D640053461D /* YMAOrderTableViewCell.m */; };
 		98CFD8411F322D640053461D /* YMAOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98CFD83F1F322D640053461D /* YMAOrderTableViewCell.xib */; };
+		9FE9C6916AB9A609AC8DA069 /* Pods_ShoppingCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E357AEC728CAB7BCFDAD87E4 /* Pods_ShoppingCart.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D84E45EDA19C349D8F08B65 /* YMABackEnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMABackEnd.h; sourceTree = "<group>"; };
+		1D84E550AA77F33839C7D0AA /* YMAJSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAJSONParser.h; sourceTree = "<group>"; };
+		1D84E781014102F9FCDAF9EB /* YMAShopService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAShopService.h; sourceTree = "<group>"; };
+		1D84E819F60A718C918BE6DD /* YMABackEnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMABackEnd.m; sourceTree = "<group>"; };
+		1D84E9F2B56F56D270729E13 /* YMAShopService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAShopService.m; sourceTree = "<group>"; };
+		1D84ED4ABF869363D9502E12 /* YMAJSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAJSONParser.m; sourceTree = "<group>"; };
 		982E96E51F1DF14200FB0F1C /* YMAGoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAGoodsViewController.h; sourceTree = "<group>"; };
 		982E96E61F1DF14200FB0F1C /* YMAGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAGoodsViewController.m; sourceTree = "<group>"; };
 		982E96EF1F1DF80A00FB0F1C /* YMADataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMADataBase.h; sourceTree = "<group>"; };
@@ -48,8 +59,27 @@
 		982E96FA1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAGoodsNotAvailableCell.h; sourceTree = "<group>"; };
 		982E96FB1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAGoodsNotAvailableCell.m; sourceTree = "<group>"; };
 		982E96FC1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMAGoodsNotAvailableCell.xib; sourceTree = "<group>"; };
-		985F704D1F29EEAD0087E8F8 /* YMABackEnd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMABackEnd.h; sourceTree = "<group>"; };
-		985F704E1F29EEAD0087E8F8 /* YMABackEnd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMABackEnd.m; sourceTree = "<group>"; };
+		985A3B041F7CE96100C6A4B4 /* YMAOrderBook+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YMAOrderBook+CoreDataClass.h"; sourceTree = "<group>"; };
+		985A3B051F7CE96100C6A4B4 /* YMAOrderBook+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YMAOrderBook+CoreDataClass.m"; sourceTree = "<group>"; };
+		985A3B061F7CE96100C6A4B4 /* YMAOrderBook+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YMAOrderBook+CoreDataProperties.h"; sourceTree = "<group>"; };
+		985A3B071F7CE96100C6A4B4 /* YMAOrderBook+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YMAOrderBook+CoreDataProperties.m"; sourceTree = "<group>"; };
+		985A3B081F7CE96100C6A4B4 /* YMAUser+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YMAUser+CoreDataClass.h"; sourceTree = "<group>"; };
+		985A3B091F7CE96100C6A4B4 /* YMAUser+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YMAUser+CoreDataClass.m"; sourceTree = "<group>"; };
+		985A3B0A1F7CE96100C6A4B4 /* YMAUser+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YMAUser+CoreDataProperties.h"; sourceTree = "<group>"; };
+		985A3B0B1F7CE96100C6A4B4 /* YMAUser+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YMAUser+CoreDataProperties.m"; sourceTree = "<group>"; };
+		985A3B0C1F7CE96100C6A4B4 /* YMAOrder+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YMAOrder+CoreDataClass.h"; sourceTree = "<group>"; };
+		985A3B0D1F7CE96100C6A4B4 /* YMAOrder+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YMAOrder+CoreDataClass.m"; sourceTree = "<group>"; };
+		985A3B0E1F7CE96100C6A4B4 /* YMAOrder+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YMAOrder+CoreDataProperties.h"; sourceTree = "<group>"; };
+		985A3B0F1F7CE96100C6A4B4 /* YMAOrder+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YMAOrder+CoreDataProperties.m"; sourceTree = "<group>"; };
+		985A3B101F7CE96100C6A4B4 /* YMAGoods+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YMAGoods+CoreDataClass.h"; sourceTree = "<group>"; };
+		985A3B111F7CE96100C6A4B4 /* YMAGoods+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YMAGoods+CoreDataClass.m"; sourceTree = "<group>"; };
+		985A3B121F7CE96100C6A4B4 /* YMAGoods+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YMAGoods+CoreDataProperties.h"; sourceTree = "<group>"; };
+		985A3B131F7CE96100C6A4B4 /* YMAGoods+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YMAGoods+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9861C97E1F7E495100F1E2F4 /* YMALeftMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMALeftMenuViewController.h; sourceTree = "<group>"; };
+		9861C97F1F7E495100F1E2F4 /* YMALeftMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMALeftMenuViewController.m; sourceTree = "<group>"; };
+		9861C9841F7E629900F1E2F4 /* 78770204_catsmeshnoy11.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 78770204_catsmeshnoy11.jpg; sourceTree = "<group>"; };
+		9861C9861F7E6DAE00F1E2F4 /* YMACircularGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMACircularGradientView.h; sourceTree = "<group>"; };
+		9861C9871F7E6DAE00F1E2F4 /* YMACircularGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMACircularGradientView.m; sourceTree = "<group>"; };
 		987607121F1DEDFF00FEAD5C /* ShoppingCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		987607161F1DEDFF00FEAD5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		987607181F1DEDFF00FEAD5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -59,24 +89,6 @@
 		987607241F1DEE0100FEAD5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		987607271F1DEE0100FEAD5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		987607291F1DEE0100FEAD5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98769ED81F2CEBF500602FCF /* YMAShopService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAShopService.h; sourceTree = "<group>"; };
-		98769ED91F2CEBF500602FCF /* YMAShopService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAShopService.m; sourceTree = "<group>"; };
-		9887D8D91F330E3500448E4C /* User+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataClass.h"; sourceTree = "<group>"; };
-		9887D8DA1F330E3500448E4C /* User+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataClass.m"; sourceTree = "<group>"; };
-		9887D8DB1F330E3500448E4C /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
-		9887D8DC1F330E3500448E4C /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
-		9887D8ED1F330ED100448E4C /* Goods+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Goods+CoreDataClass.h"; path = "../Goods+CoreDataClass.h"; sourceTree = "<group>"; };
-		9887D8EE1F330ED100448E4C /* Goods+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Goods+CoreDataClass.m"; path = "../Goods+CoreDataClass.m"; sourceTree = "<group>"; };
-		9887D8EF1F330ED100448E4C /* Goods+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Goods+CoreDataProperties.h"; path = "../Goods+CoreDataProperties.h"; sourceTree = "<group>"; };
-		9887D8F01F330ED100448E4C /* Goods+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Goods+CoreDataProperties.m"; path = "../Goods+CoreDataProperties.m"; sourceTree = "<group>"; };
-		9887D8F11F330ED100448E4C /* Order+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Order+CoreDataClass.h"; sourceTree = "<group>"; };
-		9887D8F21F330ED100448E4C /* Order+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Order+CoreDataClass.m"; sourceTree = "<group>"; };
-		9887D8F31F330ED100448E4C /* Order+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Order+CoreDataProperties.h"; sourceTree = "<group>"; };
-		9887D8F41F330ED100448E4C /* Order+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Order+CoreDataProperties.m"; sourceTree = "<group>"; };
-		9887D8F51F330ED100448E4C /* OrderBook+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OrderBook+CoreDataClass.h"; sourceTree = "<group>"; };
-		9887D8F61F330ED100448E4C /* OrderBook+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OrderBook+CoreDataClass.m"; sourceTree = "<group>"; };
-		9887D8F71F330ED100448E4C /* OrderBook+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OrderBook+CoreDataProperties.h"; sourceTree = "<group>"; };
-		9887D8F81F330ED100448E4C /* OrderBook+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OrderBook+CoreDataProperties.m"; sourceTree = "<group>"; };
 		98B71EF61F30A400005D81FE /* YMACartOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMACartOrderViewController.h; sourceTree = "<group>"; };
 		98B71EF71F30A400005D81FE /* YMACartOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMACartOrderViewController.m; sourceTree = "<group>"; };
 		98B71EF91F30B121005D81FE /* YMAPrettyButtonHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAPrettyButtonHelper.h; sourceTree = "<group>"; };
@@ -88,6 +100,9 @@
 		98CFD83D1F322D640053461D /* YMAOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAOrderTableViewCell.h; sourceTree = "<group>"; };
 		98CFD83E1F322D640053461D /* YMAOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAOrderTableViewCell.m; sourceTree = "<group>"; };
 		98CFD83F1F322D640053461D /* YMAOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMAOrderTableViewCell.xib; sourceTree = "<group>"; };
+		C5FB07C14E5CC7F59F62268C /* Pods-ShoppingCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.release.xcconfig"; sourceTree = "<group>"; };
+		DEF4BDECD3FFC58DB5E5A6B6 /* Pods-ShoppingCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.debug.xcconfig"; sourceTree = "<group>"; };
+		E357AEC728CAB7BCFDAD87E4 /* Pods_ShoppingCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,20 +110,56 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FE9C6916AB9A609AC8DA069 /* Pods_ShoppingCart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D84E0F139D9FE1101D8705F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9861C9841F7E629900F1E2F4 /* 78770204_catsmeshnoy11.jpg */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1D84E4D9DB20693800F46D25 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1D84E781014102F9FCDAF9EB /* YMAShopService.h */,
+				1D84E9F2B56F56D270729E13 /* YMAShopService.m */,
+				1D84E6C154797EAF7F59327A /* serverside */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1D84E6C154797EAF7F59327A /* serverside */ = {
+			isa = PBXGroup;
+			children = (
+				1D84E45EDA19C349D8F08B65 /* YMABackEnd.h */,
+				1D84E819F60A718C918BE6DD /* YMABackEnd.m */,
+				1D84E550AA77F33839C7D0AA /* YMAJSONParser.h */,
+				1D84ED4ABF869363D9502E12 /* YMAJSONParser.m */,
+			);
+			name = serverside;
+			path = ShoppingCart;
+			sourceTree = SOURCE_ROOT;
+		};
+		5D59BF755BB4F995852F17F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DEF4BDECD3FFC58DB5E5A6B6 /* Pods-ShoppingCart.debug.xcconfig */,
+				C5FB07C14E5CC7F59F62268C /* Pods-ShoppingCart.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		982E96E11F1DF05500FB0F1C /* model */ = {
 			isa = PBXGroup;
 			children = (
 				982E96EE1F1DF7E400FB0F1C /* core */,
-				982E96EC1F1DF77D00FB0F1C /* storagearea */,
-				982E96EB1F1DF75C00FB0F1C /* serverside */,
-				98769ED81F2CEBF500602FCF /* YMAShopService.h */,
-				98769ED91F2CEBF500602FCF /* YMAShopService.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -140,66 +191,71 @@
 			name = cells;
 			sourceTree = "<group>";
 		};
-		982E96E41F1DF0AC00FB0F1C /* controllers */ = {
-			isa = PBXGroup;
-			children = (
-				982E96E51F1DF14200FB0F1C /* YMAGoodsViewController.h */,
-				982E96E61F1DF14200FB0F1C /* YMAGoodsViewController.m */,
-				98B71EF61F30A400005D81FE /* YMACartOrderViewController.h */,
-				98B71EF71F30A400005D81FE /* YMACartOrderViewController.m */,
-				98CFD83A1F322CC20053461D /* YMAOrdersViewController.h */,
-				98CFD83B1F322CC20053461D /* YMAOrdersViewController.m */,
-			);
-			name = controllers;
-			sourceTree = "<group>";
-		};
-		982E96EB1F1DF75C00FB0F1C /* serverside */ = {
-			isa = PBXGroup;
-			children = (
-				985F704D1F29EEAD0087E8F8 /* YMABackEnd.h */,
-				985F704E1F29EEAD0087E8F8 /* YMABackEnd.m */,
-			);
-			name = serverside;
-			sourceTree = "<group>";
-		};
-		982E96EC1F1DF77D00FB0F1C /* storagearea */ = {
-			isa = PBXGroup;
-			children = (
-				985F70501F2A32CA0087E8F8 /* managed object */,
-			);
-			name = storagearea;
-			sourceTree = "<group>";
-		};
 		982E96EE1F1DF7E400FB0F1C /* core */ = {
 			isa = PBXGroup;
 			children = (
+				985F70501F2A32CA0087E8F8 /* managed object */,
 				982E96EF1F1DF80A00FB0F1C /* YMADataBase.h */,
 				982E96F01F1DF80A00FB0F1C /* YMADataBase.m */,
 			);
 			name = core;
 			sourceTree = "<group>";
 		};
-		985A712B1F2F422900CF1D79 /* orderBook */ = {
+		985A3B1C1F7D011600C6A4B4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9887D8F51F330ED100448E4C /* OrderBook+CoreDataClass.h */,
-				9887D8F61F330ED100448E4C /* OrderBook+CoreDataClass.m */,
-				9887D8F71F330ED100448E4C /* OrderBook+CoreDataProperties.h */,
-				9887D8F81F330ED100448E4C /* OrderBook+CoreDataProperties.m */,
+				9861C9811F7E4D0700F1E2F4 /* Main */,
+				9861C97D1F7E492F00F1E2F4 /* LefMenu */,
+				982E96E31F1DF06C00FB0F1C /* cells */,
+				98B71EF61F30A400005D81FE /* YMACartOrderViewController.h */,
+				98B71EF71F30A400005D81FE /* YMACartOrderViewController.m */,
+				98CFD83A1F322CC20053461D /* YMAOrdersViewController.h */,
+				98CFD83B1F322CC20053461D /* YMAOrdersViewController.m */,
 			);
-			name = orderBook;
-			path = ..;
+			name = View;
 			sourceTree = "<group>";
 		};
 		985F70501F2A32CA0087E8F8 /* managed object */ = {
 			isa = PBXGroup;
 			children = (
-				98769ED71F2CDFF700602FCF /* User */,
-				98769ECA1F2CD98B00602FCF /* order */,
-				985A712B1F2F422900CF1D79 /* orderBook */,
-				98769EC31F2CD82D00602FCF /*  goods */,
+				985A3B041F7CE96100C6A4B4 /* YMAOrderBook+CoreDataClass.h */,
+				985A3B051F7CE96100C6A4B4 /* YMAOrderBook+CoreDataClass.m */,
+				985A3B061F7CE96100C6A4B4 /* YMAOrderBook+CoreDataProperties.h */,
+				985A3B071F7CE96100C6A4B4 /* YMAOrderBook+CoreDataProperties.m */,
+				985A3B081F7CE96100C6A4B4 /* YMAUser+CoreDataClass.h */,
+				985A3B091F7CE96100C6A4B4 /* YMAUser+CoreDataClass.m */,
+				985A3B0A1F7CE96100C6A4B4 /* YMAUser+CoreDataProperties.h */,
+				985A3B0B1F7CE96100C6A4B4 /* YMAUser+CoreDataProperties.m */,
+				985A3B0C1F7CE96100C6A4B4 /* YMAOrder+CoreDataClass.h */,
+				985A3B0D1F7CE96100C6A4B4 /* YMAOrder+CoreDataClass.m */,
+				985A3B0E1F7CE96100C6A4B4 /* YMAOrder+CoreDataProperties.h */,
+				985A3B0F1F7CE96100C6A4B4 /* YMAOrder+CoreDataProperties.m */,
+				985A3B101F7CE96100C6A4B4 /* YMAGoods+CoreDataClass.h */,
+				985A3B111F7CE96100C6A4B4 /* YMAGoods+CoreDataClass.m */,
+				985A3B121F7CE96100C6A4B4 /* YMAGoods+CoreDataProperties.h */,
+				985A3B131F7CE96100C6A4B4 /* YMAGoods+CoreDataProperties.m */,
 			);
 			name = "managed object";
+			sourceTree = "<group>";
+		};
+		9861C97D1F7E492F00F1E2F4 /* LefMenu */ = {
+			isa = PBXGroup;
+			children = (
+				9861C97E1F7E495100F1E2F4 /* YMALeftMenuViewController.h */,
+				9861C97F1F7E495100F1E2F4 /* YMALeftMenuViewController.m */,
+				9861C9861F7E6DAE00F1E2F4 /* YMACircularGradientView.h */,
+				9861C9871F7E6DAE00F1E2F4 /* YMACircularGradientView.m */,
+			);
+			name = LefMenu;
+			sourceTree = "<group>";
+		};
+		9861C9811F7E4D0700F1E2F4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				982E96E51F1DF14200FB0F1C /* YMAGoodsViewController.h */,
+				982E96E61F1DF14200FB0F1C /* YMAGoodsViewController.m */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 		987607091F1DEDFF00FEAD5C = {
@@ -207,6 +263,8 @@
 			children = (
 				987607141F1DEDFF00FEAD5C /* ShoppingCart */,
 				987607131F1DEDFF00FEAD5C /* Products */,
+				5D59BF755BB4F995852F17F2 /* Pods */,
+				9983BC6CAAFB5065BB5728A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,13 +279,14 @@
 		987607141F1DEDFF00FEAD5C /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
-				982E96E41F1DF0AC00FB0F1C /* controllers */,
-				982E96E31F1DF06C00FB0F1C /* cells */,
+				985A3B1C1F7D011600C6A4B4 /* View */,
 				982E96E21F1DF05E00FB0F1C /* helpes */,
 				982E96E11F1DF05500FB0F1C /* model */,
 				9876071E1F1DEDFF00FEAD5C /* Main.storyboard */,
 				987607211F1DEE0000FEAD5C /* ShoppingCart.xcdatamodeld */,
 				987607151F1DEDFF00FEAD5C /* Supporting Files */,
+				1D84E4D9DB20693800F46D25 /* Controller */,
+				1D84E0F139D9FE1101D8705F /* Resources */,
 			);
 			path = ShoppingCart;
 			sourceTree = "<group>";
@@ -245,39 +304,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		98769EC31F2CD82D00602FCF /*  goods */ = {
+		9983BC6CAAFB5065BB5728A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9887D8ED1F330ED100448E4C /* Goods+CoreDataClass.h */,
-				9887D8EE1F330ED100448E4C /* Goods+CoreDataClass.m */,
-				9887D8EF1F330ED100448E4C /* Goods+CoreDataProperties.h */,
-				9887D8F01F330ED100448E4C /* Goods+CoreDataProperties.m */,
+				E357AEC728CAB7BCFDAD87E4 /* Pods_ShoppingCart.framework */,
 			);
-			name = " goods";
-			sourceTree = "<group>";
-		};
-		98769ECA1F2CD98B00602FCF /* order */ = {
-			isa = PBXGroup;
-			children = (
-				9887D8F11F330ED100448E4C /* Order+CoreDataClass.h */,
-				9887D8F21F330ED100448E4C /* Order+CoreDataClass.m */,
-				9887D8F31F330ED100448E4C /* Order+CoreDataProperties.h */,
-				9887D8F41F330ED100448E4C /* Order+CoreDataProperties.m */,
-			);
-			name = order;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		98769ED71F2CDFF700602FCF /* User */ = {
-			isa = PBXGroup;
-			children = (
-				9887D8D91F330E3500448E4C /* User+CoreDataClass.h */,
-				9887D8DA1F330E3500448E4C /* User+CoreDataClass.m */,
-				9887D8DB1F330E3500448E4C /* User+CoreDataProperties.h */,
-				9887D8DC1F330E3500448E4C /* User+CoreDataProperties.m */,
-			);
-			name = User;
-			path = ..;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,9 +319,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9876072C1F1DEE0100FEAD5C /* Build configuration list for PBXNativeTarget "ShoppingCart" */;
 			buildPhases = (
+				FB76D9EBC79A35C33C186B87 /* [CP] Check Pods Manifest.lock */,
 				9876070E1F1DEDFF00FEAD5C /* Sources */,
 				9876070F1F1DEDFF00FEAD5C /* Frameworks */,
 				987607101F1DEDFF00FEAD5C /* Resources */,
+				C1A9C5EF120D89175E730586 /* [CP] Embed Pods Frameworks */,
+				44A6B216AD5C59A62776A98C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -344,6 +379,7 @@
 				987607281F1DEE0100FEAD5C /* LaunchScreen.storyboard in Resources */,
 				987607251F1DEE0100FEAD5C /* Assets.xcassets in Resources */,
 				982E96FE1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.xib in Resources */,
+				9861C9851F7E629900F1E2F4 /* 78770204_catsmeshnoy11.jpg in Resources */,
 				98CFD8411F322D640053461D /* YMAOrderTableViewCell.xib in Resources */,
 				987607201F1DEDFF00FEAD5C /* Main.storyboard in Resources */,
 			);
@@ -351,33 +387,90 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		44A6B216AD5C59A62776A98C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1A9C5EF120D89175E730586 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PGDrawerTransition/PGDrawerTransition.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PGDrawerTransition.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB76D9EBC79A35C33C186B87 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShoppingCart-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9876070E1F1DEDFF00FEAD5C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9887D8FC1F330ED100448E4C /* Order+CoreDataProperties.m in Sources */,
 				982E96F11F1DF80A00FB0F1C /* YMADataBase.m in Sources */,
 				98B71EFE1F30BDCF005D81FE /* YMADateHelper.m in Sources */,
+				985A3B161F7CE96100C6A4B4 /* YMAUser+CoreDataClass.m in Sources */,
 				98B71EF81F30A400005D81FE /* YMACartOrderViewController.m in Sources */,
+				985A3B1B1F7CE96100C6A4B4 /* YMAGoods+CoreDataProperties.m in Sources */,
 				98CFD8401F322D640053461D /* YMAOrderTableViewCell.m in Sources */,
 				982E96F81F1DFB5D00FB0F1C /* YMAGoodsCell.m in Sources */,
+				985A3B141F7CE96100C6A4B4 /* YMAOrderBook+CoreDataClass.m in Sources */,
+				985A3B181F7CE96100C6A4B4 /* YMAOrder+CoreDataClass.m in Sources */,
 				98B71EFB1F30B121005D81FE /* YMAPrettyButtonHelper.m in Sources */,
 				982E96FD1F1DFB9300FB0F1C /* YMAGoodsNotAvailableCell.m in Sources */,
 				9876071A1F1DEDFF00FEAD5C /* AppDelegate.m in Sources */,
-				9887D8FA1F330ED100448E4C /* Goods+CoreDataProperties.m in Sources */,
-				9887D8F91F330ED100448E4C /* Goods+CoreDataClass.m in Sources */,
+				985A3B1A1F7CE96100C6A4B4 /* YMAGoods+CoreDataClass.m in Sources */,
 				982E96E71F1DF14200FB0F1C /* YMAGoodsViewController.m in Sources */,
-				985F704F1F29EEAD0087E8F8 /* YMABackEnd.m in Sources */,
-				98769EDA1F2CEBF500602FCF /* YMAShopService.m in Sources */,
-				9887D8E71F330E3500448E4C /* User+CoreDataClass.m in Sources */,
-				9887D8FD1F330ED100448E4C /* OrderBook+CoreDataClass.m in Sources */,
-				9887D8E81F330E3500448E4C /* User+CoreDataProperties.m in Sources */,
-				9887D8FB1F330ED100448E4C /* Order+CoreDataClass.m in Sources */,
+				985A3B171F7CE96100C6A4B4 /* YMAUser+CoreDataProperties.m in Sources */,
+				985A3B191F7CE96100C6A4B4 /* YMAOrder+CoreDataProperties.m in Sources */,
 				98CFD83C1F322CC20053461D /* YMAOrdersViewController.m in Sources */,
 				987607171F1DEDFF00FEAD5C /* main.m in Sources */,
 				987607231F1DEE0100FEAD5C /* ShoppingCart.xcdatamodeld in Sources */,
-				9887D8FE1F330ED100448E4C /* OrderBook+CoreDataProperties.m in Sources */,
+				985A3B151F7CE96100C6A4B4 /* YMAOrderBook+CoreDataProperties.m in Sources */,
+				9861C9801F7E495100F1E2F4 /* YMALeftMenuViewController.m in Sources */,
+				9861C9881F7E6DAE00F1E2F4 /* YMACircularGradientView.m in Sources */,
+				1D84EDDF70FA359DFCFCD413 /* YMAShopService.m in Sources */,
+				1D84EFDD581570CC03099BC9 /* YMABackEnd.m in Sources */,
+				1D84EB1B541CD5ADD8FDA2E2 /* YMAJSONParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +590,7 @@
 		};
 		9876072D1F1DEE0100FEAD5C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DEF4BDECD3FFC58DB5E5A6B6 /* Pods-ShoppingCart.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = USB64ZNNP6;
@@ -504,11 +598,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YMA.ShoppingCart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Debug;
 		};
 		9876072E1F1DEE0100FEAD5C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C5FB07C14E5CC7F59F62268C /* Pods-ShoppingCart.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = USB64ZNNP6;
@@ -516,6 +612,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YMA.ShoppingCart;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 			};
 			name = Release;
 		};

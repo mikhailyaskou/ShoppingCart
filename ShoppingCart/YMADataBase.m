@@ -25,7 +25,7 @@
     static YMADataBase *sharedDataBase = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-      sharedDataBase = [[self alloc] init];
+        sharedDataBase = [[self alloc] init];
     });
     return sharedDataBase;
 }
@@ -36,10 +36,9 @@
     return self.persistentContainer.viewContext;
 }
 
--(NSManagedObjectContext *)newBackgroundContext {
+- (NSManagedObjectContext *)newBackgroundContext {
     return [self.persistentContainer newBackgroundContext];
 }
-
 
 
 - (NSPersistentContainer *)persistentContainer {
@@ -51,7 +50,7 @@
                 if (error != nil) {
                     // Replace this implementation with code to handle the error appropriately.
                     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                    
+
                     /*
                      Typical reasons for an error here include:
                      * The parent directory does not exist, cannot be created, or disallows writing.
@@ -66,7 +65,7 @@
             }];
         }
     }
-    
+
     return _persistentContainer;
 }
 
@@ -83,19 +82,21 @@
     }
 }
 
+#pragma mark - Core Data Operations
+
 - (void)clearCoreData {
-    [self deleteAllEtitysWithEntityName:@"Order"];
-    [self deleteAllEtitysWithEntityName:@"Goods"];
-    [self deleteAllEtitysWithEntityName:@"OrderBook"];
+    [self deleteAllEtitysWithEntityName:@"YMAOrder"];
+    [self deleteAllEtitysWithEntityName:@"YMAGoods"];
+    [self deleteAllEtitysWithEntityName:@"YMAOrderBook"];
 }
 
--(void)deleteAllEtitysWithEntityName:(NSString*)name {
+- (void)deleteAllEtitysWithEntityName:(NSString *)name {
     dispatch_async(dispatch_get_main_queue(), ^{
-    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:name];
-    NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
-    NSError *deleteError = nil;
-    [self.persistentContainer.persistentStoreCoordinator executeRequest:delete withContext:self.managedObjectContext error:&deleteError];
-    [[YMADataBase sharedDataBase] saveContext];
+        NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:name];
+        NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
+        NSError *deleteError = nil;
+        [self.persistentContainer.persistentStoreCoordinator executeRequest:delete withContext:self.managedObjectContext error:&deleteError];
+        [[YMADataBase sharedDataBase] saveContext];
     });
 }
 

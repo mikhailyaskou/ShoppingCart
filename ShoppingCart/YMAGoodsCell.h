@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-
 //@class CellTypeOne; //if u want t pass cell to controller
 @protocol TouchDelegateForGoodsCell <NSObject> //this delegate is fired each time you clicked the cell
 - (void)touchedTheCell:(UIButton *)button;
@@ -18,7 +17,7 @@
 
 @interface YMAGoodsCell : UITableViewCell
 
-@property(nonatomic, assign)id<TouchDelegateForGoodsCell> delegate;
+@property (nonatomic, assign) id <TouchDelegateForGoodsCell> delegate;
 
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *name;

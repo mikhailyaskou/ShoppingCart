@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YMACartOrderViewController : UIViewController 
+@interface YMACartOrderViewController : UIViewController
 
 @end

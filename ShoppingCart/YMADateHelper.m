@@ -25,7 +25,7 @@ static NSString *const YMADateFormat = @"dd.MM.yyyy";
 }
 
 + (NSDateComponents *)dateComponentsFromDate:(NSDate *)date {
-    return [NSCalendar.currentCalendar components: NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay |
+    return [NSCalendar.currentCalendar              components:NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay |
             NSCalendarUnitHour | NSCalendarUnitMinute fromDate:date];
 }
 @end

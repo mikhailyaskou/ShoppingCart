@@ -16,9 +16,13 @@
 + (id)sharedDataBase;
 
 - (NSManagedObjectContext *)managedObjectContext;
+
 - (NSPersistentContainer *)persistentContainer;
+
 - (void)saveContext;
+
 - (void)clearCoreData;
--(NSManagedObjectContext *)newBackgroundContext;
+
+- (NSManagedObjectContext *)newBackgroundContext;
 
 @end

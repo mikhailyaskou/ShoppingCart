@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "User+CoreDataClass.h"
-#import "Order+CoreDataClass.h"
-#import "Goods+CoreDataClass.h"
 
+@class YMAGoods;
+@class YMAUser;
+@class YMAOrder;
 
 @interface YMAShopService : NSObject
 
@@ -18,14 +18,22 @@
 
 + (id)sharedShopService;
 
-- (void)addToCart:(Goods *)product;
-- (void)removeFromCar:(Goods *)product;
-- (User *)currentUser;
-- (Order *)currentOrder;
-- (NSArray *) goodsFromOrder:(Order *)order;
-- (Goods *)goodsById:(NSNumber *) idGoods;
+- (void)addToCart:(YMAGoods *)product;
+
+- (void)removeFromCar:(YMAGoods *)product;
+
+- (YMAUser *)currentUser;
+
+- (YMAOrder *)currentOrder;
+
+- (NSArray *)goodsFromOrder:(YMAOrder *)order;
+
+- (YMAGoods *)goodsById:(NSNumber *)idGoods;
+
 - (void)addOrder;
+
 - (void)addProductToCurrentOrder;
+
 - (void)sendOrder;
 
 @end
