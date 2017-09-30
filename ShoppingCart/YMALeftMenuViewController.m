@@ -13,6 +13,7 @@
 @interface YMALeftMenuViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet YMACircularGradientView *menuView;
 
 @end
 
@@ -37,37 +38,29 @@
     self.profileImageView.layer.borderWidth = 6.0f;
     self.profileImageView.layer.borderColor = [UIColor whiteColor].CGColor;
     
-    //left menu with rounded corner
-    
+    //left menu with rounded corner and shadow under it
+    //create menu BezierPath for menu and shadow shape;
     CGRect frame = self.view.frame;
     frame.size.width = self.view.frame.size.width - self.view.frame.size.width / 5;
-
     UIBezierPath *maskPath = [UIBezierPath
             bezierPathWithRoundedRect:frame
                     byRoundingCorners:( UIRectCornerBottomRight | UIRectCornerTopRight)
                           cornerRadii:CGSizeMake(CGRectGetHeight(frame)/5, 0)
     ];
+    //add mask to menu
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.frame = frame;
     maskLayer.path = maskPath.CGPath;
-    self.view.layer.mask = maskLayer;
-    
-    
-    
-    CALayer *containerLayer = [[CALayer alloc]insertSublayer:self.view.layer];
-    
-     [self.view.layer addSublayer:containerLayer];
-    
-    
+    self.menuView.layer.mask = maskLayer;
+    //add shadow to view under menu
     self.view.layer.masksToBounds = NO;
-    self.view.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.view.layer.shadowOffset = CGSizeMake(20.0f, 20.0f);
+    self.view.layer.shadowColor = [UIColor colorWithRed:0.11 green:0.88 blue:0.88 alpha:1.0].CGColor;
+    self.view.layer.shadowOffset = CGSizeMake(10, 0);
+    self.view.layer.shadowRadius = 50;
     self.view.layer.shadowOpacity = 0.5f;
     self.view.layer.shadowPath = maskPath.CGPath;
 
     
-
-   
    }
 
 
