@@ -18,15 +18,12 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
-    [YMAPrettyButtonHelper makePrettyButton:self.inCartButton];
-
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    self.inCartButton.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.inCartButton.layer.shadowOpacity = 0.5f;
+    self.inCartButton.layer.shadowOffset = CGSizeMake(1, 1);
+    self.inCartButton.layer.borderColor = [UIColor blackColor].CGColor;
+    self.inCartButton.layer.borderWidth = 0.5f;
+    self.inCartButton.layer.cornerRadius = 6;
 }
 
 - (IBAction)addToCart:(UIButton *)sender {

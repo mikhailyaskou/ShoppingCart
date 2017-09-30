@@ -18,29 +18,22 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
 
 @interface YMAGoodsViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
-
 @property (nonatomic, strong) PGDrawerTransition *drawerTransition;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
-
 
 @end
 
 @implementation YMAGoodsViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    //register nib in teble view
     UINib *nib = [UINib nibWithNibName:@"YMAGoodsCell" bundle:nil];
-    [[self tableView] registerNib:nib forCellReuseIdentifier:@"YMAGoodsCell"];
-
-
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"YMAGoodsCell"];
+    // set left menu
     self.drawerTransition = [[PGDrawerTransition alloc] initWithTargetViewController:self
                                                                 drawerViewController:YMALeftMenuViewController.sharedInstance];
-
-
-
-
+    
 }
 
 
@@ -54,6 +47,7 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
 
 //get all goods;
 - (void)initializeFetchedResultsController {
+    
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"YMAGoods"];
 
     NSSortDescriptor *lastNameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
