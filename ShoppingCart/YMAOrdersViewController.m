@@ -19,8 +19,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
-@property (nonatomic, strong) PGDrawerTransition *drawerTransition;
-
 
 @end
 
@@ -32,9 +30,6 @@
     UINib *nib = [UINib nibWithNibName:@"YMAOrderTableViewCell" bundle:nil];
     [[self tableView] registerNib:nib forCellReuseIdentifier:@"YMAOrderTableViewCell"];
     
-    // set left menu
-    self.drawerTransition = [[PGDrawerTransition alloc] initWithTargetViewController:self
-                                                                drawerViewController:YMALeftMenuViewController.sharedInstance];
 
     //   [self initializeFetchedResultsController];
 
@@ -67,7 +62,7 @@
 }
 
 - (IBAction)menuTapped:(id)sender {
-    [self.drawerTransition presentDrawerViewController];
+      [YMALeftMenuViewController.sharedInstance.drawerTransition presentDrawerViewController];
 }
 
 

@@ -14,6 +14,8 @@
 #import "YMAGoods+CoreDataProperties.h"
 #import "YMAOrderBook+CoreDataProperties.h"
 #import "YMAAvailableGoodsCell.h"
+#import "YMALeftMenuViewController.h"
+#import "PGDrawerTransition.h"
 
 @interface YMACartOrderViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -61,6 +63,12 @@
         abort();
     }
 }
+
+- (IBAction)showMenuTapped:(id)sender {
+    [YMALeftMenuViewController.sharedInstance.drawerTransition presentDrawerViewController];
+
+}
+
 
 - (IBAction)sendOrderButtonTapped:(id)sender {
     YMAOrder *order = [[YMAShopService sharedShopService] currentOrder];

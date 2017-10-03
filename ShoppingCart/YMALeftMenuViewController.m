@@ -62,32 +62,27 @@
     self.view.layer.shadowPath = maskPath.CGPath;
 }
 
-- (IBAction)mainButtonTapped:(id)sender {
-    UIViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"YMAGoodsViewController"];
-    [self.drawerTransition.targetViewController.navigationController showViewController:view sender:nil];
-    [self.drawerTransition setTargetViewController:view];
-    [self.drawerTransition dismissDrawerViewController];
-    
+- (IBAction)mainButtonTapped:(id)sender {  
+    [self makeTransitionToViewControllerWithIdentifier:@"YMAGoodsViewController"];
 }
 
 - (IBAction)ordersButtonTapped:(id)sender {
-    UIViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"YMAOrdersViewController"];
-    [self.drawerTransition.targetViewController.navigationController showViewController:view sender:nil];
-    
-    [self.drawerTransition setTargetViewController:view];
-    [self.drawerTransition dismissDrawerViewController];
+    [self makeTransitionToViewControllerWithIdentifier:@"YMAOrdersViewController"];
 }
 
 - (IBAction)cartButtonTapped:(id)sender {
-    UIViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"YMACartOrderViewController"];
-    //[self.drawerTransition.targetViewController.navigationController showViewController:view sender:nil];
-    
-    [self showViewController:view sender:nil];
-    
-    [self.drawerTransition setTargetViewController:view];
-    [self.drawerTransition dismissDrawerViewController];
-    
+    [self makeTransitionToViewControllerWithIdentifier:@"YMACartOrderModalViewController"];
 }
+
+-(void)makeTransitionToViewControllerWithIdentifier:(NSString *)identifier {
+     [self.drawerTransition dismissDrawerViewController];
+    if (![self.drawerTransition.targetViewController.restorationIdentifier isEqualToString:identifier]) {       
+        UIViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
+        [self.drawerTransition.targetViewController.navigationController showViewController:view sender:nil];
+        [self.drawerTransition setTargetViewController:view];
+    }
+}
+
 
 
 @end
