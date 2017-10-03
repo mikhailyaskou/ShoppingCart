@@ -232,8 +232,7 @@
 				9861C9811F7E4D0700F1E2F4 /* Main View */,
 				9861C97D1F7E492F00F1E2F4 /* Left Menu */,
 				982E96E31F1DF06C00FB0F1C /* Cells */,
-				98CFD83A1F322CC20053461D /* YMAOrdersViewController.h */,
-				98CFD83B1F322CC20053461D /* YMAOrdersViewController.m */,
+				98FEE0111F83932A0078B8FF /* Orders View */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -356,6 +355,15 @@
 				98B71EF71F30A400005D81FE /* YMACartOrderViewController.m */,
 			);
 			name = "Cart View";
+			sourceTree = "<group>";
+		};
+		98FEE0111F83932A0078B8FF /* Orders View */ = {
+			isa = PBXGroup;
+			children = (
+				98CFD83A1F322CC20053461D /* YMAOrdersViewController.h */,
+				98CFD83B1F322CC20053461D /* YMAOrdersViewController.m */,
+			);
+			name = "Orders View";
 			sourceTree = "<group>";
 		};
 		9983BC6CAAFB5065BB5728A9 /* Frameworks */ = {

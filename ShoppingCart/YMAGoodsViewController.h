@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "YMAGoodsCell.h"
 
-@interface YMAGoodsViewController : UITableViewController <TouchDelegateForGoodsCell>
+@class PGDrawerTransition;
 
-@property (retain, nonatomic) IBOutlet UITableView *tableView;
+@interface YMAGoodsViewController : UITableViewController <TouchDelegateForGoodsCell>
 
 @end

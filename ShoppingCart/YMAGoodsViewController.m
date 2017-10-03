@@ -20,8 +20,9 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
 
 @interface YMAGoodsViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, strong) PGDrawerTransition *drawerTransition;
+@property (retain, nonatomic) IBOutlet UITableView * TableView;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+//@property (nonatomic, strong) PGDrawerTransition *drawerTransition;
 
 @end
 
@@ -32,9 +33,15 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
     //register nib in table view
     UINib *nib = [UINib nibWithNibName:@"YMAGoodsCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"YMAGoodsCell"];
+    
     // set left menu
-    self.drawerTransition = [[PGDrawerTransition alloc] initWithTargetViewController:self
+    
+    YMALeftMenuViewController.sharedInstance.drawerTransition = [[PGDrawerTransition alloc] initWithTargetViewController:self
+                                                                                                    drawerViewController:YMALeftMenuViewController.sharedInstance];
+   /* self.drawerTransition = [[PGDrawerTransition alloc] initWithTargetViewController:self
                                                                 drawerViewController:YMALeftMenuViewController.sharedInstance];
+    
+    */
     [YMABackEnd fetchPhoneWithCompletionHandler:^{
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"available == %@", @YES];
         self.fetchedResultsController =  [YMADataBase.sharedDataBase fetchedResultsControllerWithDataName:@"YMAGoods" predicate:predicate sotretByKey:@"name"];
@@ -45,8 +52,8 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
     
 }
 
-- (IBAction)menyTapped:(id)sender {
-        [self.drawerTransition presentDrawerViewController];
+- (IBAction)menuTapped:(id)sender {
+        [YMALeftMenuViewController.sharedInstance.drawerTransition presentDrawerViewController];
 }
 
 #pragma mark - Table view data source

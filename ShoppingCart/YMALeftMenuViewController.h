@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class PGDrawerTransition;
+
 @interface YMALeftMenuViewController : UIViewController
+
+@property (nonatomic, strong) PGDrawerTransition *drawerTransition;
 
 + (YMALeftMenuViewController *)sharedInstance;
 

@@ -12,11 +12,14 @@
 #import "YMADataBase.h"
 #import "YMADateHelper.h"
 #import "YMAOrder+CoreDataClass.h"
+#import "PGDrawerTransition.h"
+#import "YMALeftMenuViewController.h"
 
 @interface YMAOrdersViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) PGDrawerTransition *drawerTransition;
 
 
 @end
@@ -28,14 +31,19 @@
 
     UINib *nib = [UINib nibWithNibName:@"YMAOrderTableViewCell" bundle:nil];
     [[self tableView] registerNib:nib forCellReuseIdentifier:@"YMAOrderTableViewCell"];
-
+    
+    // set left menu
+    self.drawerTransition = [[PGDrawerTransition alloc] initWithTargetViewController:self
+                                                                drawerViewController:YMALeftMenuViewController.sharedInstance];
 
     //   [self initializeFetchedResultsController];
 
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self initializeFetchedResultsController];
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
 }
 
 
@@ -56,6 +64,10 @@
         NSLog(@"Failed to initialize FetchedResultsController: %@\n%@", [error localizedDescription], [error userInfo]);
         abort();
     }
+}
+
+- (IBAction)menuTapped:(id)sender {
+    [self.drawerTransition presentDrawerViewController];
 }
 
 

@@ -9,6 +9,7 @@
 #import "YMALeftMenuViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "YMACircularGradientView.h"
+#import "PGDrawerTransition.h"
 
 @interface YMALeftMenuViewController ()
 
@@ -59,6 +60,33 @@
     self.view.layer.shadowRadius = 50;
     self.view.layer.shadowOpacity = 0.5f;
     self.view.layer.shadowPath = maskPath.CGPath;
+}
+
+- (IBAction)mainButtonTapped:(id)sender {
+    UIViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"YMAGoodsViewController"];
+    [self.drawerTransition.targetViewController.navigationController showViewController:view sender:nil];
+    [self.drawerTransition setTargetViewController:view];
+    [self.drawerTransition dismissDrawerViewController];
+    
+}
+
+- (IBAction)ordersButtonTapped:(id)sender {
+    UIViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"YMAOrdersViewController"];
+    [self.drawerTransition.targetViewController.navigationController showViewController:view sender:nil];
+    
+    [self.drawerTransition setTargetViewController:view];
+    [self.drawerTransition dismissDrawerViewController];
+}
+
+- (IBAction)cartButtonTapped:(id)sender {
+    UIViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:@"YMACartOrderViewController"];
+    //[self.drawerTransition.targetViewController.navigationController showViewController:view sender:nil];
+    
+    [self showViewController:view sender:nil];
+    
+    [self.drawerTransition setTargetViewController:view];
+    [self.drawerTransition dismissDrawerViewController];
+    
 }
 
 

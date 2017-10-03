@@ -30,8 +30,6 @@
 
 - (YMAGoods *)goodsById:(NSNumber *)idGoods;
 
-- (void)addOrder;
-
 - (void)addProductToCurrentOrder;
 
 - (void)sendOrder;
