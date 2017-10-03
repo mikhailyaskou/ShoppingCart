@@ -1,9 +1,9 @@
 //
 //  YMAGoods+CoreDataProperties.h
-//  ShoppingCart
+//  
 //
-//  Created by Mikhail Yaskou on 28.09.17.
-//  Copyright © 2017 Mikhail Yaskou. All rights reserved.
+//  Created by Mikhail Yaskou on 02.10.17.
+//
 //
 
 #import "YMAGoods+CoreDataClass.h"
@@ -15,10 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<YMAGoods *> *)fetchRequest;
 
-@property (nonatomic) BOOL aviable;
-@property (nonatomic) int32_t code;
-@property (nonatomic) double discount;
-@property (nullable, nonatomic, retain) NSObject *image;
+@property (nonatomic) BOOL available;
+@property (nonatomic) int16_t code;
+@property (nullable, nonatomic, copy) NSString *image;
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nonatomic) double price;
 @property (nullable, nonatomic, retain) NSSet<YMAOrderBook *> *orderBooks;
@@ -28,11 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YMAGoods (CoreDataGeneratedAccessors)
 
 - (void)addOrderBooksObject:(YMAOrderBook *)value;
-
 - (void)removeOrderBooksObject:(YMAOrderBook *)value;
-
 - (void)addOrderBooks:(NSSet<YMAOrderBook *> *)values;
-
 - (void)removeOrderBooks:(NSSet<YMAOrderBook *> *)values;
 
 @end

@@ -10,10 +10,10 @@
 #import "YMADataBase.h"
 #import "YMAShopService.h"
 #import "YMAGoodsCell.h"
-#import "YMAPrettyButtonHelper.h"
 #import "YMABackEnd.h"
 #import "YMAGoods+CoreDataProperties.h"
 #import "YMAOrderBook+CoreDataProperties.h"
+#import "YMAAvailableGoodsCell.h"
 
 @interface YMACartOrderViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -27,20 +27,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    UINib *nib = [UINib nibWithNibName:@"YMAGoodsCell" bundle:nil];
-    [[self tableView] registerNib:nib forCellReuseIdentifier:@"YMAGoodsCell"];
-    [YMAPrettyButtonHelper makePrettyButton:self.sendOrderButton];
-
+    
+    UINib *nib = [UINib nibWithNibName:@"YMAAvailableGoodsCell" bundle:nil];
+    [[self tableView] registerNib:nib forCellReuseIdentifier:@"YMAAvailableGoodsCell"];
+    
+    nib = [UINib nibWithNibName:@"YMANotAvailableGoodsCell" bundle:nil];
+    [[self tableView] registerNib:nib forCellReuseIdentifier:@"YMANotAvailableGoodsCell"];
+    
     [self initializeFetchedResultsController];
 }
 
-
-- (IBAction)sendOrderButtonTapped:(id)sender {
-    YMAOrder *order = [[YMAShopService sharedShopService] currentOrder];
-    [YMABackEnd post:order];
+-(void)viewWillAppear:(BOOL)animated {
+ /*   NSPredicate *predicate = [NSPredicate predicateWithFormat:@"available == %@", @YES];
+    
+    self.fetchedResultsController =  [YMADataBase.sharedDataBase fetchedResultsControllerWithDataName:@"YMAOrderBook" predicate:predicate sotretByKey:@"goods"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });*/
 }
-
 
 - (void)initializeFetchedResultsController {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"YMAOrderBook"];
@@ -58,15 +62,9 @@
     }
 }
 
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
-    [super setEditing:editing animated:animated];
-    [self.tableView setEditing:editing animated:animated];
-}
-
-- (void)configureCell:(YMAGoodsCell *)cell withObject:(YMAGoods *)goods {
-    cell.name.text = goods.name;
-    cell.code.text = [NSString stringWithFormat:@"%d", goods.code];
-    cell.price.text = [NSString stringWithFormat:@"%f", goods.price];
+- (IBAction)sendOrderButtonTapped:(id)sender {
+    YMAOrder *order = [[YMAShopService sharedShopService] currentOrder];
+    [YMABackEnd post:order];
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate
@@ -96,13 +94,16 @@
             break;
 
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] withObject:anObject];
+           // [self configureCell:[tableView cellForRowAtIndexPath:indexPath] withObject:anObject];
             break;
 
         case NSFetchedResultsChangeMove:
             [tableView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
             break;
     }
+}
+- (IBAction)editTableTapped:(id)sender {
+    [self.tableView setEditing: YES animated: YES];
 }
 
 #pragma mark - Table view data source
@@ -115,10 +116,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    YMAGoodsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YMAGoodsCell"];
+    YMAAvailableGoodsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YMAAvailableGoodsCell"];
     YMAOrderBook *orderBook = [self.fetchedResultsController objectAtIndexPath:indexPath];
     YMAGoods *goods = orderBook.goods;
-    [self configureCell:cell withObject:goods];
+    cell.nameLabel.text = goods.name;
+    cell.priceLabel.text = [NSString stringWithFormat:@"%d", goods.code];
+    cell.priceLabel.text = [NSString stringWithFormat:@"%.f", goods.price];
+    cell.image.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:goods.image]]];
     return cell;
 }
 

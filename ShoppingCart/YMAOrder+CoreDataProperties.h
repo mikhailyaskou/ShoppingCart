@@ -1,9 +1,9 @@
 //
 //  YMAOrder+CoreDataProperties.h
-//  ShoppingCart
+//  
 //
-//  Created by Mikhail Yaskou on 28.09.17.
-//  Copyright © 2017 Mikhail Yaskou. All rights reserved.
+//  Created by Mikhail Yaskou on 02.10.17.
+//
 //
 
 #import "YMAOrder+CoreDataClass.h"
@@ -26,11 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface YMAOrder (CoreDataGeneratedAccessors)
 
 - (void)addBookOrdersObject:(YMAOrderBook *)value;
-
 - (void)removeBookOrdersObject:(YMAOrderBook *)value;
-
 - (void)addBookOrders:(NSSet<YMAOrderBook *> *)values;
-
 - (void)removeBookOrders:(NSSet<YMAOrderBook *> *)values;
 
 @end

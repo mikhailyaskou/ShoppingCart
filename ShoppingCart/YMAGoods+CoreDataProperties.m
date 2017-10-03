@@ -1,9 +1,9 @@
 //
 //  YMAGoods+CoreDataProperties.m
-//  ShoppingCart
+//  
 //
-//  Created by Mikhail Yaskou on 28.09.17.
-//  Copyright © 2017 Mikhail Yaskou. All rights reserved.
+//  Created by Mikhail Yaskou on 02.10.17.
+//
 //
 
 #import "YMAGoods+CoreDataProperties.h"
@@ -11,12 +11,11 @@
 @implementation YMAGoods (CoreDataProperties)
 
 + (NSFetchRequest<YMAGoods *> *)fetchRequest {
-    return [[NSFetchRequest alloc] initWithEntityName:@"YMAGoods"];
+	return [[NSFetchRequest alloc] initWithEntityName:@"YMAGoods"];
 }
 
-@dynamic aviable;
+@dynamic available;
 @dynamic code;
-@dynamic discount;
 @dynamic image;
 @dynamic name;
 @dynamic price;

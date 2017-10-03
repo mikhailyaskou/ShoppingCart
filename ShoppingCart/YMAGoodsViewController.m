@@ -12,6 +12,8 @@
 #import "YMAGoods+CoreDataProperties.h"
 #import "PGDrawerTransition.h"
 #import "YMALeftMenuViewController.h"
+#import "YMABackEnd.h"
+#import "YMANotAvailableGoodsCell.h"
 
 
 static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
@@ -27,77 +29,58 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //register nib in teble view
+    //register nib in table view
     UINib *nib = [UINib nibWithNibName:@"YMAGoodsCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"YMAGoodsCell"];
     // set left menu
     self.drawerTransition = [[PGDrawerTransition alloc] initWithTargetViewController:self
                                                                 drawerViewController:YMALeftMenuViewController.sharedInstance];
+    [YMABackEnd fetchPhoneWithCompletionHandler:^{
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"available == %@", @YES];
+        self.fetchedResultsController =  [YMADataBase.sharedDataBase fetchedResultsControllerWithDataName:@"YMAGoods" predicate:predicate sotretByKey:@"name"];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
     
-}
-
-
-- (void)viewWillAppear:(BOOL)animated {
-    [self initializeFetchedResultsController];
 }
 
 - (IBAction)menyTapped:(id)sender {
         [self.drawerTransition presentDrawerViewController];
 }
 
-//get all goods;
-- (void)initializeFetchedResultsController {
-    
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"YMAGoods"];
-
-    NSSortDescriptor *lastNameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    [request setSortDescriptors:@[lastNameSort]];
-
-    NSManagedObjectContext *moc = [[YMADataBase sharedDataBase] managedObjectContext];
-
-    [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:moc sectionNameKeyPath:nil cacheName:nil]];
-    [[self fetchedResultsController] setDelegate:self];
-
-    NSError *error = nil;
-    if (![[self fetchedResultsController] performFetch:&error]) {
-        NSLog(@"Failed to initialize FetchedResultsController: %@\n%@", [error localizedDescription], [error userInfo]);
-        abort();
-    }
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [[self.fetchedResultsController sections] count];
+    return self.fetchedResultsController.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section {
     id <NSFetchedResultsSectionInfo> sectionInfo =
-            [[[self fetchedResultsController] sections] objectAtIndex:section];
+            self.fetchedResultsController.sections[section];
 
     return [sectionInfo numberOfObjects];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    YMAGoodsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YMAGoodsCell"];
-    YMAGoods *goods = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.name.text = goods.name;
-    cell.code.text = [NSString stringWithFormat:@"%d", goods.code];
-    cell.price.text = [NSString stringWithFormat:@"%f", goods.price];
-
-    cell.delegate = self;
-
-    return cell;
+    YMAGoods *goods = (YMAGoods *) [self.fetchedResultsController objectAtIndexPath:indexPath];
+        YMAGoodsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YMAGoodsCell"];
+        cell.name.text = goods.name;
+        cell.code.text = [NSString stringWithFormat:@"%d", goods.code];
+        NSURL *url = [NSURL URLWithString:goods.image];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        cell.image.image = [[UIImage alloc] initWithData:data];
+        cell.delegate = self;
+        return cell;
 }
 
 - (void)touchedTheCell:(UIButton *)button {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *) button.superview.superview];
     NSLog(@"%ld", (long) indexPath.row);
 
-    YMAGoods *product = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    YMAGoods *product = (YMAGoods *) [self.fetchedResultsController objectAtIndexPath:indexPath];
 
     NSLog(@"%@", product.name);
 

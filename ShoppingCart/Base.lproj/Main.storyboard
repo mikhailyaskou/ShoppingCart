@@ -39,6 +39,9 @@
                                         <state key="normal" title="    Главная" image="menu_home">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="Kos-Zp-Bwc" kind="show" id="i0N-iz-GYu"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnk-rN-g7R">
                                         <rect key="frame" x="0.0" y="45" width="374" height="45"/>
@@ -46,6 +49,9 @@
                                         <state key="normal" title="    Заказы" image="menu_order">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="1BN-Hu-ESP" kind="show" id="UWE-Ps-gI8"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTX-wc-oLU">
                                         <rect key="frame" x="0.0" y="90" width="374" height="45"/>
@@ -53,6 +59,9 @@
                                         <state key="normal" title="     Корзина" image="menu_cart">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="ysn-UN-1sb" kind="show" id="2y4-4C-Pc0"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcB-ne-7gc">
                                         <rect key="frame" x="0.0" y="135" width="374" height="45"/>
@@ -107,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Bh-tA-gt8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871.20000000000005" y="-419.64017991004499"/>
+            <point key="canvasLocation" x="1616" y="-593"/>
         </scene>
         <!--Товары-->
         <scene sceneID="H6M-16-SRZ">
@@ -117,11 +126,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.38431372549999998" green="0.57254901960000004" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.38431372549019605" green="0.5725490196078431" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexTrackingBackgroundColor" red="0.38431372549999998" green="0.57254901960000004" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="WmY-Vy-u8G">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="lRf-Ia-dLk">
+                                <rect key="frame" x="0.0" y="48" width="414" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lRf-Ia-dLk" id="2Pa-qn-qOL">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="Kos-Zp-Bwc" id="mhU-6S-Kzd"/>
-                            <outlet property="delegate" destination="Kos-Zp-Bwc" id="AO9-bL-GqF"/>
+                            <outlet property="dataSource" destination="Kos-Zp-Bwc" id="L5C-pH-rvC"/>
+                            <outlet property="delegate" destination="Kos-Zp-Bwc" id="abN-Hs-ukc"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Товары" id="MTx-xL-1l1">
@@ -141,9 +166,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s3E-EU-EXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="872.79999999999995" y="332.38380809595208"/>
+            <point key="canvasLocation" x="872.46376811594212" y="330.97826086956525"/>
         </scene>
-        <!--Cart Order View Controller-->
+        <!--Корзина-->
         <scene sceneID="Vcf-JL-c1C">
             <objects>
                 <viewController id="ysn-UN-1sb" customClass="YMACartOrderViewController" sceneMemberID="viewController">
@@ -155,20 +180,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j54-w5-XIf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j54-w5-XIf">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="662"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.38431372549999998" green="0.57254901960000004" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="sectionIndexBackgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="sectionIndexTrackingBackgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.38431372549999998" green="0.57254901960000004" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexTrackingBackgroundColor" red="0.38431372549999998" green="0.57254901960000004" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="4QB-c5-yti">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KYx-Xk-6lf">
+                                        <rect key="frame" x="0.0" y="48" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KYx-Xk-6lf" id="aRR-u6-IRo">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="ysn-UN-1sb" id="uEr-CB-eGB"/>
                                     <outlet property="delegate" destination="ysn-UN-1sb" id="jUm-bY-WkK"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HS-ae-h3T">
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3HS-ae-h3T" customClass="YMAShopButton">
                                 <rect key="frame" x="46" y="670" width="322" height="58"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.6705882353" green="0.90980392160000001" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="cVw-ui-1G9"/>
                                 </constraints>
@@ -185,23 +225,26 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="1BN-Hu-ESP" kind="show" id="JbR-Qt-jCZ"/>
-                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.38431372549999998" green="0.57254901960000004" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="eKW-a7-rmC" firstAttribute="top" secondItem="3HS-ae-h3T" secondAttribute="bottom" constant="8" id="F0R-mV-A9W"/>
                             <constraint firstItem="3HS-ae-h3T" firstAttribute="top" secondItem="j54-w5-XIf" secondAttribute="bottom" constant="8" id="FgZ-Y5-sWv"/>
                             <constraint firstItem="j54-w5-XIf" firstAttribute="top" secondItem="q8Z-DX-0xx" secondAttribute="top" id="Iwa-us-Hhl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3HS-ae-h3T" secondAttribute="trailing" constant="26" id="SSZ-47-kJ0"/>
-                            <constraint firstItem="3HS-ae-h3T" firstAttribute="top" secondItem="j54-w5-XIf" secondAttribute="bottom" constant="8" id="SzT-Bp-x96"/>
                             <constraint firstItem="j54-w5-XIf" firstAttribute="leading" secondItem="q8Z-DX-0xx" secondAttribute="leading" id="TRX-xR-6Xl"/>
                             <constraint firstItem="3HS-ae-h3T" firstAttribute="leading" secondItem="q8Z-DX-0xx" secondAttribute="leadingMargin" constant="26" id="VJM-vu-Ob5"/>
                             <constraint firstAttribute="trailing" secondItem="j54-w5-XIf" secondAttribute="trailing" id="dK8-CQ-0LZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Корзина" id="9kk-7f-Mn2">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="V0l-1w-hOK">
+                            <connections>
+                                <action selector="editTableTapped:" destination="ysn-UN-1sb" id="K3g-Gu-yOs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="sendOrderButton" destination="3HS-ae-h3T" id="chi-R3-RS1"/>
@@ -276,4 +319,8 @@
         <image name="menu_settings" width="20" height="20"/>
         <image name="menu_signOut" width="20" height="20"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="i0N-iz-GYu"/>
+        <segue reference="2y4-4C-Pc0"/>
+    </inferredMetricsTieBreakers>
 </document>

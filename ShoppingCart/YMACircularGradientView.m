@@ -10,7 +10,6 @@
 
 @implementation YMACircularGradientView
 
-
 - (void)drawRect:(CGRect)rect {
     // Drawing Code
     CGContextRef context = UIGraphicsGetCurrentContext();

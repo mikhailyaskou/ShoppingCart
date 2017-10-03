@@ -24,7 +24,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            _sharedInstance = [sb instantiateViewControllerWithIdentifier:@"YMALeftMenuViewController"];
+        _sharedInstance = [sb instantiateViewControllerWithIdentifier:@"YMALeftMenuViewController"];
     });
     return _sharedInstance;
 }
@@ -43,10 +43,10 @@
     CGRect frame = self.view.frame;
     frame.size.width = self.view.frame.size.width - self.view.frame.size.width / 5;
     UIBezierPath *maskPath = [UIBezierPath
-            bezierPathWithRoundedRect:frame
-                    byRoundingCorners:( UIRectCornerBottomRight | UIRectCornerTopRight)
-                          cornerRadii:CGSizeMake(CGRectGetHeight(frame)/5, 0)
-    ];
+                              bezierPathWithRoundedRect:frame
+                              byRoundingCorners:( UIRectCornerBottomRight | UIRectCornerTopRight)
+                              cornerRadii:CGSizeMake(CGRectGetHeight(frame)/5, 0)
+                              ];
     //add mask to menu
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.frame = frame;
@@ -59,9 +59,7 @@
     self.view.layer.shadowRadius = 50;
     self.view.layer.shadowOpacity = 0.5f;
     self.view.layer.shadowPath = maskPath.CGPath;
-
-    
-   }
+}
 
 
 @end

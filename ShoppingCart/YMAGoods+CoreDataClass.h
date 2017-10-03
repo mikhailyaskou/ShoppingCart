@@ -1,15 +1,15 @@
 //
 //  YMAGoods+CoreDataClass.h
-//  ShoppingCart
+//  
 //
-//  Created by Mikhail Yaskou on 28.09.17.
-//  Copyright © 2017 Mikhail Yaskou. All rights reserved.
+//  Created by Mikhail Yaskou on 02.10.17.
+//
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class NSObject, YMAOrderBook;
+@class YMAOrderBook;
 
 NS_ASSUME_NONNULL_BEGIN
 

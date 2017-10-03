@@ -12,10 +12,11 @@
 
 @interface YMABackEnd : NSObject
 
-+ (void)fetchPhone;
++ (void)fetchPhoneWithCompletionHandler:(void (^)())completionHandler;
 
 + (void)post:(YMAOrder *)order;
 
 + (void)fetchOrders;
++ (void)fetchPhone;
 
 @end

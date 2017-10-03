@@ -18,39 +18,45 @@
 #import "YMAOrderBook+CoreDataClass.h"
 #import "YMAJSONParser.h"
 
-@interface YMADataBase () <NSURLSessionDelegate>
-
-@end
-
 @implementation YMABackEnd
 
-+ (void)fetchPhone {
++ (void)fetchPhoneWithCompletionHandler:(void (^)())completionHandler {
     [YMAJSONParser.sharedInstance parseByURL:[NSURL URLWithString:@"http://localhost:3000/catalog"]
-                           completionHandler:^(NSArray *jsonResponse){
-                               dispatch_async(dispatch_get_main_queue(), ^{
+                           completionHandler:^(NSArray *jsonResponse) {
+                               NSOperation *mainOperation = [NSBlockOperation blockOperationWithBlock:^{
                                    for (NSDictionary *item in jsonResponse) {
                                        YMAGoods *entityProduct = [NSEntityDescription insertNewObjectForEntityForName:@"YMAGoods" inManagedObjectContext:[[YMADataBase sharedDataBase] managedObjectContext]];
-                                       entityProduct.code = (int32_t) item[@"id"];
+                                       entityProduct.code = [item[@"id"] integerValue];
                                        entityProduct.name = item[@"title"];
                                        entityProduct.price = [item[@"price"] doubleValue];
+                                       entityProduct.available = [item[@"available"] integerValue];
+                                       entityProduct.image = item[@"image"];
                                        NSLog(@"%@", entityProduct.name);
                                    }
                                    [YMADataBase.sharedDataBase saveContext];
-                               });
+                               }];
+                               NSOperation *completionOperation = [NSBlockOperation blockOperationWithBlock:^{
+                                   completionHandler();
+                               }];
+                               [completionOperation addDependency:mainOperation];
+                               NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+                               [queue addOperation:mainOperation];
+                               [queue addOperation:completionOperation];
                            }];
+
 }
 
-+ (void)fetchOrders {
++ (void)fetchOrdersWithCompletionHandler:(void (^)())completionHandler {
     [YMAJSONParser.sharedInstance parseByURL:[NSURL URLWithString:@"http://localhost:3000/order"]
-                           completionHandler:^(NSArray *jsonResponse){
-                               dispatch_async(dispatch_get_main_queue(), ^{
+                           completionHandler:^(NSArray *jsonResponse) {
+                               NSOperation *mainOperation = [NSBlockOperation blockOperationWithBlock:^{
                                    NSManagedObjectContext *moc = [YMADataBase.sharedDataBase managedObjectContext];
                                    for (NSDictionary *item in jsonResponse) {
                                        YMAOrder *order = [NSEntityDescription insertNewObjectForEntityForName:@"YMAOrder" inManagedObjectContext:moc];
                                        [[YMAShopService.sharedShopService currentUser] addOrdersObject:order];
                                        order.date = [YMADateHelper dateFromString:item[@"date"]];
-                                       order.orderId = (int16_t) item[@"id"];
-                                       order.state = (int16_t) item[@"state"];
+                                       order.orderId = item[@"id"];
+                                       order.state = item[@"state"];
                                        NSArray *goodsIds = [item[@"catalog"] valueForKey:@"id"];
                                        for (NSNumber *idGoods in goodsIds) {
                                            YMAOrderBook *orderBook = [NSEntityDescription insertNewObjectForEntityForName:@"YMAOrderBook" inManagedObjectContext:moc];
@@ -58,16 +64,21 @@
                                            orderBook.order = order;
                                            [order addBookOrdersObject:orderBook];
                                        }
-                                       NSLog(@"%@", order.date);
                                    }
                                    [[YMADataBase sharedDataBase] saveContext];
-                               });
+                               }];
+                               NSOperation *completionOperation = [NSBlockOperation blockOperationWithBlock:^{
+                                   completionHandler();
+                               }];
+                               [completionOperation addDependency:mainOperation];
+                               NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+                               [queue addOperation:mainOperation];
+                               [queue addOperation:completionOperation];
                            }];
+
 }
 
-
 + (void)post:(YMAOrder *)order {
-
     NSError *error;
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
@@ -93,85 +104,5 @@
     }];
     [postDataTask resume];
 }
-
-/*+ (void)fetchPhone {
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    [[session dataTaskWithURL:[NSURL URLWithString:@"http://localhost:3000/catalog"]
-            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                if (!error) {
-                    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
-                        NSError *jsonError;
-                        NSArray *jsonResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-                        NSError *e = nil;
-
-                        if (!jsonResponse) {
-                            NSLog(@"Error parsing JSON: %@", e);
-                        }
-                        else {
-                            dispatch_async(dispatch_get_main_queue(), ^{
-                                for (NSDictionary *item in jsonResponse) {
-                                    YMAGoods *entityProduct =
-                                            [NSEntityDescription insertNewObjectForEntityForName:@"YMAGoods" inManagedObjectContext:[[YMADataBase sharedDataBase] managedObjectContext]];
-                                    [entityProduct setValue:item[@"id"] forKey:@"code"];
-                                    [entityProduct setValue:item[@"title"] forKey:@"name"];
-                                    [entityProduct setValue:@([item[@"price"] doubleValue]) forKey:@"price"];
-                                    NSLog(@"%@", entityProduct.name);
-                                }
-                                [[YMADataBase sharedDataBase] saveContext];
-                            });
-                        }
-                    }
-                    else {
-                        //Web server is returning an error
-                    }
-                }
-                else {
-                    NSLog(@"error : %@", error.description);
-                }
-            }] resume];
-}*/
-
-/*+ (void)fetchOrders {
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    [[session dataTaskWithURL:[self NSURLWithResourcesName:@"order"]
-            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                if (!error) {
-                    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
-                        NSError *jsonError;
-                        NSArray *jsonResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-                        NSError *e = nil;
-                        if (!jsonResponse) {
-                            NSLog(@"Error parsing JSON: %@", e);
-                        }
-                        else {
-                            dispatch_async(dispatch_get_main_queue(), ^{
-                                NSManagedObjectContext *moc = [[YMADataBase sharedDataBase] managedObjectContext];
-                                for (NSDictionary *item in jsonResponse) {
-                                    YMAOrder *order = [NSEntityDescription insertNewObjectForEntityForName:@"YMAOrder" inManagedObjectContext:moc];
-                                    [[YMAShopService.sharedShopService currentUser] addOrdersObject:order];
-                                    [order setValue:[YMADateHelper dateFromString:item[@"date"]] forKey:@"date"];
-                                    [order setValue:@([item[@"id"] integerValue]) forKey:@"orderId"];
-                                    [order setValue:@([item[@"state"] doubleValue]) forKey:@"state"];
-                                    NSArray *goodsIds = [item[@"catalog"] valueForKey:@"id"];
-                                    for (NSNumber *idGoods in goodsIds) {
-                                        YMAOrderBook *orderBook = [NSEntityDescription insertNewObjectForEntityForName:@"YMAOrderBook" inManagedObjectContext:moc];
-                                        orderBook.goods = [[YMAShopService sharedShopService] goodsById:idGoods];
-                                        orderBook.order = order;
-                                        [order addBookOrdersObject:orderBook];
-                                    }
-                                }
-                                [[YMADataBase sharedDataBase] saveContext];
-                            });
-                        }
-                    }
-                    else {
-                        //Web server is returning an error
-                    }
-                }
-                else {
-                    NSLog(@"error : %@", error.description);
-                }
-            }] resume];
-}*/
 
 @end
