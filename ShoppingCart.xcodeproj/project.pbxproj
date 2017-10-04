@@ -142,8 +142,8 @@
 				1D84E781014102F9FCDAF9EB /* YMAShopService.h */,
 				1D84E9F2B56F56D270729E13 /* YMAShopService.m */,
 				1D84E6C154797EAF7F59327A /* serverside */,
-				1D84E5403C813AACDE0FE2B7 /* YMADataBase.m */,
 				1D84E0428365503E949F4896 /* YMADataBase.h */,
+				1D84E5403C813AACDE0FE2B7 /* YMADataBase.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

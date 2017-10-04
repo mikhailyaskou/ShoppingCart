@@ -13,7 +13,6 @@
 #import "PGDrawerTransition.h"
 #import "YMALeftMenuViewController.h"
 #import "YMABackEnd.h"
-#import "YMANotAvailableGoodsCell.h"
 
 
 static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
@@ -28,27 +27,34 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
 
 @implementation YMAGoodsViewController
 
++ (YMAGoodsViewController *)sharedInstance {
+    static YMAGoodsViewController *_sharedInstance = nil;
+    static dispatch_once_t oneTask;
+    dispatch_once(&oneTask, ^{
+        UIStoryboard *sb = [UIStoryboard  storyboardWithName: @"Main" bundle:nil];
+        _sharedInstance = [sb instantiateViewControllerWithIdentifier:@"YMAGoodsViewController"];
+    });
+    return _sharedInstance;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //register nib in table view
     UINib *nib = [UINib nibWithNibName:@"YMAGoodsCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"YMAGoodsCell"];
-    
     // set left menu
-    
-    YMALeftMenuViewController.sharedInstance.drawerTransition = [[PGDrawerTransition alloc] initWithTargetViewController:self
+    YMALeftMenuViewController.sharedInstance.drawerTransition = [[PGDrawerTransition alloc] initWithTargetViewController:self.navigationController
                                                                                                     drawerViewController:YMALeftMenuViewController.sharedInstance];
-   /* self.drawerTransition = [[PGDrawerTransition alloc] initWithTargetViewController:self
-                                                                drawerViewController:YMALeftMenuViewController.sharedInstance];
-    
-    */
+
     [YMABackEnd fetchPhoneWithCompletionHandler:^{
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"available == %@", @YES];
         self.fetchedResultsController =  [YMADataBase.sharedDataBase fetchedResultsControllerWithDataName:@"YMAGoods" predicate:predicate sotretByKey:@"name"];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
+        [YMABackEnd fetchOrdersWithCompletionHandler:nil];
     }];
+
     
 }
 
@@ -84,14 +90,13 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
 }
 
 - (void)touchedTheCell:(UIButton *)button {
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *) button.superview.superview];
-    NSLog(@"%ld", (long) indexPath.row);
 
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *) button.superview.superview];
+    NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%ld", (long) indexPath.row);
     YMAGoods *product = (YMAGoods *) [self.fetchedResultsController objectAtIndexPath:indexPath];
 
     NSLog(@"%@", product.name);
-
-    [[YMAShopService sharedShopService] addToCart:product];
+    [YMAShopService.sharedShopService addToCart:product.objectID];
 }
 
 @end

@@ -13,4 +13,6 @@
 
 @interface YMAGoodsViewController : UITableViewController <TouchDelegateForGoodsCell>
 
++ (YMAGoodsViewController *)sharedInstance;
+
 @end

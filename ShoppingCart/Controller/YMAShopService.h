@@ -12,26 +12,17 @@
 @class YMAUser;
 @class YMAOrder;
 
-@interface YMAShopService : NSObject
+@class NSManagedObjectID;
+@class NSManagedObjectContext;
 
-@property (nonatomic, strong) NSMutableArray *cart;
+@interface YMAShopService : NSObject
 
 + (id)sharedShopService;
 
-- (void)addToCart:(YMAGoods *)product;
+- (void)addToCart:(NSManagedObjectID *)productId;
 
-- (void)removeFromCar:(YMAGoods *)product;
+- (NSManagedObjectID *)currentUserManagedObjectID;
 
-- (YMAUser *)currentUser;
-
-- (YMAOrder *)currentOrder;
-
-- (NSArray *)goodsFromOrder:(YMAOrder *)order;
-
-- (YMAGoods *)goodsById:(NSNumber *)idGoods;
-
-- (void)addProductToCurrentOrder;
-
-- (void)sendOrder;
+- (NSManagedObjectID *)currentOrderManagedObjectID;
 
 @end

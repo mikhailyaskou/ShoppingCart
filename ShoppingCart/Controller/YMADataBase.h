@@ -18,11 +18,22 @@
 - (NSManagedObjectContext *)managedObjectContext;
 - (NSPersistentContainer *)persistentContainer;
 - (void)saveContext;
+- (void)saveContext:(NSManagedObjectContext *)context;
 - (void)clearCoreData;
 - (NSManagedObjectContext *)newBackgroundContext;
 - (NSFetchedResultsController *)fetchedResultsControllerWithDataName:(NSString *)entityName
                                                            predicate:(NSPredicate * _Nullable)predicate
                                                          sotretByKey:(NSString *_Nullable)sortKey;
 - (void)deleteAllEtitysWithEntityName:(NSString *_Nonnull)name;
+- (NSArray *)allEntitiesWithName:(NSString *)entityName inContext:(NSManagedObjectContext *)context;
+- (NSManagedObject *)findOrCreateEntityWithName:(NSString *)entityName
+                                findByFieldName:(NSString *)fieldName
+                                      withValue:(NSString *)value
+                                      inContext:(NSManagedObjectContext *)context;
+- (NSManagedObject *)findOrCreateEntityWithName:(NSString *)entityName
+                                findByFieldName:(NSString *)fieldName
+                                      withValue:(NSString *)value
+                       searchInArrayWithEntitys:(NSArray *)allEntities
+                                      inContext:(NSManagedObjectContext *)context;
 
 @end

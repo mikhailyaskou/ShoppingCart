@@ -62,16 +62,16 @@
     self.view.layer.shadowPath = maskPath.CGPath;
 }
 
-- (IBAction)mainButtonTapped:(id)sender {  
-    [self makeTransitionToViewControllerWithIdentifier:@"YMAGoodsViewController"];
+- (IBAction)mainButtonTapped:(id)sender {
+   // [self makeTransitionToViewControllerWithIdentifier:@"YMAGoodsViewController"];
 }
 
 - (IBAction)ordersButtonTapped:(id)sender {
-    [self makeTransitionToViewControllerWithIdentifier:@"YMAOrdersViewController"];
+ //   [self makeTransitionToViewControllerWithIdentifier:@"YMAOrdersViewController"];
 }
 
 - (IBAction)cartButtonTapped:(id)sender {
-    [self makeTransitionToViewControllerWithIdentifier:@"YMACartOrderModalViewController"];
+ //   [self makeTransitionToViewControllerWithIdentifier:@"YMACartOrderModalViewController"];
 }
 
 -(void)makeTransitionToViewControllerWithIdentifier:(NSString *)identifier {

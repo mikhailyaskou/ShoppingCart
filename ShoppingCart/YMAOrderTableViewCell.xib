@@ -87,6 +87,12 @@
                     <constraint firstItem="NrN-uI-bbl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cez-B9-VbQ"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="date" destination="oZO-LF-ffC" id="zco-H0-YoG"/>
+                <outlet property="orderId" destination="gdB-KI-JXv" id="5y5-0H-fmN"/>
+                <outlet property="price" destination="0bt-bL-gW7" id="q5O-lT-RLI"/>
+                <outlet property="state" destination="53o-ZE-RsD" id="AHa-PH-WRi"/>
+            </connections>
             <point key="canvasLocation" x="32.5" y="115"/>
         </tableViewCell>
     </objects>

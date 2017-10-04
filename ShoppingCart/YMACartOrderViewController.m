@@ -69,10 +69,10 @@
 
 }
 
-
 - (IBAction)sendOrderButtonTapped:(id)sender {
-    YMAOrder *order = [[YMAShopService sharedShopService] currentOrder];
-    [YMABackEnd post:order];
+    NSManagedObjectContext *moc = [YMADataBase.sharedDataBase managedObjectContext];
+    YMAOrder *currentOrder =  [moc existingObjectWithID:[YMAShopService.sharedShopService currentOrderManagedObjectID] error:nil];
+    [YMABackEnd post:currentOrder];
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate
