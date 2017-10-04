@@ -41,7 +41,15 @@
       "price": "100",
       "image": "https://content2.onliner.by/catalog/device/header/10f55bb2587a0c163150f8efbf57022f.jpeg",
       "available": "1"
+    },
+    {
+      "id": 7,
+      "title": "Apple iPhone 7 32GB Gold",
+      "price": "450",
+      "image": "https://content2.onliner.by/catalog/device/header/da078f31b051d37f747848e69891ff1a.jpeg",
+      "available": "1"
     }
+
 
   ],
   "profile": [
@@ -81,6 +89,19 @@
     {
       "catalog": [
         {
+          "id": 3
+        },
+        {
+          "id": 1
+        }
+      ],
+      "state": 1,
+      "id": 0,
+      "date": "01.10.2017"
+    },
+    {
+      "catalog": [
+        {
           "id": 1
         },
         {
@@ -88,27 +109,9 @@
         }
       ],
       "state": 1,
-      "id": 3,
+      "id": 5,
       "date": "21.07.2014"
-    },
-    {
-      "catalog": [
-        {
-          "id": 3
-        },
-        {
-          "id": 1
-        },
-        {
-          "id": 2
-        },
-        {
-          "id": 2
-        }
-      ],
-      "state": "0",
-      "id": "0",
-      "date": "04.08.2017"
     }
+
   ]
 }

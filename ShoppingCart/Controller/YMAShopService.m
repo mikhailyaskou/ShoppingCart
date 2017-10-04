@@ -16,9 +16,6 @@
 
 @interface YMAShopService ()
 
-@property (nonatomic, strong) YMAUser *currentUser;
-@property (nonatomic, strong) YMAOrder *currentOrder;
-
 @end
 
 @implementation YMAShopService
@@ -33,90 +30,61 @@
     return sharedShopService;
 }
 
-- (void)removeFromCar:(YMAGoods *)product {
-    [self.cart removeObject:product];
-}
+- (NSManagedObjectID *)currentUserManagedObjectID {
+    NSManagedObjectContext *moc = [YMADataBase.sharedDataBase newBackgroundContext];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"YMAUser"];
+    // Specify criteria for filtering which objects to fetch
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", @"Mike Yaskou"];
+    [request setPredicate:predicate];
 
-- (YMAUser *)currentUser {
-
-    if (!_currentUser) {
-
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"YMAUser" inManagedObjectContext:[[YMADataBase sharedDataBase] managedObjectContext]];
-        [fetchRequest setEntity:entity];
-        // Specify criteria for filtering which objects to fetch
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", @"Igor"];
-        [fetchRequest setPredicate:predicate];
-
-        NSError *error = nil;
-        NSArray *fetchedObjects = [[[YMADataBase sharedDataBase] managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-        if (fetchedObjects == nil) {
-            NSLog(@"%@", [error localizedDescription]);
-        }
-        //creating new user
-        if (fetchedObjects.count == 0) {
-
-            _currentUser = (YMAUser *) [NSEntityDescription insertNewObjectForEntityForName:@"YMAUser" inManagedObjectContext:[[YMADataBase sharedDataBase] managedObjectContext]];
-            _currentUser.name = @"Igor";
-            [[YMADataBase sharedDataBase] saveContext];
-        }
-        else {
-            _currentUser = [fetchedObjects objectAtIndex:0];
-        }
+    NSError *error = nil;
+    NSArray *fetchedObjects = [moc executeFetchRequest:request error:&error];
+    if (fetchedObjects == nil) {
+        NSLog(@"%@", [error localizedDescription]);
     }
-    return _currentUser;
+    //creating new user
+    YMAUser *user;
+    if (fetchedObjects.count == 0) {
+        user = (YMAUser *) [NSEntityDescription insertNewObjectForEntityForName:@"YMAUser" inManagedObjectContext:moc];
+        user.name = @"Mike Yaskou";
+        [YMADataBase.sharedDataBase saveContext:moc];
+    }
+    else {
+        user = fetchedObjects[0];
+    }
+    return user.objectID;
 }
 
-- (void)addToCart:(YMAGoods *)product {
-
-    YMAOrderBook *orderBook = [NSEntityDescription insertNewObjectForEntityForName:@"YMAOrderBook" inManagedObjectContext:[[YMADataBase sharedDataBase] managedObjectContext]];
-    orderBook.goods = product;
-    [self.currentOrder addBookOrdersObject:orderBook];
-    [[YMADataBase sharedDataBase] saveContext];
-}
-
-- (YMAOrder *)currentOrder {
-
+- (NSManagedObjectID *)currentOrderManagedObjectID {
+    NSManagedObjectContext *moc = [YMADataBase.sharedDataBase newBackgroundContext];
+    YMAUser *currentUser = [moc existingObjectWithID:[YMAShopService.sharedShopService currentUserManagedObjectID] error:nil];
     YMAOrder *openOrder = nil;
 
-    NSSet *orders = [self.currentUser orders];
-    for (YMAOrder *order in orders) {
-        NSInteger *state = order.state;
-        if (state == 0) {
-            openOrder = order;
-        }
-    }
+    NSSet *orders = [currentUser orders];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.state == %@", @(0)];
+    NSSet *filteredOrders = [orders filteredSetUsingPredicate:predicate];
 
-    //if no open order - creating new order
-    if (!openOrder) {
-        openOrder = [NSEntityDescription insertNewObjectForEntityForName:@"YMAOrder" inManagedObjectContext:[[YMADataBase sharedDataBase] managedObjectContext]];
+    if (filteredOrders.count > 0) {
+        openOrder = filteredOrders.allObjects[0];
+    }
+    else {
+        openOrder = [NSEntityDescription insertNewObjectForEntityForName:@"YMAOrder" inManagedObjectContext:moc];
         openOrder.date = [NSDate date];
         openOrder.state = 0;
-        [self.currentUser addOrdersObject:openOrder];
+        [currentUser addOrdersObject:openOrder];
+        [YMADataBase.sharedDataBase saveContext:moc];
     }
-
-    return openOrder;
+    return openOrder.objectID;
 }
 
-- (NSArray *)goodsFromOrder:(YMAOrder *)order {
-    return order.bookOrders.allObjects;
+- (void)addToCart:(NSManagedObjectID *)productId {
+    NSManagedObjectContext *moc = [YMADataBase.sharedDataBase newBackgroundContext];
+    YMAGoods *product = [moc existingObjectWithID:productId error:nil];
+    YMAOrderBook *orderBook = [NSEntityDescription insertNewObjectForEntityForName:@"YMAOrderBook" inManagedObjectContext:moc];
+    YMAOrder *currentOrder = [moc existingObjectWithID:[self currentOrderManagedObjectID] error:nil];
+    [product addOrderBooksObject:orderBook];
+    [currentOrder addBookOrdersObject:orderBook];
+    [YMADataBase.sharedDataBase saveContext:moc];
 }
-
-- (YMAGoods *)goodsById:(NSNumber *)idGoods {
-    NSManagedObjectContext *context = [[YMADataBase sharedDataBase] managedObjectContext];
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"YMAGoods" inManagedObjectContext:context];
-    [fetchRequest setEntity:entity];
-    // Specify criteria for filtering which objects to fetch
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"code == %@", [idGoods stringValue]];
-    [fetchRequest setPredicate:predicate];
-    NSError *error = nil;
-    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-    if (fetchedObjects == nil) {
-        return nil;
-    }
-    return fetchedObjects.firstObject;
-}
-
 
 @end

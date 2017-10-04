@@ -16,7 +16,6 @@
 
 @implementation YMADataBase
 
-
 #pragma mark - Core Data stack
 
 @synthesize persistentContainer = _persistentContainer;
@@ -98,6 +97,33 @@
 }
 
 #pragma mark - Core Data Operations
+
+- (NSArray *)allEntitiesWithName:(NSString *)entityName inContext:(NSManagedObjectContext *)context {
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
+    NSError *error = nil;
+    NSArray *result = [context executeFetchRequest:request error:&error];
+    if (!result){
+        NSLog(@"Error fetching objects: %@\n%@", [error localizedDescription], [error userInfo]);
+        abort();
+    }
+    return result;
+}
+
+- (NSManagedObject *)findOrCreateEntityWithName:(NSString *)entityName findByFieldName:(NSString *)fieldName withValue:(NSString *)value inContext:(NSManagedObjectContext *)context {
+    NSArray *allEntities = [self allEntitiesWithName:entityName inContext:context];
+    return [self findOrCreateEntityWithName:entityName findByFieldName:fieldName withValue:value searchInArrayWithEntitys:allEntities inContext:context];
+}
+
+- (NSManagedObject *)findOrCreateEntityWithName:(NSString *)entityName findByFieldName:(NSString *)fieldName withValue:(NSString *)value searchInArrayWithEntitys:(NSArray *)allEntities inContext:(NSManagedObjectContext *)context {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.%@ == %@",fieldName, value];
+    NSArray *foundEntity = [allEntities filteredArrayUsingPredicate:predicate];
+    if (foundEntity.count>0) {
+        return foundEntity[0];
+    }
+    else {
+        return [NSEntityDescription insertNewObjectForEntityForName:entityName inManagedObjectContext:context];
+    }
+}
 
 - (void)clearCoreData {
     NSArray<NSEntityDescription *> *entityDescriptions = self.persistentContainer.managedObjectModel.entities;

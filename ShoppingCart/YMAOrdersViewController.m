@@ -14,6 +14,8 @@
 #import "YMAOrder+CoreDataClass.h"
 #import "PGDrawerTransition.h"
 #import "YMALeftMenuViewController.h"
+#import "YMAGoods+CoreDataClass.h"
+#import "YMAOrderBook+CoreDataProperties.h"
 
 @interface YMAOrdersViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -31,7 +33,7 @@
     [[self tableView] registerNib:nib forCellReuseIdentifier:@"YMAOrderTableViewCell"];
     
 
-    //   [self initializeFetchedResultsController];
+       [self initializeFetchedResultsController];
 
 }
 
@@ -41,13 +43,18 @@
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
 }
 
+- (IBAction)showMenuTapped:(id)sender {
+    [YMALeftMenuViewController.sharedInstance.drawerTransition presentDrawerViewController];
+    
+}
+
 
 - (void)initializeFetchedResultsController {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"YMAOrder"];
 
-    NSSortDescriptor *lastNameSort = [NSSortDescriptor sortDescriptorWithKey:@"state" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"state" ascending:YES];
 
-    [request setSortDescriptors:@[lastNameSort]];
+    [request setSortDescriptors:@[sortDescriptor]];
 
     NSManagedObjectContext *moc = [[YMADataBase sharedDataBase] managedObjectContext];
 
@@ -61,15 +68,8 @@
     }
 }
 
-- (IBAction)menuTapped:(id)sender {
-      [YMALeftMenuViewController.sharedInstance.drawerTransition presentDrawerViewController];
-}
-
-
 - (void)configureCell:(YMAOrderTableViewCell *)cell withObject:(YMAOrder *)order {
-    cell.orderId.text = [NSString stringWithFormat:@"%d", order.orderId];
-    cell.date.text = [YMADateHelper stringFromDate:order.date];
-    cell.state.text = [NSString stringWithFormat:@"%d", order.state];
+
 
 }
 
@@ -78,7 +78,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     id <NSFetchedResultsSectionInfo> sectionInfo =
-            [[[self fetchedResultsController] sections] objectAtIndex:section];
+            self.fetchedResultsController.sections[section];
 
     return [sectionInfo numberOfObjects];
 }
@@ -87,8 +87,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     YMAOrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YMAOrderTableViewCell"];
-    YMAOrder *order = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [self configureCell:cell withObject:order];
+
+    YMAOrder *order = (YMAOrder *) [self.fetchedResultsController objectAtIndexPath:indexPath];
+    cell.orderId.text = [NSString stringWithFormat:@"%hi",order.orderId];
+    cell.date.text = [YMADateHelper stringFromDate:order.date];
+    cell.state.text = [NSString stringWithFormat:@"%hi", order.state];
+    NSArray <YMAOrderBook *> *books = order.bookOrders.allObjects;
+
+    NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%lf",books.firstObject.goods.price);
+   // cell.price.text = [books valueForKeyPath:@"@sum.goods.price"];
     return cell;
 
 

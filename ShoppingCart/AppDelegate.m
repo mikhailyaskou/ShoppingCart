@@ -22,6 +22,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
  //   [YMADataBase.sharedDataBase clearCoreData];
    // [YMADataBase.sharedDataBase deleteAllEtitysWithEntityName:@"YMAGoods"];
+   //[YMADataBase.sharedDataBase deleteAllEtitysWithEntityName:@"YMAOrder"];
     return YES;
 }
 
