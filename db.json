@@ -49,8 +49,6 @@
       "image": "https://content2.onliner.by/catalog/device/header/da078f31b051d37f747848e69891ff1a.jpeg",
       "available": "1"
     }
-
-
   ],
   "profile": [
     {
@@ -102,16 +100,76 @@
     {
       "catalog": [
         {
-          "id": 1
+          "id": 3
+        },
+        {
+          "id": 7
         },
         {
           "id": 2
         }
       ],
-      "state": 1,
-      "id": 5,
-      "date": "21.07.2014"
+      "state": "1",
+      "date": "12.10.2017",
+      "id": 3
+    },
+    {
+      "catalog": [
+        {
+          "id": 7
+        },
+        {
+          "id": 3
+        }
+      ],
+      "state": "1",
+      "date": "12.10.2017",
+      "id": 4
+    },
+    {
+      "catalog": [],
+      "state": "1",
+      "date": "12.10.2017",
+      "id": 5
+    },
+    {
+      "catalog": [
+        {
+          "id": 7
+        },
+        {
+          "id": 3
+        }
+      ],
+      "state": "1",
+      "date": "12.10.2017",
+      "id": 6
+    },
+    {
+      "catalog": [
+        {
+          "id": 7
+        },
+        {
+          "id": 6
+        }
+      ],
+      "state": "1",
+      "date": "12.10.2017",
+      "id": 7
+    },
+    {
+      "catalog": [
+        {
+          "id": 2
+        },
+        {
+          "id": 7
+        }
+      ],
+      "state": "1",
+      "date": "12.10.2017",
+      "id": 8
     }
-
   ]
 }

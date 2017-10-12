@@ -25,6 +25,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedDataBase = [[self alloc] init];
+        [sharedDataBase.managedObjectContext setMergePolicy:[[NSMergePolicy alloc] initWithMergeType:NSMergeByPropertyObjectTrumpMergePolicyType]];
     });
     return sharedDataBase;
 }
@@ -141,5 +142,12 @@
         [self saveContext:context];
     }];
 }
+
+- (void)deleteObjectAndSave:(NSManagedObject *)object {
+    [object.managedObjectContext deleteObject:object];    
+    [self saveContext:object.managedObjectContext];
+
+}
+
 
 @end

@@ -14,7 +14,7 @@
     // Drawing Code
     CGContextRef context = UIGraphicsGetCurrentContext();
     // Draw A Gradient from yellow to Orange
-    NSArray *colors = [NSArray arrayWithObjects:(id)[UIColor blueColor].CGColor, (id)[UIColor colorWithRed:0.11 green:0.88 blue:0.88 alpha:1.0].CGColor, nil];
+    NSArray *colors = @[(id) [UIColor blueColor].CGColor, (id) [UIColor colorWithRed:0.11 green:0.88 blue:0.88 alpha:1.0].CGColor];
     CGColorSpaceRef myColorspace=CGColorSpaceCreateDeviceRGB();
     CGGradientRef myGradient = CGGradientCreateWithColors(myColorspace, (CFArrayRef) colors, nil);
 

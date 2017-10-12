@@ -36,20 +36,20 @@
 		304D9B6F8C9AC84530A5DE8BFE1DC457 /* Pods-ShoppingCart-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ShoppingCart-acknowledgements.plist"; sourceTree = "<group>"; };
 		36310B213C9C20EC3CC17C53E345A30C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		396CD9BD1C53F4A6198A20A3F92551E8 /* PGDrawerTransition-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGDrawerTransition-umbrella.h"; sourceTree = "<group>"; };
-		3CB89CA63044F3784FA9F6C01B654952 /* PGDrawerTransition.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PGDrawerTransition.modulemap; sourceTree = "<group>"; };
-		64C22F8736646CBDE45E2E9E53AA6DB6 /* PGDrawerTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PGDrawerTransition.framework; path = PGDrawerTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CB89CA63044F3784FA9F6C01B654952 /* PGDrawerTransition.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PGDrawerTransition.modulemap; sourceTree = "<group>"; };
+		64C22F8736646CBDE45E2E9E53AA6DB6 /* PGDrawerTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PGDrawerTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		89C45F1080398F95BF25D585C2B572D5 /* PGDrawerTransition-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PGDrawerTransition-dummy.m"; sourceTree = "<group>"; };
-		8A36D7AC07E4F04329CA455D35875520 /* Pods-ShoppingCart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ShoppingCart.modulemap"; sourceTree = "<group>"; };
+		8A36D7AC07E4F04329CA455D35875520 /* Pods-ShoppingCart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ShoppingCart.modulemap"; sourceTree = "<group>"; };
 		8F127C091EAFC84F20B9430764186040 /* Pods-ShoppingCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ShoppingCart.debug.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A47DBA7E06E9A59860A2CA6966E2737C /* Pods-ShoppingCart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ShoppingCart-dummy.m"; sourceTree = "<group>"; };
 		BA68FDCDF472CA77E7F6BC278ED7CFB9 /* Pods-ShoppingCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ShoppingCart.release.xcconfig"; sourceTree = "<group>"; };
 		C5C001F8EB30A2A7A771278455C76F77 /* Pods-ShoppingCart-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ShoppingCart-umbrella.h"; sourceTree = "<group>"; };
 		DA44814B7BD18324CC17AA1E76CAA56E /* PGDrawerTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGDrawerTransition.m; path = Pod/Classes/PGDrawerTransition.m; sourceTree = "<group>"; };
 		E12E84577D93B4F76B66ACDB0766F950 /* Pods-ShoppingCart-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ShoppingCart-frameworks.sh"; sourceTree = "<group>"; };
 		E74B265B4F7B26074CA9E154A3EF679C /* PGDrawerTransition.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PGDrawerTransition.xcconfig; sourceTree = "<group>"; };
-		EBCC80EFF5755357D5AA2580B88C9B7E /* Pods_ShoppingCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ShoppingCart.framework; path = "Pods-ShoppingCart.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBCC80EFF5755357D5AA2580B88C9B7E /* Pods_ShoppingCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,6 @@
 				DA44814B7BD18324CC17AA1E76CAA56E /* PGDrawerTransition.m */,
 				BB6FF052C97A8020286B7C7AA1ACFF45 /* Support Files */,
 			);
-			name = PGDrawerTransition;
 			path = PGDrawerTransition;
 			sourceTree = "<group>";
 		};

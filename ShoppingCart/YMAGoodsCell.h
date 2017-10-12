@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-
-//@class CellTypeOne; //if u want t pass cell to controller
-@protocol TouchDelegateForGoodsCell <NSObject> //this delegate is fired each time you clicked the cell
+@protocol TouchDelegateForGoodsCell <NSObject>
 - (void)touchedTheCell:(UIButton *)button;
-//- (void) touchedTheCell:(CellTypeOne *)cell; //if u want t send entire cell this may give error add `@class CellTypeOne;` at the beginning
 @end
 
 @interface YMAGoodsCell : UITableViewCell

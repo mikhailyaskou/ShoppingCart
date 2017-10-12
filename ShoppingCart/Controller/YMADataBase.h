@@ -20,6 +20,7 @@
 - (void)saveContext;
 - (void)saveContext:(NSManagedObjectContext *)context;
 - (void)clearCoreData;
+- (void)deleteObjectAndSave:(NSManagedObject *)object;
 - (NSManagedObjectContext *)newBackgroundContext;
 - (NSFetchedResultsController *)fetchedResultsControllerWithDataName:(NSString *)entityName
                                                            predicate:(NSPredicate * _Nullable)predicate

@@ -7,7 +7,6 @@
 //
 
 #import "YMALeftMenuViewController.h"
-#import <QuartzCore/QuartzCore.h>
 #import "YMACircularGradientView.h"
 #import "PGDrawerTransition.h"
 
@@ -15,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet YMACircularGradientView *menuView;
+@property (weak, nonatomic) UITabBarController *mainTabBarController;
 
 @end
 
@@ -32,13 +32,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.mainTabBarController = (UITabBarController *)[[UIApplication sharedApplication] delegate].window.rootViewController;
     //round image with white border
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
     self.profileImageView.clipsToBounds = YES;
     self.profileImageView.layer.borderWidth = 6.0f;
     self.profileImageView.layer.borderColor = [UIColor whiteColor].CGColor;
-    
     //left menu with rounded corner and shadow under it
     //create menu BezierPath for menu and shadow shape;
     CGRect frame = self.view.frame;
@@ -63,26 +62,19 @@
 }
 
 - (IBAction)mainButtonTapped:(id)sender {
-   // [self makeTransitionToViewControllerWithIdentifier:@"YMAGoodsViewController"];
+    [self.drawerTransition dismissDrawerViewController];
+    [self.mainTabBarController setSelectedIndex:0];
 }
 
 - (IBAction)ordersButtonTapped:(id)sender {
- //   [self makeTransitionToViewControllerWithIdentifier:@"YMAOrdersViewController"];
+    [self.drawerTransition dismissDrawerViewController];
+    [self.mainTabBarController setSelectedIndex:1];
 }
 
 - (IBAction)cartButtonTapped:(id)sender {
- //   [self makeTransitionToViewControllerWithIdentifier:@"YMACartOrderModalViewController"];
+    [self.drawerTransition dismissDrawerViewController];
+    [self.mainTabBarController setSelectedIndex:2];
 }
-
--(void)makeTransitionToViewControllerWithIdentifier:(NSString *)identifier {
-     [self.drawerTransition dismissDrawerViewController];
-    if (![self.drawerTransition.targetViewController.restorationIdentifier isEqualToString:identifier]) {       
-        UIViewController *view = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
-        [self.drawerTransition.targetViewController.navigationController showViewController:view sender:nil];
-        [self.drawerTransition setTargetViewController:view];
-    }
-}
-
 
 
 @end
