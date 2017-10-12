@@ -14,14 +14,12 @@
 #import "YMALeftMenuViewController.h"
 #import "YMABackEnd.h"
 
-
 static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
 
 @interface YMAGoodsViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (retain, nonatomic) IBOutlet UITableView * TableView;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
-//@property (nonatomic, strong) PGDrawerTransition *drawerTransition;
 
 @end
 
@@ -54,12 +52,10 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
         });
         [YMABackEnd fetchOrdersWithCompletionHandler:nil];
     }];
-
-    
 }
 
 - (IBAction)menuTapped:(id)sender {
-        [YMALeftMenuViewController.sharedInstance.drawerTransition presentDrawerViewController];
+    [YMALeftMenuViewController.sharedInstance.drawerTransition presentDrawerViewController];
 }
 
 #pragma mark - Table view data source
@@ -68,14 +64,9 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
     return self.fetchedResultsController.sections.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section {
-    id <NSFetchedResultsSectionInfo> sectionInfo =
-            self.fetchedResultsController.sections[section];
-
-    return [sectionInfo numberOfObjects];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.fetchedResultsController.sections[section].numberOfObjects;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YMAGoods *goods = (YMAGoods *) [self.fetchedResultsController objectAtIndexPath:indexPath];
@@ -90,12 +81,8 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
 }
 
 - (void)touchedTheCell:(UIButton *)button {
-
     NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *) button.superview.superview];
-    NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%ld", (long) indexPath.row);
     YMAGoods *product = (YMAGoods *) [self.fetchedResultsController objectAtIndexPath:indexPath];
-
-    NSLog(@"%@", product.name);
     [YMAShopService.sharedShopService addToCart:product.objectID];
 }
 

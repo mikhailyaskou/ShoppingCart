@@ -25,10 +25,11 @@
                            completionHandler:^(NSArray *jsonResponse) {
                                NSManagedObjectContext *moc = [YMADataBase.sharedDataBase newBackgroundContext];
                                NSOperation *mainOperation = [NSBlockOperation blockOperationWithBlock:^{
-                                    NSArray *allEntity = [YMADataBase.sharedDataBase allEntitiesWithName:@"YMAGoods" inContext:moc];
+                                   NSArray *allEntity = [YMADataBase.sharedDataBase allEntitiesWithName:@"YMAGoods" inContext:moc];
                                    for (NSDictionary *item in jsonResponse) {
-                                    YMAGoods *entityProduct = (YMAGoods *) [YMADataBase.sharedDataBase findOrCreateEntityWithName:@"YMAGoods"
-                                                                                                                     findByFieldName:@"code" withValue:item[@"id"]
+                                       YMAGoods *entityProduct = (YMAGoods *) [YMADataBase.sharedDataBase findOrCreateEntityWithName:@"YMAGoods"
+                                                                                                                     findByFieldName:@"code"
+                                                                                                                           withValue:item[@"id"]
                                                                                                             searchInArrayWithEntitys:allEntity
                                                                                                                            inContext:moc];
                                        entityProduct.code = [item[@"id"] intValue];
@@ -50,7 +51,7 @@
                                [queue addOperation:mainOperation];
                                [queue addOperation:completionOperation];
                            }];
-
+    
 }
 
 + (void)fetchOrdersWithCompletionHandler:(void (^)())completionHandler {
@@ -61,13 +62,14 @@
                                    NSManagedObjectContext *moc = [YMADataBase.sharedDataBase newBackgroundContext];
                                    //get current user if not exist it will be created in sharedShopService;
                                    YMAUser *currentUser = [moc existingObjectWithID:[YMAShopService.sharedShopService currentUserManagedObjectID] error:nil];
-
+                                   
                                    NSArray *allGoods = [YMADataBase.sharedDataBase allEntitiesWithName:@"YMAGoods" inContext:moc];
                                    NSArray *allOrders = [YMADataBase.sharedDataBase allEntitiesWithName:@"YMAOrder" inContext:moc];
                                    for (NSDictionary *item in jsonResponse) {
                                        YMAOrder *order = (YMAOrder *) [YMADataBase.sharedDataBase findOrCreateEntityWithName:@"YMAOrder"
-                                                                                                                     findByFieldName:@"orderId" withValue:item[@"id"]
-                                                                                                            searchInArrayWithEntitys:allOrders
+                                                                                                             findByFieldName:@"orderId"
+                                                                                                                   withValue:item[@"id"]
+                                                                                                    searchInArrayWithEntitys:allOrders
                                                                                                                    inContext:moc];
                                        if (order.date == nil) {
                                            [currentUser addOrdersObject:order];
@@ -76,10 +78,8 @@
                                        order.date = [YMADateHelper dateFromString:item[@"date"]];
                                        order.orderId = [item[@"id"] intValue];
                                        order.state =  [item[@"state"]intValue];
-                                        //remove all order positions before reloading
-
-                                       [YMADataBase.sharedDataBase deleteAllEtitysWithEntityName:@"YMAOrderBook"];
-                                       //[order removeBookOrders:order.bookOrders];
+                                       //remove all order positions before reloading
+                                       [order removeBookOrders:order.bookOrders];
                                        NSArray *goodsIds = [item[@"catalog"] valueForKey:@"id"];
                                        //create all order positions
                                        for (NSNumber *idGoods in goodsIds) {
@@ -88,15 +88,12 @@
                                                                                                                          findByFieldName:@"code" withValue:idGoods
                                                                                                                 searchInArrayWithEntitys:allGoods
                                                                                                                                inContext:moc];
-
-                                           NSLog(@"entityProduct   !!!!!!!!%@", entityProduct.name);
-
                                            //add order positions
                                            [entityProduct addOrderBooksObject:orderBook];
                                            [order addBookOrdersObject:orderBook];
                                        }
                                    }
-
+                                   
                                    [YMADataBase.sharedDataBase saveContext:moc];
                                }];
                                NSOperation *completionOperation = [NSBlockOperation blockOperationWithBlock:^{
@@ -115,7 +112,8 @@
     NSError *error;
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:self delegateQueue:nil];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:3000/order"]
+    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/order"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                        timeoutInterval:60.0];
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -130,12 +128,18 @@
     NSString *orderDate = [YMADateHelper stringFromDate:order.date];
     NSString *orderState = [NSString stringWithFormat:@"%d", order.state];
     NSString *orderId = [NSString stringWithFormat:@"%d", order.orderId];
-    NSDictionary *mapData = @{@"date": orderDate, @"state": orderState, @"catalog": codesOfGoods, @"id": orderId};
+    NSDictionary *mapData = @{@"catalog": codesOfGoods,
+                              @"state": orderState,
+                              @"date": orderDate
+                              };
     NSData *postData = [NSJSONSerialization dataWithJSONObject:mapData options:0 error:&error];
     [request setHTTPBody:postData];
     NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error)
+            NSLog(@"Error %@", error);
     }];
     [postDataTask resume];
 }
 
 @end
+

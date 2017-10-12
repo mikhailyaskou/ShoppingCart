@@ -28,66 +28,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     UINib *nib = [UINib nibWithNibName:@"YMAOrderTableViewCell" bundle:nil];
-    [[self tableView] registerNib:nib forCellReuseIdentifier:@"YMAOrderTableViewCell"];
-    
-
-       [self initializeFetchedResultsController];
-
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"YMAOrderTableViewCell"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self initializeFetchedResultsController];
-    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    self.fetchedResultsController =  [YMADataBase.sharedDataBase fetchedResultsControllerWithDataName:@"YMAOrder" predicate:nil sotretByKey:@"state"];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+        [self.fetchedResultsController setDelegate:self];
+    });
 }
 
 - (IBAction)showMenuTapped:(id)sender {
     [YMALeftMenuViewController.sharedInstance.drawerTransition presentDrawerViewController];
-    
-}
-
-
-- (void)initializeFetchedResultsController {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"YMAOrder"];
-
-    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"state" ascending:YES];
-
-    [request setSortDescriptors:@[sortDescriptor]];
-
-    NSManagedObjectContext *moc = [[YMADataBase sharedDataBase] managedObjectContext];
-
-    [self setFetchedResultsController:[[NSFetchedResultsController alloc] initWithFetchRequest:request managedObjectContext:moc sectionNameKeyPath:nil cacheName:nil]];
-    [[self fetchedResultsController] setDelegate:self];
-
-    NSError *error = nil;
-    if (![[self fetchedResultsController] performFetch:&error]) {
-        NSLog(@"Failed to initialize FetchedResultsController: %@\n%@", [error localizedDescription], [error userInfo]);
-        abort();
-    }
-}
-
-- (void)configureCell:(YMAOrderTableViewCell *)cell withObject:(YMAOrder *)order {
-
-
 }
 
 #pragma mark - Table view data source
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    id <NSFetchedResultsSectionInfo> sectionInfo =
-            self.fetchedResultsController.sections[section];
-
-    return [sectionInfo numberOfObjects];
+    return self.fetchedResultsController.sections[section].numberOfObjects;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
     YMAOrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YMAOrderTableViewCell"];
-
     YMAOrder *order = (YMAOrder *) [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.orderId.text = [NSString stringWithFormat:@"%hi",order.orderId];
     cell.date.text = [YMADateHelper stringFromDate:order.date];
@@ -97,9 +62,6 @@
     NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%lf",books.firstObject.goods.price);
    // cell.price.text = [books valueForKeyPath:@"@sum.goods.price"];
     return cell;
-
-
 }
-
 
 @end

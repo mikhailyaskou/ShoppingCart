@@ -12,6 +12,7 @@
 #import "YMAUser+CoreDataClass.h"
 #import "YMAOrder+CoreDataClass.h"
 #import "YMAOrderBook+CoreDataProperties.h"
+#import "YMABackEnd.h"
 
 
 @interface YMAShopService ()
@@ -78,12 +79,23 @@
 }
 
 - (void)addToCart:(NSManagedObjectID *)productId {
-    NSManagedObjectContext *moc = [YMADataBase.sharedDataBase newBackgroundContext];
+    NSManagedObjectContext *moc = [YMADataBase.sharedDataBase managedObjectContext];
     YMAGoods *product = [moc existingObjectWithID:productId error:nil];
     YMAOrderBook *orderBook = [NSEntityDescription insertNewObjectForEntityForName:@"YMAOrderBook" inManagedObjectContext:moc];
     YMAOrder *currentOrder = [moc existingObjectWithID:[self currentOrderManagedObjectID] error:nil];
     [product addOrderBooksObject:orderBook];
     [currentOrder addBookOrdersObject:orderBook];
+    [YMADataBase.sharedDataBase saveContext:moc];
+}
+
+- (void)sendCurrentOrder {
+    NSManagedObjectID *orderManagedObjectID = [self currentOrderManagedObjectID];
+    NSManagedObjectContext *moc = [YMADataBase.sharedDataBase managedObjectContext];
+    YMAOrder *order = [moc existingObjectWithID:orderManagedObjectID error:nil];
+    order.state = 1;
+    [YMABackEnd post:order];
+    [order removeBookOrders:order.bookOrders];
+    [moc deleteObject:order];
     [YMADataBase.sharedDataBase saveContext:moc];
 }
 

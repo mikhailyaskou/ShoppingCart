@@ -24,5 +24,6 @@
 - (NSManagedObjectID *)currentUserManagedObjectID;
 
 - (NSManagedObjectID *)currentOrderManagedObjectID;
+- (void)sendCurrentOrder;
 
 @end
