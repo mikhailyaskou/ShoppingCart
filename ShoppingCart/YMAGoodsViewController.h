@@ -11,7 +11,7 @@
 
 @class PGDrawerTransition;
 
-@interface YMAGoodsViewController : UITableViewController <TouchDelegateForGoodsCell>
+@interface YMAGoodsViewController : UITableViewController
 
 + (YMAGoodsViewController *)sharedInstance;
 

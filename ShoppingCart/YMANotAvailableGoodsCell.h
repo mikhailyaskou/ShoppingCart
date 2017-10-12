@@ -7,12 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YMACartCell.h"
 
-@interface YMANotAvailableGoodsCell : UITableViewCell
+@interface YMANotAvailableGoodsCell : YMACartCell
 
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *codeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *image;
 
 @end

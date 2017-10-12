@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="340" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="cYn-DR-wPF" id="Xdh-5Q-nqc">
-                <rect key="frame" x="0.0" y="0.0" width="340" height="119.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="340" height="120"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cell_background_normal" translatesAutoresizingMaskIntoConstraints="NO" id="0JN-vs-RkT">
@@ -45,6 +45,9 @@
                         <rect key="frame" x="305" y="34" width="27" height="27"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         <state key="normal" image="arrow"/>
+                        <connections>
+                            <action selector="cellButtonTapped:" destination="cYn-DR-wPF" eventType="touchUpInside" id="48Y-G5-53o"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6Q-UQ-IDv">
                         <rect key="frame" x="103" y="40" width="138" height="15"/>

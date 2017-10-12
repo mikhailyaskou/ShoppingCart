@@ -58,9 +58,9 @@
 		1D84E9F2B56F56D270729E13 /* YMAShopService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAShopService.m; sourceTree = "<group>"; };
 		1D84EC9515DC6756031103CD /* YMAGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAGoodsViewController.m; sourceTree = "<group>"; };
 		1D84ED4ABF869363D9502E12 /* YMAJSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAJSONParser.m; sourceTree = "<group>"; };
-		9800D8451F8FA36800E1C188 /* CartCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CartCellDelegate.h; sourceTree = "<group>"; };
 		9800D8461F8FA4CC00E1C188 /* YMACartCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMACartCell.h; sourceTree = "<group>"; };
 		9800D8471F8FA4CC00E1C188 /* YMACartCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMACartCell.m; sourceTree = "<group>"; };
+		9800D8491F8FC04B00E1C188 /* YMAShopCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMAShopCellDelegate.h; sourceTree = "<group>"; };
 		982E96F51F1DFB5D00FB0F1C /* YMAGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAGoodsCell.h; sourceTree = "<group>"; };
 		982E96F61F1DFB5D00FB0F1C /* YMAGoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAGoodsCell.m; sourceTree = "<group>"; };
 		982E96F71F1DFB5D00FB0F1C /* YMAGoodsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMAGoodsCell.xib; sourceTree = "<group>"; };
@@ -210,7 +210,6 @@
 			children = (
 				98A6573D1F82A126006F2759 /* Available goods cell */,
 				98A657351F827F42006F2759 /* Not available goods cell */,
-				9800D8451F8FA36800E1C188 /* CartCellDelegate.h */,
 				9800D8461F8FA4CC00E1C188 /* YMACartCell.h */,
 				9800D8471F8FA4CC00E1C188 /* YMACartCell.m */,
 			);
@@ -241,6 +240,7 @@
 				9800D8441F8FA2F400E1C188 /* Cart cell */,
 				98FEE0171F83D9BC0078B8FF /* OrderCell */,
 				98A657341F827F12006F2759 /* Goods cell */,
+				9800D8491F8FC04B00E1C188 /* YMAShopCellDelegate.h */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -248,6 +248,7 @@
 		985A3B1C1F7D011600C6A4B4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1D84EF1E76C357FE614BB2D1 /* Main View */,
 				987607261F1DEE0100FEAD5C /* LaunchScreen.storyboard */,
 				9876071E1F1DEDFF00FEAD5C /* Main.storyboard */,
 				98A657431F82B33B006F2759 /* Cart View */,
@@ -384,7 +385,6 @@
 				98CFD83D1F322D640053461D /* YMAOrderTableViewCell.h */,
 				98CFD83E1F322D640053461D /* YMAOrderTableViewCell.m */,
 				98CFD83F1F322D640053461D /* YMAOrderTableViewCell.xib */,
-				1D84EF1E76C357FE614BB2D1 /* Main View */,
 			);
 			name = OrderCell;
 			sourceTree = "<group>";

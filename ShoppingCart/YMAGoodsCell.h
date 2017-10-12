@@ -7,14 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol TouchDelegateForGoodsCell <NSObject>
-- (void)touchedTheCell:(UIButton *)button;
-@end
+#import "YMAShopCellDelegate.h"
 
 @interface YMAGoodsCell : UITableViewCell
 
-@property (nonatomic, assign) id <TouchDelegateForGoodsCell> delegate;
+@property (nonatomic, assign) id <YMAShopCellDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UIImageView *image;
 @property (weak, nonatomic) IBOutlet UILabel *name;

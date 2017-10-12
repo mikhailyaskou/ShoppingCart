@@ -17,8 +17,8 @@
 @implementation YMAGoodsCell
 
 - (IBAction)addToCart:(UIButton *)sender {
-    if ([self.delegate respondsToSelector:@selector(touchedTheCell:)]) {
-        [self.delegate touchedTheCell:sender];
+    if ([self.delegate respondsToSelector:@selector(cellButtonTapped:)]) {
+        [self.delegate cellButtonTapped:sender];
     }
 }
 
