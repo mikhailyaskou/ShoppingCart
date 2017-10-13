@@ -1,0 +1,4 @@
+use_frameworks!
+target 'ShoppingCart' do
+ pod 'PGDrawerTransition', '~> 1.0.1'
+end

@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02F88761C445A2A039B84CD18DE1824E /* Pods-ShoppingCart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A47DBA7E06E9A59860A2CA6966E2737C /* Pods-ShoppingCart-dummy.m */; };
+		5D580B3E9F98F663B83BB941308E8B8E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		626FFBD9E3BB2921772B22E20696DD3D /* Pods-ShoppingCart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C5C001F8EB30A2A7A771278455C76F77 /* Pods-ShoppingCart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		713E9B0F24B6A21550F71E1063BA5362 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		880D01BB63C3AAAFD25884C2D93E5BC5 /* PGDrawerTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = DA44814B7BD18324CC17AA1E76CAA56E /* PGDrawerTransition.m */; };
+		8A0128C964DA955932F05868B8A66E67 /* PGDrawerTransition-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 396CD9BD1C53F4A6198A20A3F92551E8 /* PGDrawerTransition-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C886013A6E78EF2F7BA697E1C6057655 /* PGDrawerTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 20BC09306870984679C0AAC83B440298 /* PGDrawerTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CE35171E34615726A655B36AE18D84D5 /* PGDrawerTransition-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C45F1080398F95BF25D585C2B572D5 /* PGDrawerTransition-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0729E1A55D5F498BE53587498AB44EF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6B78E9C74B75B0B1F16C50F95767D1DC;
+			remoteInfo = PGDrawerTransition;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		053163B47663EED462BB3DA5AEA9C021 /* PGDrawerTransition-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGDrawerTransition-prefix.pch"; sourceTree = "<group>"; };
+		20718DBFB0CD90FC2E6110003F1421D8 /* Pods-ShoppingCart-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ShoppingCart-acknowledgements.markdown"; sourceTree = "<group>"; };
+		20BC09306870984679C0AAC83B440298 /* PGDrawerTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PGDrawerTransition.h; path = Pod/Classes/PGDrawerTransition.h; sourceTree = "<group>"; };
+		24271532577FE23605B5893688BE3201 /* Pods-ShoppingCart-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ShoppingCart-resources.sh"; sourceTree = "<group>"; };
+		270176B52FD8DFA2E13185D28B76CFE7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		304D9B6F8C9AC84530A5DE8BFE1DC457 /* Pods-ShoppingCart-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ShoppingCart-acknowledgements.plist"; sourceTree = "<group>"; };
+		36310B213C9C20EC3CC17C53E345A30C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		396CD9BD1C53F4A6198A20A3F92551E8 /* PGDrawerTransition-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PGDrawerTransition-umbrella.h"; sourceTree = "<group>"; };
+		3CB89CA63044F3784FA9F6C01B654952 /* PGDrawerTransition.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PGDrawerTransition.modulemap; sourceTree = "<group>"; };
+		64C22F8736646CBDE45E2E9E53AA6DB6 /* PGDrawerTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PGDrawerTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		89C45F1080398F95BF25D585C2B572D5 /* PGDrawerTransition-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PGDrawerTransition-dummy.m"; sourceTree = "<group>"; };
+		8A36D7AC07E4F04329CA455D35875520 /* Pods-ShoppingCart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ShoppingCart.modulemap"; sourceTree = "<group>"; };
+		8F127C091EAFC84F20B9430764186040 /* Pods-ShoppingCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ShoppingCart.debug.xcconfig"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A47DBA7E06E9A59860A2CA6966E2737C /* Pods-ShoppingCart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ShoppingCart-dummy.m"; sourceTree = "<group>"; };
+		BA68FDCDF472CA77E7F6BC278ED7CFB9 /* Pods-ShoppingCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ShoppingCart.release.xcconfig"; sourceTree = "<group>"; };
+		C5C001F8EB30A2A7A771278455C76F77 /* Pods-ShoppingCart-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ShoppingCart-umbrella.h"; sourceTree = "<group>"; };
+		DA44814B7BD18324CC17AA1E76CAA56E /* PGDrawerTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = PGDrawerTransition.m; path = Pod/Classes/PGDrawerTransition.m; sourceTree = "<group>"; };
+		E12E84577D93B4F76B66ACDB0766F950 /* Pods-ShoppingCart-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ShoppingCart-frameworks.sh"; sourceTree = "<group>"; };
+		E74B265B4F7B26074CA9E154A3EF679C /* PGDrawerTransition.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PGDrawerTransition.xcconfig; sourceTree = "<group>"; };
+		EBCC80EFF5755357D5AA2580B88C9B7E /* Pods_ShoppingCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B430CC13EBEEFED3A0F8CD23836E03FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				713E9B0F24B6A21550F71E1063BA5362 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F90E3B7145E4977D14D94D7E5E2C68A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D580B3E9F98F663B83BB941308E8B8E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		131B888C14C9A63F85C83DEA8F2D3B58 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C098A191D860ADFAE71632A3B61B2305 /* Pods-ShoppingCart */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		1E4483662BDD27AE012BD630C81B4025 /* PGDrawerTransition */ = {
+			isa = PBXGroup;
+			children = (
+				20BC09306870984679C0AAC83B440298 /* PGDrawerTransition.h */,
+				DA44814B7BD18324CC17AA1E76CAA56E /* PGDrawerTransition.m */,
+				BB6FF052C97A8020286B7C7AA1ACFF45 /* Support Files */,
+			);
+			path = PGDrawerTransition;
+			sourceTree = "<group>";
+		};
+		57FCE0A732D9F517F86E79EC20EF04B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1E4483662BDD27AE012BD630C81B4025 /* PGDrawerTransition */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		64E31AE5CA73AFC90AC89F05F8F3EACF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64C22F8736646CBDE45E2E9E53AA6DB6 /* PGDrawerTransition.framework */,
+				EBCC80EFF5755357D5AA2580B88C9B7E /* Pods_ShoppingCart.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				57FCE0A732D9F517F86E79EC20EF04B8 /* Pods */,
+				64E31AE5CA73AFC90AC89F05F8F3EACF /* Products */,
+				131B888C14C9A63F85C83DEA8F2D3B58 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BB6FF052C97A8020286B7C7AA1ACFF45 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				36310B213C9C20EC3CC17C53E345A30C /* Info.plist */,
+				3CB89CA63044F3784FA9F6C01B654952 /* PGDrawerTransition.modulemap */,
+				E74B265B4F7B26074CA9E154A3EF679C /* PGDrawerTransition.xcconfig */,
+				89C45F1080398F95BF25D585C2B572D5 /* PGDrawerTransition-dummy.m */,
+				053163B47663EED462BB3DA5AEA9C021 /* PGDrawerTransition-prefix.pch */,
+				396CD9BD1C53F4A6198A20A3F92551E8 /* PGDrawerTransition-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/PGDrawerTransition";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C098A191D860ADFAE71632A3B61B2305 /* Pods-ShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				270176B52FD8DFA2E13185D28B76CFE7 /* Info.plist */,
+				8A36D7AC07E4F04329CA455D35875520 /* Pods-ShoppingCart.modulemap */,
+				20718DBFB0CD90FC2E6110003F1421D8 /* Pods-ShoppingCart-acknowledgements.markdown */,
+				304D9B6F8C9AC84530A5DE8BFE1DC457 /* Pods-ShoppingCart-acknowledgements.plist */,
+				A47DBA7E06E9A59860A2CA6966E2737C /* Pods-ShoppingCart-dummy.m */,
+				E12E84577D93B4F76B66ACDB0766F950 /* Pods-ShoppingCart-frameworks.sh */,
+				24271532577FE23605B5893688BE3201 /* Pods-ShoppingCart-resources.sh */,
+				C5C001F8EB30A2A7A771278455C76F77 /* Pods-ShoppingCart-umbrella.h */,
+				8F127C091EAFC84F20B9430764186040 /* Pods-ShoppingCart.debug.xcconfig */,
+				BA68FDCDF472CA77E7F6BC278ED7CFB9 /* Pods-ShoppingCart.release.xcconfig */,
+			);
+			name = "Pods-ShoppingCart";
+			path = "Target Support Files/Pods-ShoppingCart";
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8B10443A4A1E611C40E8F68DCBC4FCE5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				626FFBD9E3BB2921772B22E20696DD3D /* Pods-ShoppingCart-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A3C0DC3ADD2710E0C3C3BED088530DA6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A0128C964DA955932F05868B8A66E67 /* PGDrawerTransition-umbrella.h in Headers */,
+				C886013A6E78EF2F7BA697E1C6057655 /* PGDrawerTransition.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1F0CD9E92BDB58D505ED195448C82E74 /* Pods-ShoppingCart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38B8AA27C6421473138C3EA4D892CF71 /* Build configuration list for PBXNativeTarget "Pods-ShoppingCart" */;
+			buildPhases = (
+				9F1D9692EDCEA3C7401A3EB4D1C85D08 /* Sources */,
+				B430CC13EBEEFED3A0F8CD23836E03FC /* Frameworks */,
+				8B10443A4A1E611C40E8F68DCBC4FCE5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C3FB5DC579AF73D1730623D279005EA /* PBXTargetDependency */,
+			);
+			name = "Pods-ShoppingCart";
+			productName = "Pods-ShoppingCart";
+			productReference = EBCC80EFF5755357D5AA2580B88C9B7E /* Pods_ShoppingCart.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6B78E9C74B75B0B1F16C50F95767D1DC /* PGDrawerTransition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D0FE14DACB2496393A268BE46587E11 /* Build configuration list for PBXNativeTarget "PGDrawerTransition" */;
+			buildPhases = (
+				515B5119460138E366965819BDD4DF25 /* Sources */,
+				F90E3B7145E4977D14D94D7E5E2C68A9 /* Frameworks */,
+				A3C0DC3ADD2710E0C3C3BED088530DA6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PGDrawerTransition;
+			productName = PGDrawerTransition;
+			productReference = 64C22F8736646CBDE45E2E9E53AA6DB6 /* PGDrawerTransition.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 64E31AE5CA73AFC90AC89F05F8F3EACF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B78E9C74B75B0B1F16C50F95767D1DC /* PGDrawerTransition */,
+				1F0CD9E92BDB58D505ED195448C82E74 /* Pods-ShoppingCart */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		515B5119460138E366965819BDD4DF25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE35171E34615726A655B36AE18D84D5 /* PGDrawerTransition-dummy.m in Sources */,
+				880D01BB63C3AAAFD25884C2D93E5BC5 /* PGDrawerTransition.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F1D9692EDCEA3C7401A3EB4D1C85D08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02F88761C445A2A039B84CD18DE1824E /* Pods-ShoppingCart-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C3FB5DC579AF73D1730623D279005EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PGDrawerTransition;
+			target = 6B78E9C74B75B0B1F16C50F95767D1DC /* PGDrawerTransition */;
+			targetProxy = 0729E1A55D5F498BE53587498AB44EF5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1E0138A61F315553359CF894751B7EFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E74B265B4F7B26074CA9E154A3EF679C /* PGDrawerTransition.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PGDrawerTransition/PGDrawerTransition-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PGDrawerTransition/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PGDrawerTransition/PGDrawerTransition.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = PGDrawerTransition;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		707B86CFB21B645E37109F39754D4051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8DCF9A3FA3B59326CF23148E544F7D26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E74B265B4F7B26074CA9E154A3EF679C /* PGDrawerTransition.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PGDrawerTransition/PGDrawerTransition-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PGDrawerTransition/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PGDrawerTransition/PGDrawerTransition.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = PGDrawerTransition;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CEF57EDBD5420422F1FF2D920C63B78B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F127C091EAFC84F20B9430764186040 /* Pods-ShoppingCart.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ShoppingCart/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ShoppingCart;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EF26A3C5B6EDA309192C6025F703DE0A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		FAD0FE3DC34C9CA02C84714642831D5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA68FDCDF472CA77E7F6BC278ED7CFB9 /* Pods-ShoppingCart.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-ShoppingCart/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_ShoppingCart;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF26A3C5B6EDA309192C6025F703DE0A /* Debug */,
+				707B86CFB21B645E37109F39754D4051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		38B8AA27C6421473138C3EA4D892CF71 /* Build configuration list for PBXNativeTarget "Pods-ShoppingCart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF57EDBD5420422F1FF2D920C63B78B /* Debug */,
+				FAD0FE3DC34C9CA02C84714642831D5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D0FE14DACB2496393A268BE46587E11 /* Build configuration list for PBXNativeTarget "PGDrawerTransition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E0138A61F315553359CF894751B7EFC /* Debug */,
+				8DCF9A3FA3B59326CF23148E544F7D26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
