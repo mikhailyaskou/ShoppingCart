@@ -73,6 +73,7 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
         YMAGoodsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YMAGoodsCell"];
         cell.name.text = goods.name;
         cell.code.text = [NSString stringWithFormat:@"%d", goods.code];
+        cell.price.text = [NSString stringWithFormat:@"%g", goods.price];
         NSURL *url = [NSURL URLWithString:goods.image];
         NSData *data = [NSData dataWithContentsOfURL:url];
         cell.image.image = [[UIImage alloc] initWithData:data];

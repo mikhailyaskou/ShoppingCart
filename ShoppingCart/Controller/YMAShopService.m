@@ -26,7 +26,6 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedShopService = [[self alloc] init];
-
     });
     return sharedShopService;
 }
@@ -97,6 +96,15 @@
     [order removeBookOrders:order.bookOrders];
     [moc deleteObject:order];
     [YMADataBase.sharedDataBase saveContext:moc];
+}
+
+- (NSDecimalNumber *)totalOrderPrice:(YMAOrder *)order {
+    NSDecimalNumber *totalPrice = NSDecimalNumber.zero;
+    for (YMAOrderBook *orderBook in order.bookOrders.allObjects) {
+        NSDecimalNumber *dn = [NSDecimalNumber decimalNumberWithDecimal:[@(orderBook.goods.price) decimalValue]];
+        totalPrice = [totalPrice decimalNumberByAdding:dn];
+    }
+    return totalPrice;
 }
 
 @end

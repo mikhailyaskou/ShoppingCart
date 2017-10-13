@@ -12,7 +12,7 @@
 #import "YMAShopService.h"
 #import "YMAGoods+CoreDataProperties.h"
 #import "YMAOrderBook+CoreDataProperties.h"
-#import "YMAAvailableGoodsCell.h"
+#import "YMACartCellAvailable.h"
 #import "YMALeftMenuViewController.h"
 
 @interface YMACartOrderViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate, YMAShopCellDelegate>
@@ -28,10 +28,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    UINib *nib = [UINib nibWithNibName:@"YMAAvailableGoodsCell" bundle:nil];
-    [[self tableView] registerNib:nib forCellReuseIdentifier:@"YMAAvailableGoodsCell"];
-    nib = [UINib nibWithNibName:@"YMANotAvailableGoodsCell" bundle:nil];
-    [[self tableView] registerNib:nib forCellReuseIdentifier:@"YMANotAvailableGoodsCell"];
+    UINib *nib = [UINib nibWithNibName:@"YMACartCellAvailable" bundle:nil];
+    [[self tableView] registerNib:nib forCellReuseIdentifier:@"YMACartCellAvailable"];
+    nib = [UINib nibWithNibName:@"YMACartCellNotAvailable" bundle:nil];
+    [[self tableView] registerNib:nib forCellReuseIdentifier:@"YMACartCellNotAvailable"];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -123,14 +123,14 @@
     YMAGoods *goods = orderBook.goods;
     YMACartCell *cell;
     if (goods.available > 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"YMAAvailableGoodsCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"YMACartCellAvailable"];
         cell.nameLabel.text = goods.name;
-        ((YMAAvailableGoodsCell *) cell).codeLabel.text = [NSString stringWithFormat:@"%d", goods.code];
-        ((YMAAvailableGoodsCell *) cell).priceLabel.text = [NSString stringWithFormat:@"%.f", goods.price];
+        ((YMACartCellAvailable *) cell).codeLabel.text = [NSString stringWithFormat:@"%d", goods.code];
+        ((YMACartCellAvailable *) cell).priceLabel.text = [NSString stringWithFormat:@"%.f", goods.price];
         cell.image.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:goods.image]]];
     }
     else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"YMANotAvailableGoodsCell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:@"YMACartCellNotAvailable"];
         cell.nameLabel.text = goods.name;
         cell.image.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:goods.image]]];
     }

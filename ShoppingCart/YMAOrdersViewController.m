@@ -16,6 +16,7 @@
 #import "YMALeftMenuViewController.h"
 #import "YMAGoods+CoreDataClass.h"
 #import "YMAOrderBook+CoreDataProperties.h"
+#import "YMAShopService.h"
 
 @interface YMAOrdersViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -34,7 +35,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.fetchedResultsController =  [YMADataBase.sharedDataBase fetchedResultsControllerWithDataName:@"YMAOrder" predicate:nil sotretByKey:@"state"];
+    self.fetchedResultsController =  [YMADataBase.sharedDataBase fetchedResultsControllerWithDataName:@"YMAOrder" predicate:nil sotretByKey:@"date"];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
         [self.fetchedResultsController setDelegate:self];
@@ -57,10 +58,7 @@
     cell.orderId.text = [NSString stringWithFormat:@"%hi",order.orderId];
     cell.date.text = [YMADateHelper stringFromDate:order.date];
     cell.state.text = [NSString stringWithFormat:@"%hi", order.state];
-    NSArray <YMAOrderBook *> *books = order.bookOrders.allObjects;
-
-    NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!%lf",books.firstObject.goods.price);
-   // cell.price.text = [books valueForKeyPath:@"@sum.goods.price"];
+    cell.price.text = ([YMAShopService.sharedShopService totalOrderPrice:order]).stringValue;
     return cell;
 }
 

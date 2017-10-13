@@ -1,5 +1,5 @@
 //
-//  YMANotAvailableGoodsCell.h
+//  YMACartCellNotAvailable.h
 //  ShoppingCart
 //
 //  Created by Mikhail Yaskou on 02.10.17.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "YMACartCell.h"
 
-@interface YMANotAvailableGoodsCell : YMACartCell
+@interface YMACartCellNotAvailable : YMACartCell
 
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 

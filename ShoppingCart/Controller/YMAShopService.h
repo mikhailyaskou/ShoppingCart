@@ -25,5 +25,6 @@
 
 - (NSManagedObjectID *)currentOrderManagedObjectID;
 - (void)sendCurrentOrder;
+- (NSDecimalNumber *)totalOrderPrice:(YMAOrder *)order;
 
 @end
