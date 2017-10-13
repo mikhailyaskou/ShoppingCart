@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YMAGoodsCell.h"
 
 @class PGDrawerTransition;
 

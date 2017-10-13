@@ -7,15 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YMAShopCellDelegate.h"
+#import "YMAProductCell.h"
 
-@interface YMAGoodsCell : UITableViewCell
+@interface YMAGoodsCell : YMAProductCell
 
-@property (nonatomic, assign) id <YMAShopCellDelegate> delegate;
-
-@property (weak, nonatomic) IBOutlet UIImageView *image;
-@property (weak, nonatomic) IBOutlet UILabel *name;
-@property (weak, nonatomic) IBOutlet UILabel *code;
 @property (weak, nonatomic) IBOutlet UILabel *price;
 
 @end
