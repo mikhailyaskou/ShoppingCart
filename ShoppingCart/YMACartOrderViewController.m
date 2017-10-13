@@ -15,7 +15,7 @@
 #import "YMACartCellAvailable.h"
 #import "YMALeftMenuViewController.h"
 
-@interface YMACartOrderViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate, YMAShopCellDelegate>
+@interface YMACartOrderViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate, YMAProductCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
@@ -121,7 +121,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YMAOrderBook *orderBook = (YMAOrderBook *) [self.fetchedResultsController objectAtIndexPath:indexPath];
     YMAGoods *goods = orderBook.goods;
-    YMACartCell *cell;
+    YMAProductCell *cell;
     if (goods.available > 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"YMACartCellAvailable"];
         cell.nameLabel.text = goods.name;

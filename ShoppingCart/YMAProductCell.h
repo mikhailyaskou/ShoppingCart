@@ -1,5 +1,5 @@
 //
-//  YMACartCell.h
+//  YMAProductCell.h
 //  ShoppingCart
 //
 //  Created by Mikhail Yaskou on 12.10.17.
@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YMAShopCellDelegate.h"
 
-@interface YMACartCell : UITableViewCell
+@protocol YMAProductCellDelegate <NSObject>
+- (void)cellButtonTapped:(UIButton *)sender;
+@end
 
-@property (weak, nonatomic) id <YMAShopCellDelegate> delegate;
+@interface YMAProductCell : UITableViewCell
+
+@property (weak, nonatomic) id <YMAProductCellDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *codeLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *image;

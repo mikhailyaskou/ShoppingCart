@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YMAProductCell.h"
+#import "YMACartCell.h"
 
-@interface YMACartCellNotAvailable : YMAProductCell
+@interface YMACartCellNotAvailable : YMACartCell
 
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 

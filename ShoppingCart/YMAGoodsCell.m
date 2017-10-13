@@ -8,18 +8,6 @@
 
 #import "YMAGoodsCell.h"
 
-@interface YMAGoodsCell ()
-
-@property (weak, nonatomic) IBOutlet UIButton *inCartButton;
-
-@end
-
 @implementation YMAGoodsCell
-
-- (IBAction)addToCart:(UIButton *)sender {
-    if ([self.delegate respondsToSelector:@selector(cellButtonTapped:)]) {
-        [self.delegate cellButtonTapped:sender];
-    }
-}
 
 @end

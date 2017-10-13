@@ -12,7 +12,7 @@
 		1D84EB1B541CD5ADD8FDA2E2 /* YMAJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84ED4ABF869363D9502E12 /* YMAJSONParser.m */; };
 		1D84EDDF70FA359DFCFCD413 /* YMAShopService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E9F2B56F56D270729E13 /* YMAShopService.m */; };
 		1D84EFDD581570CC03099BC9 /* YMABackEnd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E819F60A718C918BE6DD /* YMABackEnd.m */; };
-		9800D8481F8FA4CC00E1C188 /* YMACartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9800D8471F8FA4CC00E1C188 /* YMACartCell.m */; };
+		9800D8481F8FA4CC00E1C188 /* YMAProductCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9800D8471F8FA4CC00E1C188 /* YMAProductCell.m */; };
 		982E96F81F1DFB5D00FB0F1C /* YMAGoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 982E96F61F1DFB5D00FB0F1C /* YMAGoodsCell.m */; };
 		982E96F91F1DFB5D00FB0F1C /* YMAGoodsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 982E96F71F1DFB5D00FB0F1C /* YMAGoodsCell.xib */; };
 		9861C9801F7E495100F1E2F4 /* YMALeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9861C97F1F7E495100F1E2F4 /* YMALeftMenuViewController.m */; };
@@ -58,9 +58,8 @@
 		1D84E9F2B56F56D270729E13 /* YMAShopService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAShopService.m; sourceTree = "<group>"; };
 		1D84EC9515DC6756031103CD /* YMAGoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAGoodsViewController.m; sourceTree = "<group>"; };
 		1D84ED4ABF869363D9502E12 /* YMAJSONParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAJSONParser.m; sourceTree = "<group>"; };
-		9800D8461F8FA4CC00E1C188 /* YMACartCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMACartCell.h; sourceTree = "<group>"; };
-		9800D8471F8FA4CC00E1C188 /* YMACartCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMACartCell.m; sourceTree = "<group>"; };
-		9800D8491F8FC04B00E1C188 /* YMAShopCellDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMAShopCellDelegate.h; sourceTree = "<group>"; };
+		9800D8461F8FA4CC00E1C188 /* YMAProductCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMAProductCell.h; sourceTree = "<group>"; };
+		9800D8471F8FA4CC00E1C188 /* YMAProductCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMAProductCell.m; sourceTree = "<group>"; };
 		982E96F51F1DFB5D00FB0F1C /* YMAGoodsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAGoodsCell.h; sourceTree = "<group>"; };
 		982E96F61F1DFB5D00FB0F1C /* YMAGoodsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAGoodsCell.m; sourceTree = "<group>"; };
 		982E96F71F1DFB5D00FB0F1C /* YMAGoodsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMAGoodsCell.xib; sourceTree = "<group>"; };
@@ -210,8 +209,6 @@
 			children = (
 				98A6573D1F82A126006F2759 /* Cart Cell Available */,
 				98A657351F827F42006F2759 /* Cart Cell Not Available */,
-				9800D8461F8FA4CC00E1C188 /* YMACartCell.h */,
-				9800D8471F8FA4CC00E1C188 /* YMACartCell.m */,
 			);
 			name = "Cart cell";
 			sourceTree = "<group>";
@@ -236,10 +233,11 @@
 		982E96E31F1DF06C00FB0F1C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9800D8461F8FA4CC00E1C188 /* YMAProductCell.h */,
+				9800D8471F8FA4CC00E1C188 /* YMAProductCell.m */,
 				9800D8441F8FA2F400E1C188 /* Cart cell */,
 				98FEE0171F83D9BC0078B8FF /* OrderCell */,
 				98A657341F827F12006F2759 /* Goods cell */,
-				9800D8491F8FC04B00E1C188 /* YMAShopCellDelegate.h */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -427,7 +425,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = YMA;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Mikhail Yaskou";
 				TargetAttributes = {
 					987607111F1DEDFF00FEAD5C = {
@@ -539,7 +537,7 @@
 				98A657411F82A14D006F2759 /* YMACartCellAvailable.m in Sources */,
 				98A657391F827F7C006F2759 /* YMACartCellNotAvailable.m in Sources */,
 				98B71EFE1F30BDCF005D81FE /* YMADateHelper.m in Sources */,
-				9800D8481F8FA4CC00E1C188 /* YMACartCell.m in Sources */,
+				9800D8481F8FA4CC00E1C188 /* YMAProductCell.m in Sources */,
 				98A6572D1F827D21006F2759 /* YMAGoods+CoreDataProperties.m in Sources */,
 				98B71EF81F30A400005D81FE /* YMACartOrderViewController.m in Sources */,
 				98CFD8401F322D640053461D /* YMAOrderTableViewCell.m in Sources */,

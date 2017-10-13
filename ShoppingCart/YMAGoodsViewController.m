@@ -13,10 +13,11 @@
 #import "PGDrawerTransition.h"
 #import "YMALeftMenuViewController.h"
 #import "YMABackEnd.h"
+#import "YMAGoodsCell.h"
 
 static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
 
-@interface YMAGoodsViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate, YMAShopCellDelegate>
+@interface YMAGoodsViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate, YMAProductCellDelegate>
 
 @property (retain, nonatomic) IBOutlet UITableView * TableView;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
@@ -71,8 +72,8 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YMAGoods *goods = (YMAGoods *) [self.fetchedResultsController objectAtIndexPath:indexPath];
         YMAGoodsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YMAGoodsCell"];
-        cell.name.text = goods.name;
-        cell.code.text = [NSString stringWithFormat:@"%d", goods.code];
+        cell.nameLabel.text = goods.name;
+        cell.codeLabel.text = [NSString stringWithFormat:@"%d", goods.code];
         cell.price.text = [NSString stringWithFormat:@"%g", goods.price];
         NSURL *url = [NSURL URLWithString:goods.image];
         NSData *data = [NSData dataWithContentsOfURL:url];
