@@ -26,14 +26,14 @@
       "title": "Nokia 3200",
       "price": "780",
       "image": "https://content2.onliner.by/catalog/device/header/fc1b54a6764ad0715fa1322c8f8112a7.jpg",
-      "available": "0"
+      "available": "1"
     },
     {
       "id": 5,
       "title": "Motorola MPx200",
       "price": "820",
       "image": "https://content2.onliner.by/catalog/device/header/d4e2102cde99b1a998bb064c5fbd5ae7.jpg",
-      "available": "0"
+      "available": "1"
     },
     {
       "id": 6,
@@ -170,6 +170,90 @@
       "state": "1",
       "date": "12.10.2017",
       "id": 8
+    },
+    {
+      "catalog": [
+        {
+          "id": 2
+        },
+        {
+          "id": 7
+        }
+      ],
+      "state": "1",
+      "date": "12.10.2017",
+      "id": 9
+    },
+    {
+      "catalog": [
+        {
+          "id": 7
+        },
+        {
+          "id": 2
+        }
+      ],
+      "state": "1",
+      "date": "12.10.2017",
+      "id": 10
+    },
+    {
+      "catalog": [
+        {
+          "id": 2
+        },
+        {
+          "id": 7
+        },
+        {
+          "id": 7
+        },
+        {
+          "id": 6
+        }
+      ],
+      "state": "1",
+      "date": "12.10.2017",
+      "id": 11
+    },
+    {
+      "catalog": [
+        {
+          "id": 2
+        }
+      ],
+      "state": "1",
+      "date": "12.10.2017",
+      "id": 12
+    },
+    {
+      "catalog": [
+        {
+          "id": 7
+        },
+        {
+          "id": 6
+        }
+      ],
+      "state": "1",
+      "date": "12.10.2017",
+      "id": 13
+    },
+    {
+      "catalog": [
+        {
+          "id": 4
+        },
+        {
+          "id": 7
+        },
+        {
+          "id": 6
+        }
+      ],
+      "state": "1",
+      "date": "12.10.2017",
+      "id": 14
     }
   ]
 }

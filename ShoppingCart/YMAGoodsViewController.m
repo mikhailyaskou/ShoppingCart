@@ -16,7 +16,7 @@
 
 static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
 
-@interface YMAGoodsViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@interface YMAGoodsViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate, YMAShopCellDelegate>
 
 @property (retain, nonatomic) IBOutlet UITableView * TableView;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
@@ -73,6 +73,7 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
         YMAGoodsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YMAGoodsCell"];
         cell.name.text = goods.name;
         cell.code.text = [NSString stringWithFormat:@"%d", goods.code];
+        cell.price.text = [NSString stringWithFormat:@"%g", goods.price];
         NSURL *url = [NSURL URLWithString:goods.image];
         NSData *data = [NSData dataWithContentsOfURL:url];
         cell.image.image = [[UIImage alloc] initWithData:data];
@@ -80,7 +81,9 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
         return cell;
 }
 
-- (void)touchedTheCell:(UIButton *)button {
+#pragma mark - YMACartCell Delegate
+
+- (void)cellButtonTapped:(UIButton *)button {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:(UITableViewCell *) button.superview.superview];
     YMAGoods *product = (YMAGoods *) [self.fetchedResultsController objectAtIndexPath:indexPath];
     [YMAShopService.sharedShopService addToCart:product.objectID];

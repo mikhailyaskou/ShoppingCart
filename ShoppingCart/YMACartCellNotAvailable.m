@@ -1,14 +1,14 @@
 //
-//  YMANotAvailableGoodsCell.m
+//  YMACartCellNotAvailable.m
 //  ShoppingCart
 //
 //  Created by Mikhail Yaskou on 02.10.17.
 //  Copyright © 2017 Mikhail Yaskou. All rights reserved.
 //
 
-#import "YMANotAvailableGoodsCell.h"
+#import "YMACartCellNotAvailable.h"
 
-@implementation YMANotAvailableGoodsCell
+@implementation YMACartCellNotAvailable
 
 - (void)awakeFromNib {
     [super awakeFromNib];

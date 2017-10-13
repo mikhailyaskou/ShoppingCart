@@ -10,4 +10,10 @@
 
 @implementation YMACartCell
 
+- (IBAction)cellButtonTapped:(id)sender {
+    if ([self.delegate respondsToSelector:@selector(cellButtonTapped:)]) {
+        [self.delegate cellButtonTapped:sender];
+    }
+}
+
 @end
