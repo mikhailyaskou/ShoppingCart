@@ -14,6 +14,10 @@
 #import "YMAOrderBook+CoreDataProperties.h"
 #import "YMACartCellAvailable.h"
 #import "YMALeftMenuViewController.h"
+#import "YMAConstants.h"
+
+static NSString *const YMACartCellAvailableNibName = @"YMACartCellAvailable";
+static NSString *const YMACartCellNotAvailableNibName = @"YMACartCellNotAvailable";
 
 @interface YMACartOrderViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate, YMAProductCellDelegate>
 
@@ -28,10 +32,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    UINib *nib = [UINib nibWithNibName:@"YMACartCellAvailable" bundle:nil];
-    [[self tableView] registerNib:nib forCellReuseIdentifier:@"YMACartCellAvailable"];
-    nib = [UINib nibWithNibName:@"YMACartCellNotAvailable" bundle:nil];
-    [[self tableView] registerNib:nib forCellReuseIdentifier:@"YMACartCellNotAvailable"];
+    UINib *nib = [UINib nibWithNibName:YMACartCellAvailableNibName bundle:nil];
+    [[self tableView] registerNib:nib forCellReuseIdentifier:YMACartCellAvailableNibName];
+    nib = [UINib nibWithNibName:YMACartCellNotAvailableNibName bundle:nil];
+    [[self tableView] registerNib:nib forCellReuseIdentifier:YMACartCellNotAvailableNibName];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -40,7 +44,7 @@
 
 - (void)initCartFetchedResultsController {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"order.state == %@", @"0"];
-    self.fetchedResultsController = [YMADataBase.sharedDataBase fetchedResultsControllerWithDataName:@"YMAOrderBook" predicate:predicate sotretByKey:@"goods"];
+    self.fetchedResultsController = [YMADataBase.sharedDataBase fetchedResultsControllerWithDataName:YMAOrderBookEntityName predicate:predicate sotretByKey:@"goods"];
     [self.tableView reloadData];
     [self.fetchedResultsController setDelegate:self];
 }
@@ -123,14 +127,14 @@
     YMAGoods *goods = orderBook.goods;
     YMAProductCell *cell;
     if (goods.available > 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"YMACartCellAvailable"];
+        cell = [tableView dequeueReusableCellWithIdentifier:YMACartCellAvailableNibName];
         cell.nameLabel.text = goods.name;
         ((YMACartCellAvailable *) cell).codeLabel.text = [NSString stringWithFormat:@"%d", goods.code];
         ((YMACartCellAvailable *) cell).priceLabel.text = [NSString stringWithFormat:@"%.f", goods.price];
         cell.image.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:goods.image]]];
     }
     else {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"YMACartCellNotAvailable"];
+        cell = [tableView dequeueReusableCellWithIdentifier:YMACartCellNotAvailableNibName];
         cell.nameLabel.text = goods.name;
         cell.image.image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:goods.image]]];
     }

@@ -14,7 +14,6 @@
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
 + (id)sharedDataBase;
-
 - (NSManagedObjectContext *)managedObjectContext;
 - (NSPersistentContainer *)persistentContainer;
 - (void)saveContext;
@@ -23,9 +22,9 @@
 - (void)deleteObjectAndSave:(NSManagedObject *)object;
 - (NSManagedObjectContext *)newBackgroundContext;
 - (NSFetchedResultsController *)fetchedResultsControllerWithDataName:(NSString *)entityName
-                                                           predicate:(NSPredicate * _Nullable)predicate
+                                                           predicate:(NSPredicate *_Nullable)predicate
                                                          sotretByKey:(NSString *_Nullable)sortKey;
-- (void)deleteAllEtitysWithEntityName:(NSString *_Nonnull)name;
+- (void)deleteAllEntitiesWithEntityName:(NSString *_Nonnull)name;
 - (NSArray *)allEntitiesWithName:(NSString *)entityName inContext:(NSManagedObjectContext *)context;
 - (NSManagedObject *)findOrCreateEntityWithName:(NSString *)entityName
                                 findByFieldName:(NSString *)fieldName

@@ -11,7 +11,7 @@
 @implementation YMAOrder (CoreDataProperties)
 
 + (NSFetchRequest<YMAOrder *> *)fetchRequest {
-	return [[NSFetchRequest alloc] initWithEntityName:@"YMAOrder"];
+    return [[NSFetchRequest alloc] initWithEntityName:@"YMAOrder"];
 }
 
 @dynamic date;

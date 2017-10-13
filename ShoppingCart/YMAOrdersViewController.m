@@ -14,9 +14,10 @@
 #import "YMAOrder+CoreDataClass.h"
 #import "PGDrawerTransition.h"
 #import "YMALeftMenuViewController.h"
-#import "YMAGoods+CoreDataClass.h"
-#import "YMAOrderBook+CoreDataProperties.h"
 #import "YMAShopService.h"
+#import "YMAConstants.h"
+
+static NSString *const YMAOrderTableViewCellNibName = @"YMAOrderTableViewCell";
 
 @interface YMAOrdersViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -29,13 +30,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UINib *nib = [UINib nibWithNibName:@"YMAOrderTableViewCell" bundle:nil];
-    [self.tableView registerNib:nib forCellReuseIdentifier:@"YMAOrderTableViewCell"];
+    UINib *nib = [UINib nibWithNibName:YMAOrderTableViewCellNibName bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:YMAOrderTableViewCellNibName];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.fetchedResultsController =  [YMADataBase.sharedDataBase fetchedResultsControllerWithDataName:@"YMAOrder" predicate:nil sotretByKey:@"date"];
+    self.fetchedResultsController = [YMADataBase.sharedDataBase fetchedResultsControllerWithDataName:YMAOrderEntityName predicate:nil sotretByKey:@"date"];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
         [self.fetchedResultsController setDelegate:self];
@@ -53,9 +54,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    YMAOrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YMAOrderTableViewCell"];
+    YMAOrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:YMAOrderTableViewCellNibName];
     YMAOrder *order = (YMAOrder *) [self.fetchedResultsController objectAtIndexPath:indexPath];
-    cell.orderId.text = [NSString stringWithFormat:@"%hi",order.orderId];
+    cell.orderId.text = [NSString stringWithFormat:@"%hi", order.orderId];
     cell.date.text = [YMADateHelper stringFromDate:order.date];
     cell.state.text = [NSString stringWithFormat:@"%hi", order.state];
     cell.price.text = ([YMAShopService.sharedShopService totalOrderPrice:order]).stringValue;

@@ -11,7 +11,7 @@
 @implementation YMAOrderBook (CoreDataProperties)
 
 + (NSFetchRequest<YMAOrderBook *> *)fetchRequest {
-	return [[NSFetchRequest alloc] initWithEntityName:@"YMAOrderBook"];
+    return [[NSFetchRequest alloc] initWithEntityName:@"YMAOrderBook"];
 }
 
 @dynamic goods;
