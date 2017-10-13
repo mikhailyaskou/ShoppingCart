@@ -12,8 +12,6 @@
 
 @interface YMABackEnd : NSObject
 
-+ (void)post;
-
 + (void)fetchPhoneWithCompletionHandler:(void (^)())completionHandler;
 + (void)fetchOrdersWithCompletionHandler:(void (^)())completionHandler;
 + (void)post:(YMAOrder *)order;

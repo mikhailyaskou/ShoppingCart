@@ -16,12 +16,13 @@ typedef void(^PGDrawerInteractionBlock)(void);
 
 @optional
 - (BOOL)canPresentWithDrawerTransition:(PGDrawerTransition *)transition;
+
 - (BOOL)canDismissWithDrawerTransition:(PGDrawerTransition *)transition;
 
 @end
 
 @interface PGDrawerTransition : UIPercentDrivenInteractiveTransition
-<UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate>
+        <UIViewControllerAnimatedTransitioning, UIViewControllerTransitioningDelegate>
 
 @property (nonatomic, copy) PGDrawerInteractionBlock presentBlock;
 @property (nonatomic, copy) PGDrawerInteractionBlock dismissBlock;
@@ -29,8 +30,11 @@ typedef void(^PGDrawerInteractionBlock)(void);
 - (instancetype)initWithTargetViewController:(UIViewController *)targetViewController drawerViewController:(UIViewController *)drawerViewController;
 
 - (void)presentDrawerViewController;
+
 - (void)dismissDrawerViewController;
+
 - (void)presentDrawerViewControllerWithAnimated:(BOOL)animated completion:(void (^)(void))completion;
+
 - (void)dismissDrawerViewControllerWithAnimated:(BOOL)animated completion:(void (^)(void))completion;
 
 @property (nonatomic, assign) BOOL enablePresent;

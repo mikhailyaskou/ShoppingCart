@@ -44,6 +44,8 @@
 		98CFD83C1F322CC20053461D /* YMAOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CFD83B1F322CC20053461D /* YMAOrdersViewController.m */; };
 		98CFD8401F322D640053461D /* YMAOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CFD83E1F322D640053461D /* YMAOrderTableViewCell.m */; };
 		98CFD8411F322D640053461D /* YMAOrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98CFD83F1F322D640053461D /* YMAOrderTableViewCell.xib */; };
+		98D0D2AE1F90AF6C00C4F6D6 /* YMAConstants.h in Sources */ = {isa = PBXBuildFile; fileRef = 98D0D2AC1F90A59500C4F6D6 /* YMAConstants.h */; };
+		98D0D2AF1F90AF6C00C4F6D6 /* YMAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D0D2AD1F90A59500C4F6D6 /* YMAConstants.m */; };
 		9FE9C6916AB9A609AC8DA069 /* Pods_ShoppingCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E357AEC728CAB7BCFDAD87E4 /* Pods_ShoppingCart.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +114,8 @@
 		98CFD83D1F322D640053461D /* YMAOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAOrderTableViewCell.h; sourceTree = "<group>"; };
 		98CFD83E1F322D640053461D /* YMAOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAOrderTableViewCell.m; sourceTree = "<group>"; };
 		98CFD83F1F322D640053461D /* YMAOrderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMAOrderTableViewCell.xib; sourceTree = "<group>"; };
+		98D0D2AC1F90A59500C4F6D6 /* YMAConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMAConstants.h; sourceTree = "<group>"; };
+		98D0D2AD1F90A59500C4F6D6 /* YMAConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMAConstants.m; sourceTree = "<group>"; };
 		C5FB07C14E5CC7F59F62268C /* Pods-ShoppingCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.release.xcconfig"; sourceTree = "<group>"; };
 		DEF4BDECD3FFC58DB5E5A6B6 /* Pods-ShoppingCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingCart.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingCart/Pods-ShoppingCart.debug.xcconfig"; sourceTree = "<group>"; };
 		E357AEC728CAB7BCFDAD87E4 /* Pods_ShoppingCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShoppingCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,8 +211,8 @@
 		9800D8441F8FA2F400E1C188 /* Cart cell */ = {
 			isa = PBXGroup;
 			children = (
-				98A6573D1F82A126006F2759 /* Cart Cell Available */,
-				98A657351F827F42006F2759 /* Cart Cell Not Available */,
+				98A6573D1F82A126006F2759 /* Cart cell Available */,
+				98A657351F827F42006F2759 /* Cart cell not Available */,
 			);
 			name = "Cart cell";
 			sourceTree = "<group>";
@@ -236,7 +240,7 @@
 				9800D8461F8FA4CC00E1C188 /* YMAProductCell.h */,
 				9800D8471F8FA4CC00E1C188 /* YMAProductCell.m */,
 				9800D8441F8FA2F400E1C188 /* Cart cell */,
-				98FEE0171F83D9BC0078B8FF /* OrderCell */,
+				98FEE0171F83D9BC0078B8FF /* Order cell */,
 				98A657341F827F12006F2759 /* Goods cell */,
 			);
 			name = Cells;
@@ -289,6 +293,7 @@
 		987607141F1DEDFF00FEAD5C /* ShoppingCart */ = {
 			isa = PBXGroup;
 			children = (
+				98D0D2AB1F90A57B00C4F6D6 /* Constants */,
 				985A3B1C1F7D011600C6A4B4 /* View */,
 				982E96E21F1DF05E00FB0F1C /* Helpes */,
 				982E96E11F1DF05500FB0F1C /* Model */,
@@ -339,24 +344,24 @@
 			name = "Goods cell";
 			sourceTree = "<group>";
 		};
-		98A657351F827F42006F2759 /* Cart Cell Not Available */ = {
+		98A657351F827F42006F2759 /* Cart cell not Available */ = {
 			isa = PBXGroup;
 			children = (
 				98A657361F827F7C006F2759 /* YMACartCellNotAvailable.h */,
 				98A657371F827F7C006F2759 /* YMACartCellNotAvailable.m */,
 				98A657381F827F7C006F2759 /* YMACartCellNotAvailable.xib */,
 			);
-			name = "Cart Cell Not Available";
+			name = "Cart cell not Available";
 			sourceTree = "<group>";
 		};
-		98A6573D1F82A126006F2759 /* Cart Cell Available */ = {
+		98A6573D1F82A126006F2759 /* Cart cell Available */ = {
 			isa = PBXGroup;
 			children = (
 				98A6573E1F82A14D006F2759 /* YMACartCellAvailable.h */,
 				98A6573F1F82A14D006F2759 /* YMACartCellAvailable.m */,
 				98A657401F82A14D006F2759 /* YMACartCellAvailable.xib */,
 			);
-			name = "Cart Cell Available";
+			name = "Cart cell Available";
 			sourceTree = "<group>";
 		};
 		98A657431F82B33B006F2759 /* Cart View */ = {
@@ -368,6 +373,15 @@
 			name = "Cart View";
 			sourceTree = "<group>";
 		};
+		98D0D2AB1F90A57B00C4F6D6 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				98D0D2AC1F90A59500C4F6D6 /* YMAConstants.h */,
+				98D0D2AD1F90A59500C4F6D6 /* YMAConstants.m */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 		98FEE0111F83932A0078B8FF /* Orders View */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,14 +391,14 @@
 			name = "Orders View";
 			sourceTree = "<group>";
 		};
-		98FEE0171F83D9BC0078B8FF /* OrderCell */ = {
+		98FEE0171F83D9BC0078B8FF /* Order cell */ = {
 			isa = PBXGroup;
 			children = (
 				98CFD83D1F322D640053461D /* YMAOrderTableViewCell.h */,
 				98CFD83E1F322D640053461D /* YMAOrderTableViewCell.m */,
 				98CFD83F1F322D640053461D /* YMAOrderTableViewCell.xib */,
 			);
-			name = OrderCell;
+			name = "Order cell";
 			sourceTree = "<group>";
 		};
 		9983BC6CAAFB5065BB5728A9 /* Frameworks */ = {
@@ -532,6 +546,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98D0D2AE1F90AF6C00C4F6D6 /* YMAConstants.h in Sources */,
+				98D0D2AF1F90AF6C00C4F6D6 /* YMAConstants.m in Sources */,
 				98A6572E1F827D21006F2759 /* YMAUser+CoreDataClass.m in Sources */,
 				98A6572C1F827D21006F2759 /* YMAGoods+CoreDataClass.m in Sources */,
 				98A657411F82A14D006F2759 /* YMACartCellAvailable.m in Sources */,

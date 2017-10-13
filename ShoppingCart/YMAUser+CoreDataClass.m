@@ -7,7 +7,6 @@
 //
 
 #import "YMAUser+CoreDataClass.h"
-#import "YMAOrder+CoreDataClass.h"
 
 @implementation YMAUser
 

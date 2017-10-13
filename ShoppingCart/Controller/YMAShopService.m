@@ -13,11 +13,7 @@
 #import "YMAOrder+CoreDataClass.h"
 #import "YMAOrderBook+CoreDataProperties.h"
 #import "YMABackEnd.h"
-
-
-@interface YMAShopService ()
-
-@end
+#import "YMAConstants.h"
 
 @implementation YMAShopService
 
@@ -32,7 +28,7 @@
 
 - (NSManagedObjectID *)currentUserManagedObjectID {
     NSManagedObjectContext *moc = [YMADataBase.sharedDataBase newBackgroundContext];
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"YMAUser"];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:YMAUserEntityName];
     // Specify criteria for filtering which objects to fetch
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", @"Mike Yaskou"];
     [request setPredicate:predicate];
@@ -45,7 +41,7 @@
     //creating new user
     YMAUser *user;
     if (fetchedObjects.count == 0) {
-        user = (YMAUser *) [NSEntityDescription insertNewObjectForEntityForName:@"YMAUser" inManagedObjectContext:moc];
+        user = [NSEntityDescription insertNewObjectForEntityForName:YMAUserEntityName inManagedObjectContext:moc];
         user.name = @"Mike Yaskou";
         [YMADataBase.sharedDataBase saveContext:moc];
     }
@@ -68,7 +64,7 @@
         openOrder = filteredOrders.allObjects[0];
     }
     else {
-        openOrder = [NSEntityDescription insertNewObjectForEntityForName:@"YMAOrder" inManagedObjectContext:moc];
+        openOrder = [NSEntityDescription insertNewObjectForEntityForName:YMAOrderEntityName inManagedObjectContext:moc];
         openOrder.date = [NSDate date];
         openOrder.state = 0;
         [currentUser addOrdersObject:openOrder];
@@ -80,7 +76,7 @@
 - (void)addToCart:(NSManagedObjectID *)productId {
     NSManagedObjectContext *moc = [YMADataBase.sharedDataBase managedObjectContext];
     YMAGoods *product = [moc existingObjectWithID:productId error:nil];
-    YMAOrderBook *orderBook = [NSEntityDescription insertNewObjectForEntityForName:@"YMAOrderBook" inManagedObjectContext:moc];
+    YMAOrderBook *orderBook = [NSEntityDescription insertNewObjectForEntityForName:YMAOrderBookEntityName inManagedObjectContext:moc];
     YMAOrder *currentOrder = [moc existingObjectWithID:[self currentOrderManagedObjectID] error:nil];
     [product addOrderBooksObject:orderBook];
     [currentOrder addBookOrdersObject:orderBook];

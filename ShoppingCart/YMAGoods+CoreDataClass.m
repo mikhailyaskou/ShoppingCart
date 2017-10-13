@@ -7,7 +7,6 @@
 //
 
 #import "YMAGoods+CoreDataClass.h"
-#import "YMAOrderBook+CoreDataClass.h"
 
 @implementation YMAGoods
 

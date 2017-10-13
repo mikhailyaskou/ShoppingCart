@@ -11,7 +11,7 @@
 @implementation YMAGoods (CoreDataProperties)
 
 + (NSFetchRequest<YMAGoods *> *)fetchRequest {
-	return [[NSFetchRequest alloc] initWithEntityName:@"YMAGoods"];
+    return [[NSFetchRequest alloc] initWithEntityName:@"YMAGoods"];
 }
 
 @dynamic available;

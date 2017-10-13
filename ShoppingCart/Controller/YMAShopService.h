@@ -18,11 +18,8 @@
 @interface YMAShopService : NSObject
 
 + (id)sharedShopService;
-
 - (void)addToCart:(NSManagedObjectID *)productId;
-
 - (NSManagedObjectID *)currentUserManagedObjectID;
-
 - (NSManagedObjectID *)currentOrderManagedObjectID;
 - (void)sendCurrentOrder;
 - (NSDecimalNumber *)totalOrderPrice:(YMAOrder *)order;

@@ -69,7 +69,7 @@
 - (void)saveContext:(NSManagedObjectContext *)context {
     NSError *error = nil;
     if ([context hasChanges] && ![context save:&error]) {
-      NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
         abort();
     }
 }
@@ -77,7 +77,7 @@
 #pragma mark - Core Data Fetch Data
 
 - (NSFetchedResultsController *)fetchedResultsControllerWithDataName:(NSString *)entityName
-                                                           predicate:(NSPredicate * _Nullable)predicate
+                                                           predicate:(NSPredicate *_Nullable)predicate
                                                          sotretByKey:(NSString *)sortKey {
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
     if (predicate) {
@@ -103,7 +103,7 @@
     NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:entityName];
     NSError *error = nil;
     NSArray *result = [context executeFetchRequest:request error:&error];
-    if (!result){
+    if (!result) {
         NSLog(@"Error fetching objects: %@\n%@", [error localizedDescription], [error userInfo]);
         abort();
     }
@@ -116,9 +116,9 @@
 }
 
 - (NSManagedObject *)findOrCreateEntityWithName:(NSString *)entityName findByFieldName:(NSString *)fieldName withValue:(NSString *)value searchInArrayWithEntitys:(NSArray *)allEntities inContext:(NSManagedObjectContext *)context {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.%@ == %@",fieldName, value];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.%@ == %@", fieldName, value];
     NSArray *foundEntity = [allEntities filteredArrayUsingPredicate:predicate];
-    if (foundEntity.count>0) {
+    if (foundEntity.count > 0) {
         return foundEntity[0];
     }
     else {
@@ -129,12 +129,12 @@
 - (void)clearCoreData {
     NSArray<NSEntityDescription *> *entityDescriptions = self.persistentContainer.managedObjectModel.entities;
     for (NSEntityDescription *entityDescription in entityDescriptions) {
-        [self deleteAllEtitysWithEntityName:entityDescription.name];
+        [self deleteAllEntitiesWithEntityName:entityDescription.name];
     }
 }
 
-- (void)deleteAllEtitysWithEntityName:(NSString *)name {
-    [self.persistentContainer performBackgroundTask:^(NSManagedObjectContext *context){
+- (void)deleteAllEntitiesWithEntityName:(NSString *_Nonnull)name {
+    [self.persistentContainer performBackgroundTask:^(NSManagedObjectContext *context) {
         NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:name];
         NSBatchDeleteRequest *delete = [[NSBatchDeleteRequest alloc] initWithFetchRequest:request];
         NSError *deleteError = nil;
@@ -144,7 +144,7 @@
 }
 
 - (void)deleteObjectAndSave:(NSManagedObject *)object {
-    [object.managedObjectContext deleteObject:object];    
+    [object.managedObjectContext deleteObject:object];
     [self saveContext:object.managedObjectContext];
 
 }

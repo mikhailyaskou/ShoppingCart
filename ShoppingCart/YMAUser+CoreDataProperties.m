@@ -11,7 +11,7 @@
 @implementation YMAUser (CoreDataProperties)
 
 + (NSFetchRequest<YMAUser *> *)fetchRequest {
-	return [[NSFetchRequest alloc] initWithEntityName:@"YMAUser"];
+    return [[NSFetchRequest alloc] initWithEntityName:@"YMAUser"];
 }
 
 @dynamic address;

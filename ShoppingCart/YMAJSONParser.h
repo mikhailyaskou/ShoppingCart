@@ -1,5 +1,5 @@
 //
-//  YMAJSONPaerser.h
+//  YMAJSONParser.h
 //  ShoppingCart
 //
 //  Created by Mikhail Yaskou on 28.09.17.
@@ -11,7 +11,6 @@
 @interface YMAJSONParser : NSObject
 
 + (YMAJSONParser *)sharedInstance;
-
-- (void)parseByURL:(NSURL *)url completionHandler:(void(^)(NSArray *array))completionHandler;
+- (void)parseByURL:(NSURL *)url completionHandler:(void (^)(NSArray *array))completionHandler;
 
 @end

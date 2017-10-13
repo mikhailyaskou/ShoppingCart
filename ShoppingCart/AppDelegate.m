@@ -8,9 +8,6 @@
 
 #import "AppDelegate.h"
 #import "YMADataBase.h"
-#import "YMADataBase.h"
-#import "YMABackEnd.h"
-#import "YMAShopService.h"
 
 @interface AppDelegate ()
 

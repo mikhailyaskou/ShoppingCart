@@ -14,12 +14,13 @@
 #import "YMALeftMenuViewController.h"
 #import "YMABackEnd.h"
 #import "YMAGoodsCell.h"
+#import "YMAConstants.h"
 
-static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
+static NSString *const YMAGoodsCellNibName = @"YMAGoodsCell";
+static NSString *const YMAGoodsViewControllerIdentifier = @"YMAGoodsViewController";
 
 @interface YMAGoodsViewController () <NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate, YMAProductCellDelegate>
 
-@property (retain, nonatomic) IBOutlet UITableView * TableView;
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @end
@@ -30,8 +31,8 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
     static YMAGoodsViewController *_sharedInstance = nil;
     static dispatch_once_t oneTask;
     dispatch_once(&oneTask, ^{
-        UIStoryboard *sb = [UIStoryboard  storyboardWithName: @"Main" bundle:nil];
-        _sharedInstance = [sb instantiateViewControllerWithIdentifier:@"YMAGoodsViewController"];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:YMAStoryboardName bundle:nil];
+        _sharedInstance = [sb instantiateViewControllerWithIdentifier:YMAGoodsViewControllerIdentifier];
     });
     return _sharedInstance;
 }
@@ -39,15 +40,15 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     //register nib in table view
-    UINib *nib = [UINib nibWithNibName:@"YMAGoodsCell" bundle:nil];
-    [self.tableView registerNib:nib forCellReuseIdentifier:@"YMAGoodsCell"];
+    UINib *nib = [UINib nibWithNibName:YMAGoodsCellNibName bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:YMAGoodsCellNibName];
     // set left menu
     YMALeftMenuViewController.sharedInstance.drawerTransition = [[PGDrawerTransition alloc] initWithTargetViewController:self.navigationController
                                                                                                     drawerViewController:YMALeftMenuViewController.sharedInstance];
 
     [YMABackEnd fetchPhoneWithCompletionHandler:^{
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"available == %@", @YES];
-        self.fetchedResultsController =  [YMADataBase.sharedDataBase fetchedResultsControllerWithDataName:@"YMAGoods" predicate:predicate sotretByKey:@"name"];
+        self.fetchedResultsController = [YMADataBase.sharedDataBase fetchedResultsControllerWithDataName:YMAGoodsEntitiesName predicate:predicate sotretByKey:@"name"];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
@@ -71,15 +72,15 @@ static NSString *const YMAGoodsCellIdentifier = @"YMAGoodsCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     YMAGoods *goods = (YMAGoods *) [self.fetchedResultsController objectAtIndexPath:indexPath];
-        YMAGoodsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"YMAGoodsCell"];
-        cell.nameLabel.text = goods.name;
-        cell.codeLabel.text = [NSString stringWithFormat:@"%d", goods.code];
-        cell.price.text = [NSString stringWithFormat:@"%g", goods.price];
-        NSURL *url = [NSURL URLWithString:goods.image];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        cell.image.image = [[UIImage alloc] initWithData:data];
-        cell.delegate = self;
-        return cell;
+    YMAGoodsCell *cell = [tableView dequeueReusableCellWithIdentifier:YMAGoodsCellNibName];
+    cell.nameLabel.text = goods.name;
+    cell.codeLabel.text = [NSString stringWithFormat:@"%d", goods.code];
+    cell.price.text = [NSString stringWithFormat:@"%g", goods.price];
+    NSURL *url = [NSURL URLWithString:goods.image];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    cell.image.image = [[UIImage alloc] initWithData:data];
+    cell.delegate = self;
+    return cell;
 }
 
 #pragma mark - YMACartCell Delegate

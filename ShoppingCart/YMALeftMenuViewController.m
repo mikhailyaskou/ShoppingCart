@@ -9,6 +9,9 @@
 #import "YMALeftMenuViewController.h"
 #import "YMACircularGradientView.h"
 #import "PGDrawerTransition.h"
+#import "YMAConstants.h"
+
+static NSString *const YMALeftMenuViewControllerIdentifier = @"YMALeftMenuViewController";
 
 @interface YMALeftMenuViewController ()
 
@@ -24,15 +27,15 @@
     static YMALeftMenuViewController *_sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        _sharedInstance = [sb instantiateViewControllerWithIdentifier:@"YMALeftMenuViewController"];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:YMAStoryboardName bundle:nil];
+        _sharedInstance = [sb instantiateViewControllerWithIdentifier:YMALeftMenuViewControllerIdentifier];
     });
     return _sharedInstance;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.mainTabBarController = (UITabBarController *)[[UIApplication sharedApplication] delegate].window.rootViewController;
+    self.mainTabBarController = (UITabBarController *) [[UIApplication sharedApplication] delegate].window.rootViewController;
     //round image with white border
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
     self.profileImageView.clipsToBounds = YES;
@@ -43,10 +46,10 @@
     CGRect frame = self.view.frame;
     frame.size.width = self.view.frame.size.width - self.view.frame.size.width / 5;
     UIBezierPath *maskPath = [UIBezierPath
-                              bezierPathWithRoundedRect:frame
-                              byRoundingCorners:( UIRectCornerBottomRight | UIRectCornerTopRight)
-                              cornerRadii:CGSizeMake(CGRectGetHeight(frame)/5, 0)
-                              ];
+            bezierPathWithRoundedRect:frame
+                    byRoundingCorners:(UIRectCornerBottomRight | UIRectCornerTopRight)
+                          cornerRadii:CGSizeMake(CGRectGetHeight(frame) / 5, 0)
+    ];
     //add mask to menu
     CAShapeLayer *maskLayer = [CAShapeLayer layer];
     maskLayer.frame = frame;
